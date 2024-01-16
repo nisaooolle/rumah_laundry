@@ -1,361 +1,796 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Data Siswa Baru</title>
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-xxx" crossorigin="anonymous" />
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="Content-Language" content="en">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Dash</title>
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, shrink-to-fit=no" />
+  <meta name="description" content="This is an example dashboard created using build-in elements and components.">
+  <meta name="msapplication-tap-highlight" content="no">
+  <link href="https://demo.dashboardpack.com/architectui-html-free/main.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link href='https://dtdrycleaning.wpengine.com/wp-content/themes/dry-cleaning/images/favicon.ico' rel='shortcut icon'
+    type='image/x-icon' />
 </head>
 
 <body>
-  <?php $this->load->view('sidebar'); ?>
-    <!-- Statistics Cards -->
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 p-4 gap-4">
-      <div class="bg-blue-500 dark:bg-gray-800 shadow-lg rounded-md flex justify-between p-3 border-b-4 border-blue-600 dark:border-gray-600 text-white font-medium group">
-        <div class="flex justify-center items-center w-14 h-14 bg-white rounded-full transition-all duration-300 transform group-hover:rotate-12">
-          <svg width="30" height="30" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="stroke-current text-blue-800 dark:text-gray-800 transform transition-transform duration-500 ease-in-out">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
-          </svg>
-        </div>
-        <div class="text-right">
-          <p class="text-2xl"><?php echo $user; ?></p>
-          <p>Siswa Baru</p>
+  <div class="app-container app-theme-white body-tabs-shadow  fixed-header">
+    <div class="app-header header-shadow">
+      <div class="app-header__logo">
+        <div>
+          <div id="logo"> <a href="dashboard" rel="home">
+              <img style="width: 200px;"
+                src="https://dtdrycleaning.wpengine.com/wp-content/themes/dry-cleaning/images/logo.png"
+                alt="Dry Cleaning" title="Dry Cleaning" />
+            </a></div>
         </div>
       </div>
-      <div class="bg-blue-500 dark:bg-gray-800 shadow-lg rounded-md flex p-3 border-b-4 border-blue-600 dark:border-gray-600 text-white font-medium group">
-        <div class="flex items-center justify-center w-14 h-14 bg-white rounded-full transition-all duration-300 transform group-hover:rotate-12">
-          <svg width="30" height="30" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="stroke-current text-blue-800 dark:text-gray-800 transform transition-transform duration-500 ease-in-out">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
-          </svg>
-        </div>
-        <div class="ml-4 text-right">
-          <p class="text-2xl"><?php echo $admin; ?></p>
-          <p>Jumlah Siswa yang masuk</p>
+      <div class="app-header__mobile-menu">
+        <div>
+          <button type="button" class="hamburger hamburger--elastic mobile-toggle-nav">
+            <span class="hamburger-box">
+              <span class="hamburger-inner"></span>
+            </span>
+          </button>
         </div>
       </div>
-      <div class="bg-blue-500 dark:bg-gray-800 shadow-lg rounded-md flex items-center justify-between p-3 border-b-4 border-blue-600 dark:border-gray-600 text-white font-medium group">
-        <div class="flex items-center justify-center w-14 h-14 bg-white rounded-full transition-all duration-300 transform group-hover:rotate-12">
-          <svg width="30" height="30" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="stroke-current text-blue-800 dark:text-gray-800 transform transition-transform duration-500 ease-in-out">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
-          </svg>
-        </div>
-        <div class="ml-4 text-right">
-          <p class="text-2xl"><?php echo $guru; ?></p>
-          <p>Jumlah guru</p>
-        </div>
+      <div class="app-header__menu">
+        <span>
+          <button type="button" class="btn-icon btn-icon-only btn btn-primary btn-sm mobile-toggle-header-nav">
+            <span class="btn-icon-wrapper">
+              <i class="fa fa-ellipsis-v fa-w-6"></i>
+            </span>
+          </button>
+        </span>
       </div>
-      <div class="bg-blue-500 dark:bg-gray-800 shadow-lg rounded-md flex items-center justify-between p-3 border-b-4 border-blue-600 dark:border-gray-600 text-white font-medium group">
-        <div class="flex justify-center items-center w-14 h-14 bg-white rounded-full transition-all duration-300 transform group-hover:rotate-12">
-          <svg width="30" height="30" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="stroke-current text-blue-800 dark:text-gray-800 transform transition-transform duration-500 ease-in-out">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" fill="currentColor" d="M288 0C128.6 0 0 128.6 0 288s128.6 288 288 288 288-128.6 288-288S447.4 0 288 0zm.6 481.9c-3.1 17-18.1 29.1-35.3 29.1-9.7 0-19.1-3.8-26.2-10.7L32.9 334.4c-9.7-9.7-10.2-24.8-1-34.6L128 240V112c0-13.3 10.7-24 24-24h80c19.3 0 35.4 14.2 38.3 33.3C290.3 114.1 303.9 96 320 96s29.7 18.1 31.7 41.3C354.6 102.2 371.7 88 392 88h80c13.3 0 24 10.7 24 24v128l95 59.7c9.1 9.1 8.7 24.2-1 34.6l-193.2 166.2c-7.1 7-16.5 10.7-26.2 10.7-17.2 0-32.2-12.1-35.3-29.1z"></path>
-          </svg>
-        </div>
-        <div class="text-right">
-          <p class="text-2xl"><?php echo $ekstra; ?></p>
-          <p>Ekstrakulikuler</p>
+      <div class="app-header__content">
+        <ul class="header-menu nav">
+          <li class="nav-item">
+            <a href="riwayat" class="nav-link">
+              <!-- <i class="nav-link-icon fa fa-database"> </i> -->
+              <i class="nav-link-icon fa-solid fa-clock-rotate-left"></i>
+              Riwayat Transaksi
+            </a>
+          </li>
+          <li class="btn-group nav-item">
+            <a href="manage_karyawan" class="nav-link">
+              <!-- <i class="nav-link-icon fa fa-edit"></i> -->
+              <i class="nav-link-icon fa-solid fa-people-roof"></i>
+              Manage Karyawan
+            </a>
+          </li>
+          <li class="dropdown nav-item">
+            <a href="daftar_paket" class="nav-link">
+              <!-- <i class="nav-link-icon fa fa-cog"></i> -->
+              <i class="nav-link-icon fa-solid fa-sliders"></i>
+              Daftar Paket
+            </a>
+          </li>
+        </ul>
+        <div class="app-header-right">
+          <div class="widget-content-right header-user-info ml-3">
+            <button type="button" class="btn-shadow p-1 btn btn-primary btn-sm show-toastr-example">
+              <i class="fa text-white fa-calendar pr-1 pl-1"></i>
+            </button>
+          </div>
         </div>
       </div>
     </div>
-    <!-- ./Statistics Cards -->
-
-    <div class="grid grid-cols-1 lg:grid-cols-2 p-4 gap-4">
-
-      <!-- Social Traffic -->
-      <div class="relative flex flex-col min-w-0 mb-4 lg:mb-0 break-words bg-gray-50 dark:bg-gray-800 w-full shadow-lg rounded">
-        <div class="rounded-t mb-0 px-0 border-0">
-          <div class="flex flex-wrap items-center px-4 py-2">
-            <div class="relative w-full max-w-full flex-grow flex-1">
-              <h3 class="font-semibold text-base text-gray-900 dark:text-gray-50">Mendaftar Melalui</h3>
+    <div class="ui-theme-settings">
+      <button type="button" id="TooltipDemo" class="btn-open-options btn btn-warning">
+        <i class="fa fa-cog fa-w-16 fa-spin fa-2x"></i>
+      </button>
+      <div class="theme-settings__inner">
+        <div class="scrollbar-container">
+          <div class="theme-settings__options-wrapper">
+            <h3 class="themeoptions-heading">Layout Options
+            </h3>
+            <div class="p-3">
+              <ul class="list-group">
+                <li class="list-group-item">
+                  <div class="widget-content p-0">
+                    <div class="widget-content-wrapper">
+                      <div class="widget-content-left mr-3">
+                        <div class="switch has-switch switch-container-class" data-class="fixed-header">
+                          <div class="switch-animate switch-on">
+                            <input type="checkbox" checked data-toggle="toggle" data-onstyle="success">
+                          </div>
+                        </div>
+                      </div>
+                      <div class="widget-content-left">
+                        <div class="widget-heading">Fixed Header
+                        </div>
+                        <div class="widget-subheading">Makes the header top fixed, always visible!
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li class="list-group-item">
+                  <div class="widget-content p-0">
+                    <div class="widget-content-wrapper">
+                      <div class="widget-content-left mr-3">
+                        <div class="switch has-switch switch-container-class" data-class="fixed-sidebar">
+                          <div class="switch-animate switch-on">
+                            <input type="checkbox" checked data-toggle="toggle" data-onstyle="success">
+                          </div>
+                        </div>
+                      </div>
+                      <div class="widget-content-left">
+                        <div class="widget-heading">Fixed Sidebar
+                        </div>
+                        <div class="widget-subheading">Makes the sidebar left fixed, always visible!
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li class="list-group-item">
+                  <div class="widget-content p-0">
+                    <div class="widget-content-wrapper">
+                      <div class="widget-content-left mr-3">
+                        <div class="switch has-switch switch-container-class" data-class="fixed-footer">
+                          <div class="switch-animate switch-off">
+                            <input type="checkbox" data-toggle="toggle" data-onstyle="success">
+                          </div>
+                        </div>
+                      </div>
+                      <div class="widget-content-left">
+                        <div class="widget-heading">Fixed Footer
+                        </div>
+                        <div class="widget-subheading">Makes the app footer bottom fixed, always visible!
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+              </ul>
             </div>
-            <div class="relative w-full max-w-full flex-grow flex-1 text-right">
-              <!-- <button class="bg-blue-500 dark:bg-gray-100 text-white active:bg-blue-600 dark:text-gray-800 dark:active:text-gray-700 text-xs font-bold uppercase px-3 py-1 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" type="button">See all</button> -->
+            <h3 class="themeoptions-heading">
+              <div>
+                Header Options
+              </div>
+              <button type="button"
+                class="btn-pill btn-shadow btn-wide ml-auto btn btn-focus btn-sm switch-header-cs-class" data-class="">
+                Restore Default
+              </button>
+            </h3>
+            <div class="p-3">
+              <ul class="list-group">
+                <li class="list-group-item">
+                  <h5 class="pb-2">Choose Color Scheme
+                  </h5>
+                  <div class="theme-settings-swatches">
+                    <div class="swatch-holder bg-primary switch-header-cs-class"
+                      data-class="bg-primary header-text-light">
+                    </div>
+                    <div class="swatch-holder bg-secondary switch-header-cs-class"
+                      data-class="bg-secondary header-text-light">
+                    </div>
+                    <div class="swatch-holder bg-success switch-header-cs-class"
+                      data-class="bg-success header-text-dark">
+                    </div>
+                    <div class="swatch-holder bg-info switch-header-cs-class" data-class="bg-info header-text-dark">
+                    </div>
+                    <div class="swatch-holder bg-warning switch-header-cs-class"
+                      data-class="bg-warning header-text-dark">
+                    </div>
+                    <div class="swatch-holder bg-danger switch-header-cs-class"
+                      data-class="bg-danger header-text-light">
+                    </div>
+                    <div class="swatch-holder bg-light switch-header-cs-class" data-class="bg-light header-text-dark">
+                    </div>
+                    <div class="swatch-holder bg-dark switch-header-cs-class" data-class="bg-dark header-text-light">
+                    </div>
+                    <div class="swatch-holder bg-focus switch-header-cs-class" data-class="bg-focus header-text-light">
+                    </div>
+                    <div class="swatch-holder bg-alternate switch-header-cs-class"
+                      data-class="bg-alternate header-text-light">
+                    </div>
+                    <div class="divider">
+                    </div>
+                    <div class="swatch-holder bg-vicious-stance switch-header-cs-class"
+                      data-class="bg-vicious-stance header-text-light">
+                    </div>
+                    <div class="swatch-holder bg-midnight-bloom switch-header-cs-class"
+                      data-class="bg-midnight-bloom header-text-light">
+                    </div>
+                    <div class="swatch-holder bg-night-sky switch-header-cs-class"
+                      data-class="bg-night-sky header-text-light">
+                    </div>
+                    <div class="swatch-holder bg-slick-carbon switch-header-cs-class"
+                      data-class="bg-slick-carbon header-text-light">
+                    </div>
+                    <div class="swatch-holder bg-asteroid switch-header-cs-class"
+                      data-class="bg-asteroid header-text-light">
+                    </div>
+                    <div class="swatch-holder bg-royal switch-header-cs-class" data-class="bg-royal header-text-light">
+                    </div>
+                    <div class="swatch-holder bg-warm-flame switch-header-cs-class"
+                      data-class="bg-warm-flame header-text-dark">
+                    </div>
+                    <div class="swatch-holder bg-night-fade switch-header-cs-class"
+                      data-class="bg-night-fade header-text-dark">
+                    </div>
+                    <div class="swatch-holder bg-sunny-morning switch-header-cs-class"
+                      data-class="bg-sunny-morning header-text-dark">
+                    </div>
+                    <div class="swatch-holder bg-tempting-azure switch-header-cs-class"
+                      data-class="bg-tempting-azure header-text-dark">
+                    </div>
+                    <div class="swatch-holder bg-amy-crisp switch-header-cs-class"
+                      data-class="bg-amy-crisp header-text-dark">
+                    </div>
+                    <div class="swatch-holder bg-heavy-rain switch-header-cs-class"
+                      data-class="bg-heavy-rain header-text-dark">
+                    </div>
+                    <div class="swatch-holder bg-mean-fruit switch-header-cs-class"
+                      data-class="bg-mean-fruit header-text-dark">
+                    </div>
+                    <div class="swatch-holder bg-malibu-beach switch-header-cs-class"
+                      data-class="bg-malibu-beach header-text-light">
+                    </div>
+                    <div class="swatch-holder bg-deep-blue switch-header-cs-class"
+                      data-class="bg-deep-blue header-text-dark">
+                    </div>
+                    <div class="swatch-holder bg-ripe-malin switch-header-cs-class"
+                      data-class="bg-ripe-malin header-text-light">
+                    </div>
+                    <div class="swatch-holder bg-arielle-smile switch-header-cs-class"
+                      data-class="bg-arielle-smile header-text-light">
+                    </div>
+                    <div class="swatch-holder bg-plum-plate switch-header-cs-class"
+                      data-class="bg-plum-plate header-text-light">
+                    </div>
+                    <div class="swatch-holder bg-happy-fisher switch-header-cs-class"
+                      data-class="bg-happy-fisher header-text-dark">
+                    </div>
+                    <div class="swatch-holder bg-happy-itmeo switch-header-cs-class"
+                      data-class="bg-happy-itmeo header-text-light">
+                    </div>
+                    <div class="swatch-holder bg-mixed-hopes switch-header-cs-class"
+                      data-class="bg-mixed-hopes header-text-light">
+                    </div>
+                    <div class="swatch-holder bg-strong-bliss switch-header-cs-class"
+                      data-class="bg-strong-bliss header-text-light">
+                    </div>
+                    <div class="swatch-holder bg-grow-early switch-header-cs-class"
+                      data-class="bg-grow-early header-text-light">
+                    </div>
+                    <div class="swatch-holder bg-love-kiss switch-header-cs-class"
+                      data-class="bg-love-kiss header-text-light">
+                    </div>
+                    <div class="swatch-holder bg-premium-dark switch-header-cs-class"
+                      data-class="bg-premium-dark header-text-light">
+                    </div>
+                    <div class="swatch-holder bg-happy-green switch-header-cs-class"
+                      data-class="bg-happy-green header-text-light">
+                    </div>
+                  </div>
+                </li>
+              </ul>
             </div>
-          </div>
-          <div class="block w-full overflow-x-auto">
-            <table class="items-center w-full bg-transparent border-collapse">
-              <thead>
-                <tr>
-                  <th class="px-4 bg-gray-100 dark:bg-gray-600 text-gray-500 dark:text-gray-100 align-middle border border-solid border-gray-200 dark:border-gray-500 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">metode</th>
-                  <th class="px-4 bg-gray-100 dark:bg-gray-600 text-gray-500 dark:text-gray-100 align-middle border border-solid border-gray-200 dark:border-gray-500 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">orang</th>
-                  <th class="px-4 bg-gray-100 dark:bg-gray-600 text-gray-500 dark:text-gray-100 align-middle border border-solid border-gray-200 dark:border-gray-500 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left min-w-140-px"></th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr class="text-gray-700 dark:text-gray-100">
-                  <th class="border-t-0 px-4 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left">Prestasi</th>
-                  <td class="border-t-0 px-4 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">75</td>
-                  <td class="border-t-0 px-4 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                    <div class="flex items-center">
-                      <span class="mr-2">40%</span>
-                      <div class="relative w-full">
-                        <div class="overflow-hidden h-2 text-xs flex rounded bg-blue-200">
-                          <div style="width: 40%" class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-blue-600"></div>
-                        </div>
-                      </div>
+            <h3 class="themeoptions-heading">
+              <div>Sidebar Options</div>
+              <button type="button"
+                class="btn-pill btn-shadow btn-wide ml-auto btn btn-focus btn-sm switch-sidebar-cs-class" data-class="">
+                Restore Default
+              </button>
+            </h3>
+            <div class="p-3">
+              <ul class="list-group">
+                <li class="list-group-item">
+                  <h5 class="pb-2">Choose Color Scheme
+                  </h5>
+                  <div class="theme-settings-swatches">
+                    <div class="swatch-holder bg-primary switch-sidebar-cs-class"
+                      data-class="bg-primary sidebar-text-light">
                     </div>
-                  </td>
-                </tr>
-                <tr class="text-gray-700 dark:text-gray-100">
-                  <th class="border-t-0 px-4 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left">Zonasi</th>
-                  <td class="border-t-0 px-4 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">120</td>
-                  <td class="border-t-0 px-4 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                    <div class="flex items-center">
-                      <span class="mr-2">55%</span>
-                      <div class="relative w-full">
-                        <div class="overflow-hidden h-2 text-xs flex rounded bg-blue-200">
-                          <div style="width: 40%" class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-blue-500"></div>
-                        </div>
-                      </div>
+                    <div class="swatch-holder bg-secondary switch-sidebar-cs-class"
+                      data-class="bg-secondary sidebar-text-light">
                     </div>
-                  </td>
-                </tr>
-                <tr class="text-gray-700 dark:text-gray-100">
-                  <th class="border-t-0 px-4 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left">Perpindahan</th>
-                  <td class="border-t-0 px-4 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">50</td>
-                  <td class="border-t-0 px-4 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                    <div class="flex items-center">
-                      <span class="mr-2">30%</span>
-                      <div class="relative w-full">
-                        <div class="overflow-hidden h-2 text-xs flex rounded bg-blue-200">
-                          <div style="width: 30%" class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-blue-700"></div>
-                        </div>
-                      </div>
+                    <div class="swatch-holder bg-success switch-sidebar-cs-class"
+                      data-class="bg-success sidebar-text-dark">
                     </div>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
+                    <div class="swatch-holder bg-info switch-sidebar-cs-class" data-class="bg-info sidebar-text-dark">
+                    </div>
+                    <div class="swatch-holder bg-warning switch-sidebar-cs-class"
+                      data-class="bg-warning sidebar-text-dark">
+                    </div>
+                    <div class="swatch-holder bg-danger switch-sidebar-cs-class"
+                      data-class="bg-danger sidebar-text-light">
+                    </div>
+                    <div class="swatch-holder bg-light switch-sidebar-cs-class" data-class="bg-light sidebar-text-dark">
+                    </div>
+                    <div class="swatch-holder bg-dark switch-sidebar-cs-class" data-class="bg-dark sidebar-text-light">
+                    </div>
+                    <div class="swatch-holder bg-focus switch-sidebar-cs-class"
+                      data-class="bg-focus sidebar-text-light">
+                    </div>
+                    <div class="swatch-holder bg-alternate switch-sidebar-cs-class"
+                      data-class="bg-alternate sidebar-text-light">
+                    </div>
+                    <div class="divider">
+                    </div>
+                    <div class="swatch-holder bg-vicious-stance switch-sidebar-cs-class"
+                      data-class="bg-vicious-stance sidebar-text-light">
+                    </div>
+                    <div class="swatch-holder bg-midnight-bloom switch-sidebar-cs-class"
+                      data-class="bg-midnight-bloom sidebar-text-light">
+                    </div>
+                    <div class="swatch-holder bg-night-sky switch-sidebar-cs-class"
+                      data-class="bg-night-sky sidebar-text-light">
+                    </div>
+                    <div class="swatch-holder bg-slick-carbon switch-sidebar-cs-class"
+                      data-class="bg-slick-carbon sidebar-text-light">
+                    </div>
+                    <div class="swatch-holder bg-asteroid switch-sidebar-cs-class"
+                      data-class="bg-asteroid sidebar-text-light">
+                    </div>
+                    <div class="swatch-holder bg-royal switch-sidebar-cs-class"
+                      data-class="bg-royal sidebar-text-light">
+                    </div>
+                    <div class="swatch-holder bg-warm-flame switch-sidebar-cs-class"
+                      data-class="bg-warm-flame sidebar-text-dark">
+                    </div>
+                    <div class="swatch-holder bg-night-fade switch-sidebar-cs-class"
+                      data-class="bg-night-fade sidebar-text-dark">
+                    </div>
+                    <div class="swatch-holder bg-sunny-morning switch-sidebar-cs-class"
+                      data-class="bg-sunny-morning sidebar-text-dark">
+                    </div>
+                    <div class="swatch-holder bg-tempting-azure switch-sidebar-cs-class"
+                      data-class="bg-tempting-azure sidebar-text-dark">
+                    </div>
+                    <div class="swatch-holder bg-amy-crisp switch-sidebar-cs-class"
+                      data-class="bg-amy-crisp sidebar-text-dark">
+                    </div>
+                    <div class="swatch-holder bg-heavy-rain switch-sidebar-cs-class"
+                      data-class="bg-heavy-rain sidebar-text-dark">
+                    </div>
+                    <div class="swatch-holder bg-mean-fruit switch-sidebar-cs-class"
+                      data-class="bg-mean-fruit sidebar-text-dark">
+                    </div>
+                    <div class="swatch-holder bg-malibu-beach switch-sidebar-cs-class"
+                      data-class="bg-malibu-beach sidebar-text-light">
+                    </div>
+                    <div class="swatch-holder bg-deep-blue switch-sidebar-cs-class"
+                      data-class="bg-deep-blue sidebar-text-dark">
+                    </div>
+                    <div class="swatch-holder bg-ripe-malin switch-sidebar-cs-class"
+                      data-class="bg-ripe-malin sidebar-text-light">
+                    </div>
+                    <div class="swatch-holder bg-arielle-smile switch-sidebar-cs-class"
+                      data-class="bg-arielle-smile sidebar-text-light">
+                    </div>
+                    <div class="swatch-holder bg-plum-plate switch-sidebar-cs-class"
+                      data-class="bg-plum-plate sidebar-text-light">
+                    </div>
+                    <div class="swatch-holder bg-happy-fisher switch-sidebar-cs-class"
+                      data-class="bg-happy-fisher sidebar-text-dark">
+                    </div>
+                    <div class="swatch-holder bg-happy-itmeo switch-sidebar-cs-class"
+                      data-class="bg-happy-itmeo sidebar-text-light">
+                    </div>
+                    <div class="swatch-holder bg-mixed-hopes switch-sidebar-cs-class"
+                      data-class="bg-mixed-hopes sidebar-text-light">
+                    </div>
+                    <div class="swatch-holder bg-strong-bliss switch-sidebar-cs-class"
+                      data-class="bg-strong-bliss sidebar-text-light">
+                    </div>
+                    <div class="swatch-holder bg-grow-early switch-sidebar-cs-class"
+                      data-class="bg-grow-early sidebar-text-light">
+                    </div>
+                    <div class="swatch-holder bg-love-kiss switch-sidebar-cs-class"
+                      data-class="bg-love-kiss sidebar-text-light">
+                    </div>
+                    <div class="swatch-holder bg-premium-dark switch-sidebar-cs-class"
+                      data-class="bg-premium-dark sidebar-text-light">
+                    </div>
+                    <div class="swatch-holder bg-happy-green switch-sidebar-cs-class"
+                      data-class="bg-happy-green sidebar-text-light">
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <h3 class="themeoptions-heading">
+              <div>Main Content Options</div>
+              <button type="button" class="btn-pill btn-shadow btn-wide ml-auto active btn btn-focus btn-sm">Restore
+                Default
+              </button>
+            </h3>
+            <div class="p-3">
+              <ul class="list-group">
+                <li class="list-group-item">
+                  <h5 class="pb-2">Page Section Tabs
+                  </h5>
+                  <div class="theme-settings-swatches">
+                    <div role="group" class="mt-2 btn-group">
+                      <button type="button" class="btn-wide btn-shadow btn-primary btn btn-secondary switch-theme-class"
+                        data-class="body-tabs-line">
+                        Line
+                      </button>
+                      <button type="button"
+                        class="btn-wide btn-shadow btn-primary active btn btn-secondary switch-theme-class"
+                        data-class="body-tabs-shadow">
+                        Shadow
+                      </button>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
-      <!-- ./Social Traffic -->
-      <!-- Social Traffic -->
-      <div class="relative flex flex-col min-w-0 mb-4 lg:mb-0 break-words bg-gray-50 dark:bg-gray-800 w-full shadow-lg rounded">
-        <div class="rounded-t mb-0 px-0 border-0">
-          <div class="flex flex-wrap items-center px-4 py-2">
-            <div class="relative w-full max-w-full flex-grow flex-1">
-              <h3 class="font-semibold text-base text-gray-900 dark:text-gray-50">Lokasi pendaftar</h3>
-            </div>
-            <div class="relative w-full max-w-full flex-grow flex-1 text-right">
-              <!-- <button class="bg-blue-500 dark:bg-gray-100 text-white active:bg-blue-600 dark:text-gray-800 dark:active:text-gray-700 text-xs font-bold uppercase px-3 py-1 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" type="button">See all</button> -->
-            </div>
-          </div>
-          <div class="block w-full overflow-x-auto">
-            <table class="items-center w-full bg-transparent border-collapse">
-              <thead>
-                <tr>
-                  <th class="px-4 bg-gray-100 dark:bg-gray-600 text-gray-500 dark:text-gray-100 align-middle border border-solid border-gray-200 dark:border-gray-500 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">Lokasi</th>
-                  <th class="px-4 bg-gray-100 dark:bg-gray-600 text-gray-500 dark:text-gray-100 align-middle border border-solid border-gray-200 dark:border-gray-500 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">Orang</th>
-                  <th class="px-4 bg-gray-100 dark:bg-gray-600 text-gray-500 dark:text-gray-100 align-middle border border-solid border-gray-200 dark:border-gray-500 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left min-w-140-px"></th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr class="text-gray-700 dark:text-gray-100">
-                  <th class="border-t-0 px-4 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left">Dalam Kota</th>
-                  <td class="border-t-0 px-4 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">145</td>
-                  <td class="border-t-0 px-4 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                    <div class="flex items-center">
-                      <span class="mr-2">55%</span>
-                      <div class="relative w-full">
-                        <div class="overflow-hidden h-2 text-xs flex rounded bg-blue-200">
-                          <div style="width: 55%" class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-blue-600"></div>
-                        </div>
-                      </div>
-                    </div>
-                  </td>
-                </tr>
-                <tr class="text-gray-700 dark:text-gray-100">
-                  <th class="border-t-0 px-4 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left">Luar Kota</th>
-                  <td class="border-t-0 px-4 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">110</td>
-                  <td class="border-t-0 px-4 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                    <div class="flex items-center">
-                      <span class="mr-2">45%</span>
-                      <div class="relative w-full">
-                        <div class="overflow-hidden h-2 text-xs flex rounded bg-pink-200">
-                          <div style="width: 45%" class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-pink-500"></div>
-                        </div>
-                      </div>
-                    </div>
-                  </td>
-                </tr>
-                <tr class="text-gray-700 dark:text-gray-100">
-                  <th class="border-t-0 px-4 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left">Luar provinsi</th>
-                  <td class="border-t-0 px-4 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">4</td>
-                  <td class="border-t-0 px-4 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                    <div class="flex items-center">
-                      <span class="mr-2">2%</span>
-                      <div class="relative w-full">
-                        <div class="overflow-hidden h-2 text-xs flex rounded bg-red-200">
-                          <div style="width: 10%" class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-red-500"></div>
-                        </div>
-                      </div>
-                    </div>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </div>
-      <!-- ./Social Traffic -->
     </div>
-
-    <!-- tabel -->
-    <div class=" pl-10 pr-10">
-      <div class="w-full overflow-hidden rounded-lg shadow-xs">
-        <div class="w-full overflow-x-auto">
-          <table class="w-full">
-            <thead>
-              <tr class="text-xs font-semibold tracking-wide text-left text-white uppercase border-b dark:border-gray-700 bg-gray-50 dark:text-white dark:bg-gray-800 bg-blue-500">
-                <th class="px-10 py-4">No</th>
-                <th class="px-10 py-4">Nama Siswa</th>
-                <th class="px-10 py-4">Nama Ibu</th>
-                <th class="px-10 py-4">Nama Ayah</th>
-                <th class="px-10 py-4">Alamat</th>
-              </tr>
-            </thead>
-            <tbody class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800">
-              <?php $no = 0;
-              foreach ($orangtua as $row) : $no++ ?>
-                <tr onclick="navigateToPage('<?php echo base_url('admin/data_lengkap') ?>')" class="cursor-pointer bg-gray-50 dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-gray-900 text-gray-700 dark:text-gray-400 ml-2%">
-                  <td class="px-10 py-3"><?php echo $no ?></td>
-                  <td class="px-10 py-3"><?php echo nama_full_siswa_id($row->id_nama_siswa) ?></td>
-                  <td class="px-10 py-3"><?php echo $row->nama_ibu ?></td>
-                  <td class="px-10 py-3"><?php echo $row->nama_ayah ?></td>
-                  <td class="px-10 py-3"><?php echo $row->alamat ?></td>
-                </tr>
-              <?php endforeach ?>
-            </tbody>
-          </table>
-        </div>
-        <!-- tabel -->
-
-        <!-- Contact Form -->
-        <div class="mt-8 mx-4">
-          <div class="grid grid-cols-1 md:grid-cols-2">
-            <div class="p-6 mr-2 bg-gray-100 dark:bg-gray-800 sm:rounded-lg">
-              <h1 class="text-4xl sm:text-5xl text-gray-800 dark:text-white font-extrabold tracking-tight">Informasi lebih lanjut</h1>
-              <p class="text-normal text-lg sm:text-2xl font-medium text-gray-600 dark:text-gray-400 mt-2">Silahkan hubungi orang yang bersangkutan</p>
-
-              <div class="flex items-center mt-8 text-gray-600 dark:text-gray-400">
-                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" class="w-8 h-8 text-gray-500">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                </svg>
-                <div class="ml-4 text-md tracking-wide font-semibold w-40">Lokasi anda</div>
+    <div class="app-main">
+      <div class="app-main__outer">
+        <div class="app-main__inner">
+          <div class="app-page-title">
+            <div class="page-title-wrapper">
+              <div class="page-title-heading">
+                <div class="page-title-icon">
+                  <i class="pe-7s-car icon-gradient bg-mean-fruit">
+                  </i>
+                </div>
+                <div>Selamat Datang Admin
+                  <!-- <span><?= ucfirst($_SESSION['akun']) ?></span> -->
+                  <div class="page-title-subheading">DASHBOARD
+                  </div>
+                </div>
               </div>
-
-              <div class="flex items-center mt-4 text-gray-600 dark:text-gray-400">
-                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" class="w-8 h-8 text-gray-500">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                </svg>
-                <div class="ml-4 text-md tracking-wide font-semibold w-40">+6251 3456 7890</div>
-              </div>
-
-              <div class="flex items-center mt-4 text-gray-600 dark:text-gray-400">
-                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" class="w-8 h-8 text-gray-500">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                </svg>
-                <div class="ml-4 text-md tracking-wide font-semibold w-40">sekolah@gmail.com</div>
+              <div class="page-title-actions">
+                <button type="button" data-toggle="tooltip" title="Example Tooltip" data-placement="bottom"
+                  class="btn-shadow mr-3 btn btn-dark">
+                  <i class="fa fa-star"></i>
+                </button>
+                <div class="d-inline-block">
+                  <button type="button" class="btn-shadow btn btn-info">
+                    <span class="btn-icon-wrapper pr-2 opacity-7">
+                      <i class="fa-solid fa-plus"></i> </span>
+                    <a href="order">Order Baru</a>
+                  </button>
+                </div>
               </div>
             </div>
-            <form class="p-6 flex flex-col justify-center" action="process_form.php" method="POST">
-              <div class="flex flex-col">
-                <label for="name" class="hidden">Full Name</label>
-                <input type="text" name="name" id="name" placeholder="Full Name" class="w-100 mt-2 py-3 px-3 rounded-lg bg-white dark:bg-gray-800 border border-gray-400 dark:border-gray-700 text-gray-800 dark:text-gray-50 font-semibold focus:border-blue-500 focus:outline-none" />
+          </div>
+          <div class="row">
+            <div class="col-md-6 col-xl-4">
+              <div class="card mb-3 widget-content">
+                <div class="widget-content-outer">
+                  <div class="widget-content-wrapper">
+                    <div class="widget-content-left">
+                      <div class="widget-heading">Jumlah Karyawan</div>
+                      <!-- <div class="widget-subheading">Last year expenses</div> -->
+                      <div class="widget-numbers text-success">6</div>
+                    </div>
+                    <div class="widget-content-right">
+                      <div class="widget-numbers text-success"><i class="fa-solid fa-people-roof"></i></div>
+                    </div>
+                  </div>
+                </div>
               </div>
-
-              <div class="flex flex-col mt-2">
-                <label for="email" class="hidden">Email</label>
-                <input type="email" name="email" id="email" placeholder="Email" class="w-100 mt-2 py-3 px-3 rounded-lg bg-white dark:bg-gray-800 border border-gray-400 dark:border-gray-700 text-gray-800 dark:text-gray-50 font-semibold focus:border-blue-500 focus:outline-none" />
+            </div>
+            <div class="col-md-6 col-xl-4">
+              <div class="card mb-3 widget-content">
+                <div class="widget-content-outer">
+                  <div class="widget-content-wrapper">
+                    <div class="widget-content-left">
+                      <div class="widget-heading">Total Order</div>
+                      <!-- <div class="widget-subheading">Revenue streams</div> -->
+                      <div class="widget-numbers text-warning">7</div>
+                    </div>
+                    <div class="widget-content-right">
+                      <div class="widget-numbers text-warning"><i class="fa-solid fa-arrow-up-short-wide"></i></div>
+                    </div>
+                  </div>
+                </div>
               </div>
-
-              <div class="flex flex-col mt-2">
-                <label for="tel" class="hidden">Number</label>
-                <input type="tel" name="tel" id="tel" placeholder="Telephone Number" class="w-100 mt-2 py-3 px-3 rounded-lg bg-white dark:bg-gray-800 border border-gray-400 dark:border-gray-700 text-gray-800 dark:text-gray-50 font-semibold focus:border-blue-500 focus:outline-none" />
+            </div>
+            <div class="col-md-6 col-xl-4">
+              <div class="card mb-3 widget-content">
+                <div class="widget-content-outer">
+                  <div class="widget-content-wrapper">
+                    <div class="widget-content-left">
+                      <div class="widget-heading">Jumlah Paket Tersedia</div>
+                      <!-- <div class="widget-subheading">People Interested</div> -->
+                      <div class="widget-numbers text-danger">16</div>
+                    </div>
+                    <div class="widget-content-right">
+                      <div class="widget-numbers text-danger"><i class="fa-solid fa-truck-fast"></i></div>
+                    </div>
+                  </div>
+                </div>
               </div>
-
-              <button type="submit" class="md:w-32 bg-blue-600 dark:bg-gray-100 text-white dark:text-gray-800 font-bold py-3 px-6 rounded-lg mt-4 hover:bg-blue-500 dark:hover:bg-gray-200 transition ease-in-out duration-300">Submit</button>
-            </form>
+            </div>
+            <!-- <div class="d-xl-none d-lg-block col-md-6 col-xl-4">
+              <div class="card mb-3 widget-content">
+                <div class="widget-content-outer">
+                  <div class="widget-content-wrapper">
+                    <div class="widget-content-left">
+                      <div class="widget-heading">Income</div>
+                      <div class="widget-subheading">Expected totals</div>
+                    </div>
+                    <div class="widget-content-right">
+                      <div class="widget-numbers text-focus">$147</div>
+                    </div>
+                  </div>
+                  <div class="widget-progress-wrapper">
+                    <div class="progress-bar-sm progress-bar-animated-alt progress">
+                      <div class="progress-bar bg-info" role="progressbar" aria-valuenow="54" aria-valuemin="0"
+                        aria-valuemax="100" style="width: 54%;"></div>
+                    </div>
+                    <div class="progress-sub-label">
+                      <div class="sub-label-left">Expenses</div>
+                      <div class="sub-label-right">100%</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div> -->
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <div class="main-card mb-3 card">
+                <div class="card-header">Order Cuci Komplit
+                  <div class="btn-actions-pane-right">
+                    <!-- <div role="group" class="btn-group-sm btn-group">
+                      <button class="active btn btn-focus">Last Week</button>
+                      <button class="btn btn-focus">All Month</button>
+                    </div> -->
+                  </div>
+                </div>
+                <div class="table-responsive">
+                  <table class="align-middle mb-0 table table-borderless table-striped table-hover">
+                    <thead>
+                      <tr>
+                        <th class="text-center">No</th>
+                        <th class="text-center">No Order</th>
+                        <th class="text-center">Tgl Order</th>
+                        <th class="text-center">Nama Pelanggan</th>
+                        <th class="text-center">Jenis Paket</th>
+                        <th class="text-center">Waktu Kerja</th>
+                        <th class="text-center">Berat (KG)</th>
+                        <th class="text-center">Action</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <?php $no = 0;
+                      foreach ($get_ck as $row):
+                        $no++ ?>
+                        <tr>
+                          <td class="text-center text-muted"><?php echo $no ?></td>
+                          <td class="text-center">
+                            <div class="widget-content p-0">
+                              <div class="widget-content-wrapper">
+                                <div class="widget-content-left mr-3">
+                                  <div class="widget-content-left">
+                                    <img width="40" class="rounded-circle" src="assets/images/avatars/4.jpg" alt="">
+                                  </div>
+                                </div>
+                                <div class="widget-content-left flex2"><?php echo $row->or_ck_number ?>
+                                  <!-- <div class="widget-heading">CK-63FF618</div> -->
+                                  <!-- <td class="text-center">CK-63FF618</td> -->
+                                </div>
+                              </div>
+                            </div>
+                          </td>
+                          <td class="text-center"><?php echo $row->tgl_masuk_ck ?></td>
+                          <td class="text-center"><?php echo $row->nama_pel_ck ?>
+                            <!-- <div class="badge badge-warning">Adam</div> -->
+                          </td>
+                          <td class="text-center"><?php echo $row->jenis_paket_ck ?></td>
+                          <td class="text-center"><?php echo $row->wkt_krj_ck ?></td>
+                          <td class="text-center"><?php echo $row->berat_qty_ck ?></td>
+                          <td class="text-center">
+                            <button type="button" id="PopoverCustomT-1" class="btn btn-primary btn-sm"><a href="<?= base_url('admin/detail_order_ck') ?>" class="paket">Details</button>
+                            <button type="button" id="PopoverCustomT-1" class="btn btn-danger btn-sm">Hapus</button>
+                          </td>
+                        </tr>
+                      <?php endforeach; ?>
+                    </tbody>
+                  </table>
+                </div>
+                <!-- <div class="d-block text-center card-footer">
+                  <button class="mr-2 btn-icon btn-icon-only btn btn-outline-danger"><i
+                      class="pe-7s-trash btn-icon-wrapper"> </i></button>
+                  <button class="btn-wide btn btn-success">Save</button>
+                </div> -->
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <div class="main-card mb-3 card">
+                <div class="card-header">Order Dry Clean (Cuci Kering)
+                  <div class="btn-actions-pane-right">
+                    <!-- <div role="group" class="btn-group-sm btn-group">
+                      <button class="active btn btn-focus">Last Week</button>
+                      <button class="btn btn-focus">All Month</button>
+                    </div> -->
+                  </div>
+                </div>
+                <div class="table-responsive">
+                  <table class="align-middle mb-0 table table-borderless table-striped table-hover">
+                    <thead>
+                      <tr>
+                        <th class="text-center">No</th>
+                        <th class="text-center">No Order</th>
+                        <th class="text-center">Tgl Order</th>
+                        <th class="text-center">Nama Pelanggan</th>
+                        <th class="text-center">Jenis Paket</th>
+                        <th class="text-center">Waktu Kerja</th>
+                        <th class="text-center">Berat (KG)</th>
+                        <th class="text-center">Action</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                    <?php $no = 0;
+                      foreach ($get_dc as $row):
+                        $no++ ?>
+                        <tr>
+                          <td class="text-center text-muted"><?php echo $no ?></td>
+                          <td class="text-center">
+                            <div class="widget-content p-0">
+                              <div class="widget-content-wrapper">
+                                <div class="widget-content-left mr-3">
+                                  <div class="widget-content-left">
+                                    <img width="40" class="rounded-circle" src="assets/images/avatars/4.jpg" alt="">
+                                  </div>
+                                </div>
+                                <div class="widget-content-left flex2"><?php echo $row->or_dc_number ?>
+                                  <!-- <div class="widget-heading">dc-63FF618</div> -->
+                                  <!-- <td class="text-center">dc-63FF618</td> -->
+                                </div>
+                              </div>
+                            </div>
+                          </td>
+                          <td class="text-center"><?php echo $row->tgl_masuk_dc ?></td>
+                          <td class="text-center"><?php echo $row->nama_pel_dc ?>
+                            <!-- <div class="badge badge-warning">Adam</div> -->
+                          </td>
+                          <td class="text-center"><?php echo $row->jenis_paket_dc ?></td>
+                          <td class="text-center"><?php echo $row->wkt_krj_dc ?></td>
+                          <td class="text-center"><?php echo $row->berat_qty_dc ?></td>
+                          <td class="text-center">
+                            <button type="button" id="PopoverCustomT-1" class="btn btn-primary btn-sm">Details</button>
+                            <button type="button" id="PopoverCustomT-1" class="btn btn-danger btn-sm">Hapus</button>
+                          </td>
+                        </tr>
+                      <?php endforeach; ?>
+                    </tbody>
+                  </table>
+                </div>
+                <!-- <div class="d-block text-center card-footer">
+                  <button class="mr-2 btn-icon btn-icon-only btn btn-outline-danger"><i
+                      class="pe-7s-trash btn-icon-wrapper"> </i></button>
+                  <button class="btn-wide btn btn-success">Save</button>
+                </div> -->
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <div class="main-card mb-3 card">
+                <div class="card-header">Order Satuan
+                  <div class="btn-actions-pane-right">
+                    <!-- <div role="group" class="btn-group-sm btn-group">
+                      <button class="active btn btn-focus">Last Week</button>
+                      <button class="btn btn-focus">All Month</button>
+                    </div> -->
+                  </div>
+                </div>
+                <div class="table-responsive">
+                  <table class="align-middle mb-0 table table-borderless table-striped table-hover">
+                    <thead>
+                      <tr>
+                        <th class="text-center">No</th>
+                        <th class="text-center">No Order</th>
+                        <th class="text-center">Tgl Order</th>
+                        <th class="text-center">Nama Pelanggan</th>
+                        <th class="text-center">Jenis Paket</th>
+                        <th class="text-center">Waktu Kerja</th>
+                        <th class="text-center">Jumlah</th>
+                        <th class="text-center">Action</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                    <?php $no = 0;
+                      foreach ($get_cs as $row):
+                        $no++ ?>
+                        <tr>
+                          <td class="text-center text-muted"><?php echo $no ?></td>
+                          <td class="text-center">
+                            <div class="widget-content p-0">
+                              <div class="widget-content-wrapper">
+                                <div class="widget-content-left mr-3">
+                                  <div class="widget-content-left">
+                                    <img width="40" class="rounded-circle" src="assets/images/avatars/4.jpg" alt="">
+                                  </div>
+                                </div>
+                                <div class="widget-content-left flex2"><?php echo $row->or_cs_number ?>
+                                  <!-- <div class="widget-heading">CK-63FF618</div> -->
+                                  <!-- <td class="text-center">CK-63FF618</td> -->
+                                </div>
+                              </div>
+                            </div>
+                          </td>
+                          <td class="text-center"><?php echo $row->tgl_masuk_cs ?></td>
+                          <td class="text-center"><?php echo $row->nama_pel_cs ?>
+                            <!-- <div class="badge badge-warning">Adam</div> -->
+                          </td>
+                          <td class="text-center"><?php echo $row->jenis_paket_cs ?></td>
+                          <td class="text-center"><?php echo $row->wkt_krj_cs ?></td>
+                          <td class="text-center"><?php echo $row->jml_pcs ?></td>
+                          <td class="text-center">
+                            <button type="button" id="PopoverCustomT-1" class="btn btn-primary btn-sm">Details</button>
+                            <button type="button" id="PopoverCustomT-1" class="btn btn-danger btn-sm">Hapus</button>
+                          </td>
+                        </tr>
+                      <?php endforeach; ?>
+                    </tbody>
+                  </table>
+                </div>
+                <!-- <div class="d-block text-center card-footer">
+                  <button class="mr-2 btn-icon btn-icon-only btn btn-outline-danger"><i
+                      class="pe-7s-trash btn-icon-wrapper"> </i></button>
+                  <button class="btn-wide btn btn-success">Save</button>
+                </div> -->
+              </div>
+            </div>
           </div>
         </div>
-        <!-- ./Contact Form -->
+        <div class="app-wrapper-footer">
+          <div class="app-footer">
+            <div class="app-footer__inner">
+              <div class="app-footer-left">
+                <ul class="nav">
+                  <li class="nav-item">
+                    <a href="javascript:void(0);" class="nav-link">
+                      Footer Link 1
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="javascript:void(0);" class="nav-link">
+                      Footer Link 2
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <div class="app-footer-right">
+                <ul class="nav">
+                  <li class="nav-item">
+                    <a href="javascript:void(0);" class="nav-link">
+                      Footer Link 3
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="javascript:void(0);" class="nav-link">
+                      <div class="badge badge-success mr-1 ml-0">
+                        <small>NEW</small>
+                      </div>
+                      Footer Link 4
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
+      <script src="http://maps.google.com/maps/api/js?sensor=true"></script>
     </div>
   </div>
-
-  <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.8.0/dist/alpine.min.js" defer></script>
-  <script>
-    const setup = () => {
-      const getTheme = () => {
-        if (window.localStorage.getItem('dark')) {
-          return JSON.parse(window.localStorage.getItem('dark'))
-        }
-        return !!window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
-      }
-
-      const setTheme = (value) => {
-        window.localStorage.setItem('dark', value)
-      }
-
-      return {
-        loading: true,
-        isDark: getTheme(),
-        toggleTheme() {
-          this.isDark = !this.isDark
-          setTheme(this.isDark)
-        },
-      }
-    }
-
-    function updatePaginationInfo(start, end, total) {
-      document.getElementById('pagination-info').innerText = `Showing ${start}-${end} of ${total}`;
-    }
-
-    function changePage(page) {
-      const currentText = document.getElementById('pagination-info').innerText;
-      const currentPage = parseInt(currentText.match(/\d+/)[0]);
-      const pageSize = 10;
-
-      if (page === 'prev' && currentPage > 1) {
-        currentPage--;
-      } else if (page === 'next') {
-        currentPage++;
-      } else {
-        currentPage = page;
-      }
-
-      const start = (currentPage - 1) * pageSize + 1;
-      const end = Math.min(currentPage * pageSize, 100);
-
-      updatePaginationInfo(start, end, 100);
-
-      console.log(`Changing to page ${currentPage}`);
-    }
-
-    updatePaginationInfo(1, 10, 100);
-
-    function navigateToPage(url) {
-      window.location.href = url;
-    }
-    document.querySelector('form').addEventListener('submit', function(e) {
-      e.preventDefault();
-
-      // Get form data
-      const formData = new FormData(this);
-
-      // You may customize the WhatsApp message here
-      const message = `Hi, my name is ${formData.get('name')}. My email is ${formData.get('email')} and my phone number is ${formData.get('tel')}.`;
-
-      // Construct WhatsApp URL
-      const whatsappURL = `https://api.whatsapp.com/send?phone=YOUR_PHONE_NUMBER&text=${encodeURIComponent(message)}`;
-
-      // Redirect to WhatsApp
-      window.location.href = whatsappURL;
-    });
-  </script>
+  <script type="text/javascript"
+    src="https://demo.dashboardpack.com/architectui-html-free/assets/scripts/main.js"></script>
 </body>
 
 </html>

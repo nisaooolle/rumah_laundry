@@ -12,8 +12,10 @@
   <link href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@4/dark.css" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-  <link rel="icon" type="image/png" href="https://colorlib.com/etc/lf/Login_v15/images/icons/favicon.ico" />
-  
+  <link href='https://dtdrycleaning.wpengine.com/wp-content/themes/dry-cleaning/images/favicon.ico'
+        rel='shortcut icon' type='image/x-icon' /> 
+        <meta name="robots" content="noindex, follow">
+
   <style>
     .fs-1 {
       font-size: 1px
@@ -10252,8 +10254,6 @@
       }
     }
   </style>
-
-  <meta name="robots" content="noindex, follow">
 </head>
 
 <body>
@@ -10265,18 +10265,19 @@
             Sign In
           </span>
         </div>
-        <form class="login100-form validate-form" action="<?php echo base_url('Auth/aksi_login') ?>" method="post">
+        <form action="<?php echo base_url('Auth/aksi_login') ?>" method="post" class="login100-form validate-form">
           <div class="wrap-input100 validate-input m-b-26" data-validate="Username is required">
             <span class="label-input100">Username</span>
-            <input class="input100" type="text" name="email" placeholder="Enter username" value="<?php echo set_value('email') ?>" class="form-control">
-                    <?= form_error('email', '<div class="text-danger">', '</div>'); ?>
+            <input class="input100" type="text" class="form-control form-control-lg bg-light fs-6" required name="email"
+                            placeholder="Email" value="<?php echo set_value('email') ?>">
+                        <?= form_error('email', '<div class="text-danger">', '</div>'); ?>
             <span class="focus-input100"></span>
           </div>
           <div class="wrap-input100 validate-input m-b-18" data-validate="Password is required">
             <span class="label-input100">Password</span>
-            <input class="input100" type="password" placeholder="Password" class="form-control" style="font-size: 15px;" required
-                        name="password" value="<?php echo set_value('password'); ?>">
-                    <?= form_error('password', '<div class="text-danger">', '</div>'); ?>
+            <input class="input100" type="password" id="password" class="form-control form-control-lg bg-light fs-6" required
+                            name="password" placeholder="Password">
+                        <?= form_error('password', '<div class="text-danger">', '</div>'); ?>
             <span class="focus-input100"></span>
           </div>
           <div class="flex-sb-m w-full p-b-30">
@@ -10301,35 +10302,6 @@
       </div>
     </div>
   </div>
-
-  <script src="vendor/jquery/jquery-3.2.1.min.js"></script>
-
-  <script src="vendor/animsition/js/animsition.min.js"></script>
-
-  <script src="vendor/bootstrap/js/popper.js"></script>
-  <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
-
-  <script src="vendor/select2/select2.min.js"></script>
-
-  <script src="vendor/daterangepicker/moment.min.js"></script>
-  <script src="vendor/daterangepicker/daterangepicker.js"></script>
-
-  <script src="vendor/countdowntime/countdowntime.js"></script>
-
-  <script src="js/main.js"></script>
-
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
-
-    gtag('config', 'UA-23581568-13');
-  </script>
-  <script defer src="https://static.cloudflareinsights.com/beacon.min.js/v84a3a4012de94ce1a686ba8c167c359c1696973893317"
-    integrity="sha512-euoFGowhlaLqXsPWQ48qSkBSCFs3DPRyiwVu3FjR96cMPx+Fr+gpWRhIafcHwqwCqWS42RZhIudOvEI+Ckf6MA=="
-    data-cf-beacon='{"rayId":"844a9c992993044a","version":"2023.10.0","token":"cd0b4b3a733644fc843ef0b185f98241"}'
-    crossorigin="anonymous"></script>
 </body>
 
 </html>

@@ -7,163 +7,173 @@ class Admin extends CI_Controller
     function __construct()
     {
         parent::__construct();
-        $this->load->library('form_validation');
-        $this->load->model('M_model'); // Pastikan model dimuat di sini
+        $this->load->model('m_model'); // Pastikan model dimuat di sini
         $this->load->helper('my_helper');
-        if ($this->session->userdata('loged_in') != true || $this->session->userdata('role') != 'admin') {
+        $this->load->library('upload');
+        if ($this->session->userdata('logged_in') != true || $this->session->userdata('role') != 'admin') {
             redirect(base_url() . 'auth/login');
         }
     }
 
     public function dashboard()
     {
-        $data['user'] = $this->M_model->get_data('user')->num_rows();
-        $data['admin'] = $this->M_model->get_data('admin')->num_rows();
-        $data['guru'] = $this->M_model->get_data('guru')->num_rows();
-        $data['ekstra'] = $this->M_model->get_data('ekstra')->num_rows();
-        $data['orangtua'] = $this->M_model->get_data('orangtua')->result();
+        $data['get_ck'] = $this->m_model->get_data('tb_order_ck')->result();
+        $data['get_dc'] = $this->m_model->get_data('tb_order_dc')->result();
+        $data['get_cs'] = $this->m_model->get_data('tb_order_cs')->result();
         $this->load->view('admin/dashboard', $data);
     }
-    public function profilee()
+    public function order()
     {
-        $data['admin'] = $this->M_model->get_by_id('admin', 'id', $this->session->userdata('id'))->result();
-        $this->load->view('admin/profile', $data);
+        $this->load->view('admin/order');
+    }
+    public function order_ck()
+    {
+        $data['tb_order_ck'] = $this->m_model->get_data('tb_order_ck')->result();
+        $this->load->view('admin/order_ck', $data);
+    }
+    public function order_dc()
+    {
+        $data['tb_order_dc'] = $this->m_model->get_data('tb_order_dc')->result();
+        $this->load->view('admin/order_dc', $data);
+    }
+    public function order_cs()
+    {
+        $data['tb_order_cs'] = $this->m_model->get_data('tb_order_cs')->result();
+        $this->load->view('admin/order_cs', $data);
+    }
+    public function detail_order_ck($id)
+    {
+        $data['detail'] = $this->m_model->get_by_id('tb_order_ck', 'id_order_ck', $id)->result();
+        $this->load->view('admin/detail_order_ck', $data);
+    }
+    public function riwayat()
+    {
+        $data['get_ck'] = $this->m_model->get_data('tb_riwayat_ck')->result();
+        $data['get_dc'] = $this->m_model->get_data('tb_riwayat_dc')->result();
+        $data['get_cs'] = $this->m_model->get_data('tb_riwayat_cs')->result();
+        $this->load->view('admin/riwayat', $data);
+    }
+    public function manage_karyawan()
+    {
+        $data['data_karyawan'] = $this->m_model->hanya_karyawan('akun');
+        $this->load->view('admin/manage_karyawan', $data);
     }
 
-    public function upload_img($value)
+    public function tambah_karyawan()
     {
-        $kode = round(microtime(true) * 1000);
-        $config['upload_path'] = '../../image/';
-        $config['allowed_types'] = 'jpg|png|jpeg';
-        $config['max_size'] = '30000';
-        $config['file_name'] = $kode;
-
-        $this->load->library('upload', $config); // Load library 'upload' with config
-
-        if (!$this->upload->do_upload($value)) {
-            return array(false, '');
-        } else {
-            $fn = $this->upload->data();
-            $nama = $fn['file_name'];
-            return array(true, $nama);
-        }
+        $this->load->view('admin/tambah_karyawan');
     }
-
-    public function aksi_ubah_profile()
+    public function daftar_paket()
     {
-        $image = $_FILES['foto']['name'];
-        $foto_temp = $_FILES['foto']['tmp_name'];
-        $password_baru = $this->input->post('password_baru');
-        $konfirmasi_password = $this->input->post('konfirmasi_password');
-        $email = $this->input->post('email');
-        $nama_panggilan = $this->input->post('nama_panggilan');
-        $sekolah = $this->input->post('sekolah');
-
-        // Check if the new password matches the confirmation
-        if (!empty($password_baru) && $password_baru !== $konfirmasi_password) {
-            $this->session->set_flashdata('message', '<div class="alert alert-danger alert-dismissible fade show" role="alert">
-            Password baru dan konfirmasi password harus sama
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-            </div>');
-            redirect(base_url('admin/profilee'));
-        }
-
-        // Update other profile information
-        $data['email'] = $email;
-        $data['nama_panggilan'] = $nama_panggilan;
-        $data['sekolah'] = $sekolah;
-
-        // Update profile image if provided
-        if ($image) {
-            $kode = round(microtime(true) * 100);
-            $file_name = $kode . '_' . $image;
-            $upload_path = './image/admin/' . $file_name;
-
-            if (move_uploaded_file($foto_temp, $upload_path)) {
-                $old_file = $this->M_model->get_foto_by_id($this->session->userdata('id'));
-                if ($old_file && file_exists('./image/admin/' . $old_file)) {
-                    unlink('./image/admin/' . $old_file);
-                }
-                $data['image'] = $file_name;
-            } else {
-                $this->session->set_flashdata('message', '<div class="alert alert-danger alert-dismissible fade show" role="alert">
-                Gagal mengunggah foto
-                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                </div>');
-                redirect(base_url('admin/profile'));
-            }
-        }
-
-        // Update user data
-        $update_result = $this->M_model->ubah_data('admin', $data, array('id' => $this->session->userdata('id')));
-
-        if ($update_result) {
-            $this->session->set_flashdata('sukses', '<div id="alert" class="bg-gray-200 border-l-4 border-blue-500 text-blue-700 p-4" role="alert">
-            Berhasil Merubah data
-            <button type="button" class="ml-2 mb-1 text-blue-700 font-bold" onclick="closeAlert()">
-                &times;
-            </button>
-        </div>
-        <script>
-            function closeAlert() {
-                document.getElementById("alert").style.display = "none";
-            }
-        </script>');
-            redirect(base_url('admin/profilee'));
-        } else {
-            $this->session->set_flashdata('message', 'Gagal merubah data');
-            redirect(base_url('admin/profile'));
-        }
+        $this->load->view('admin/daftar_paket');
     }
-
-    public function hapus_image()
+    public function paket_ck()
     {
-        $data = array(
-            'image' => NULL
-        );
-
-        $eksekusi = $this->M_model->ubah_data('user', $data, array('id' => $this->session->userdata('id')));
-        if ($eksekusi) {
-
-            $this->session->set_flashdata('sukses', '<div class="alert alert-dark alert-dismissible fade show" role="alert">
-        Berhasil Menghapus Profile
-                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-            </div>');
-            redirect(base_url('admin/profile'));
-        } else {
-            $this->session->set_flashdata('error', 'gagal...');
-            redirect(base_url('admin/profile'));
-        }
+        $data['data_ck'] = $this->m_model->hanya_ck('tb_cuci_komplit');
+        $this->load->view('admin/paket_ck', $data);
     }
-
-    public function tabel_siswa()
+    public function tambah_paket_ck()
     {
-        $data['orangtua'] = $this->M_model->get_data('orangtua')->result();
-        $this->load->view('admin/tabel_siswa', $data);
+        $this->load->view('admin/tambah_paket_ck');
     }
-    public function data_lengkap($id)
+    public function aksi_tambah_paket_ck()
     {
-        $data['user'] = $this->M_model->get_by_id('user', 'id', $id)->row_array();
-        $this->load->view('admin/data_lengkap', $data);
+        $data = [
+            "nama_paket_ck" => $this->input->post('nama_paket_ck'),
+            "waktu_kerja_ck" => $this->input->post('waktu_kerja_ck'),
+            "kuantitas_ck" => $this->input->post('kuantitas_ck'),
+            "tarif_ck" => $this->input->post('tarif_ck'),
+        ];
+        $this->m_model->tambah_data('tb_cuci_komplit', $data);
+        redirect(base_url('admin/paket_ck'));
     }
-
-    public function aksi_data_lengkap()
+    public function paket_cs()
     {
-        $data = array(
-            'nama_siswa' => $this->input->post('nama'),
-            'nisn' => $this->input->post('nisn'),
-            'gender' => $this->input->post('gender'),
-            'ttl' => $this->input->post('ttl'),
-            'nilai_akhir' => $this->input->post('nilai'),
-        );
+        $data['data_cs'] = $this->m_model->hanya_cs('tb_cuci_satuan');
+        $this->load->view('admin/paket_cs', $data);
+    }
+    public function tambah_paket_cs()
+    {
+        $this->load->view('admin/tambah_paket_cs');
+    }
+    public function aksi_tambah_paket_cs()
+    {
+        $data = [
+            "nama_cs" => $this->input->post('nama_cs'),
+            "waktu_kerja_cs" => $this->input->post('waktu_kerja_cs'),
+            "kuantitas_cs" => $this->input->post('kuantitas_cs'),
+            "tarif_cs" => $this->input->post('tarif_cs'),
+            "keterangan_cs" => $this->input->post('keterangan_cs'),
+        ];
+        $this->m_model->tambah_data('tb_cuci_satuan', $data);
+        redirect(base_url('admin/paket_cs'));
+    }
+    public function paket_dc()
+    {
+        $data['data_dc'] = $this->m_model->hanya_dc('tb_dry_clean');
+        $this->load->view('admin/paket_dc', $data);
+    }
+    public function tambah_paket_dc()
+    {
+        $this->load->view('admin/tambah_paket_dc');
+    }
+    public function aksi_tambah_paket_dc()
+    {
+        $data = [
+            "nama_paket_dc" => $this->input->post('nama_paket_dc'),
+            "waktu_kerja_dc" => $this->input->post('waktu_kerja_dc'),
+            "kuantitas_dc" => $this->input->post('kuantitas_dc'),
+            "tarif_dc" => $this->input->post('tarif_dc'),
+        ];
+        $this->m_model->tambah_data('tb_dry_clean', $data);
+        redirect(base_url('admin/paket_dc'));
+    }
+    // public function aksi_manage_karyawan()
+    // {
+    //     $this->form_validation->set_rules('nama', 'Nama', 'required|trim|is_unique[akun.nama]', [
+    //         'is_unique' => 'Nama Ini Sudah Ada'
+    //     ]);
+    //     $this->form_validation->set_rules('username', 'Username', 'required|trim|is_unique[akun.username]', [
+    //         'is_unique' => 'Username Ini Sudah Ada'
+    //     ]);
+    //     $this->form_validation->set_rules('email', 'Email', 'required|trim|valid_email|is_unique[akun.email]', [
+    //         'is_unique' => 'Email Ini Sudah Ada'
+    //     ]);
+    //     $this->form_validation->set_rules('password', 'Password', 'required|min_length[8]');
 
-        $eksekusi = $this->M_model->ubah_data('user', $data, array('id' => $this->input->post('id')));
-        if ($eksekusi) {
-            $this->session->set_flashdata('sukses', 'berhasil');
-            redirect(base_url('admin/data_lengkap'));
-        } else {
-            $this->session->set_flashdata('error', 'gagal..');
-            redirect(base_url('admin/data_lengkap/' . $this->input->post('id')));
-        }
+    //     if ($this->form_validation->run() == FALSE) {
+    //         // Validasi gagal, tampilkan pesan kesalahan
+    //         $this->load->view('admin/tambah_manage_karyawan'); // Gantilah 'form_register' dengan nama view Anda
+    //     } else {
+    //         $data = [
+    //             'nama' => $this->input->post('nama', true),
+    //             'username' => $this->input->post('username', true),
+    //             'email' => $this->input->post('email', true),
+    //             'password' => md5($this->input->post('password')),
+    //             'role' => 'karyawan'
+    //         ];
+    //         $this->db->insert('akun', $data);
+    //         // $this->_sendEmail();
+    //         // Validasi berhasil, lanjutkan dengan tindakan registrasi
+    //         // Misalnya, simpan data pengguna ke database
+    //         redirect('admin/manage_karyawan'); // Redirect ke halaman sukses registrasi
+    //     }
+    // }
+    public function aksi_tambah_order_ck()
+    {
+        $or_ck_number = $this->input->post->generateRandomCode();
+        $data = [
+            $or_ck_number => $or_ck_number,
+            'nama_pel_ck' => $this->input->post('nama_pel_ck'),
+            'no_telp_ck' => $this->input->post('no_telp_ck'),
+            'alamat_ck' => $this->input->post('alamat_ck'),
+            'jenis_paket_ck' => $this->input->post('jenis_paket_ck'),
+            'berat_qty_ck' => $this->input->post('berat_qty_ck'),
+            'tgl_masuk_ck' => $this->input->post('tgl_masuk_ck'),
+            'tgl_keluar_ck' => $this->input->post('tgl_keluar_ck'),
+            'keterangan_ck' => $this->input->post('keterangan_ck'),
+        ];
+        $this->m_model->tambah_data('tb_order_ck', $data);
+        redirect(base_url('admin/order_ck'));
     }
 }
