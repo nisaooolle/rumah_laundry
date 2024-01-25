@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>manage_karyawan</title>
+    <title>Detail_ck</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- bootstrap -->
@@ -1225,7 +1225,7 @@
 
 <body>
     <div class="app-container app-theme-white body-tabs-shadow  fixed-header">
-        <div class="app-header header-shadow">
+       <div class="app-header header-shadow">
             <div class="app-header__logo">
                 <div>
                     <div id="logo"> <a href="dashboard" rel="home">
@@ -1255,34 +1255,11 @@
                 </span>
             </div>
             <div class="app-header__content">
-                <ul class="header-menu nav">
-                    <li class="nav-item">
-                        <a href="riwayat" class="nav-link">
-                            <!-- <i class="nav-link-icon fa fa-database"> </i> -->
-                            <i class="nav-link-icon fa-solid fa-clock-rotate-left"></i>
-                            Riwayat Transaksi
-                        </a>
-                    </li>
-                    <li class="btn-group nav-item">
-                        <a href="manage_karyawan" class="nav-link">
-                            <!-- <i class="nav-link-icon fa fa-edit"></i> -->
-                            <i class="nav-link-icon fa-solid fa-people-roof"></i>
-                            Manage Karyawan
-                        </a>
-                    </li>
-                    <li class="dropdown nav-item">
-                        <a href="daftar_paket" class="nav-link">
-                            <!-- <i class="nav-link-icon fa fa-cog"></i> -->
-                            <i class="nav-link-icon fa-solid fa-sliders"></i>
-                            Daftar Paket
-                        </a>
-                    </li>
-                </ul>
                 <div class="app-header-right">
                     <div class="widget-content-right header-user-info ml-3">
-                        <button type="button" class="btn-shadow p-1 btn btn-primary btn-sm show-toastr-example">
+                        <!-- <button type="button" class="btn-shadow p-1 btn btn-primary btn-sm show-toastr-example">
                             <i class="fa text-white fa-calendar pr-1 pl-1"></i>
-                        </button>
+                        </button> -->
                         <button type="button" style="width: 50px;"
                             class="btn-shadow p-1 btn btn-primary btn-sm show-toastr-example"><a
                                 href="<?php echo base_url('auth/logout') ?>"><i
@@ -1291,83 +1268,147 @@
                 </div>
             </div>
         </div>
-        <div id="karyawan" class="main-content">
+        <div id="detail_or_ck" class="main-content">
             <div class="container">
                 <div class="baris">
-                    <div class="selamat-datang">
-                        <div class="col-header">
-                            <h2 class="judul-md">Management Karyawan</h2>
-                        </div>
-
-                        <div class="col-header txt-right">
-                            <a href="<?= base_url('admin/tambah_karyawan') ?>" class="btn-lg bg-primary">+ Tambah
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="baris">
-                    <div class="col">
-                        <div class="card">
+                    <div class="col mt-2">
+                        <div class="card-md">
                             <div class="card-title card-flex">
                                 <div class="card-col">
-                                    <h2>Daftar Karyawan</h2>
+                                    <h2>Detail Order</h2>
                                 </div>
-                            </div>
+                                <?php foreach ($detail as $data): ?>
+                                    <div class="card-col txt-right">
+                                        <h3 class="no-order"><small>No Order : </small>
+                                            <?= $data->or_ck_number ?>
+                                        </h3>
+                                    </div>
+                                </div>
 
-                            <div class="card-body">
-                                <div class="tabel-kontainer">
-                                    <table class="tabel-transaksi">
-                                        <thead>
-                                            <tr>
-                                                <th class="sticky">No</th>
-                                                <th class="sticky">Nama Karyawan</th>
-                                                <th class="sticky">Username</th>
-                                                <th class="sticky">Email</th>
-                                                <th class="sticky">Action</th>
-                                            </tr>
-                                        </thead>
+                                <div class="card-body">
+                                    <div class="jdl-or">
+                                        <h4>Customer</h4>
+                                    </div>
+                                    <table class="tb-detail_customer">
+                                        <tr>
+                                            <th>Nama</th>
+                                            <td>
+                                                <?= $data->nama_pel_ck ?>
+                                            </td>
+                                        </tr>
 
-                                        <tbody>
-                                            <?php $no = 1; ?>
-                                            <?php foreach ($data_karyawan as $karyawan): ?>
-                                                <tr>
-                                                    <td>
-                                                        <?= $no ?>
-                                                    </td>
-                                                    <td>
-                                                        <?= $karyawan->nama ?>
-                                                    </td>
-                                                    <td>
-                                                        <?= $karyawan->username ?>
-                                                    </td>
-                                                    <td>
-                                                        <?= $karyawan->email ?>
-                                                    </td>
-                                                    <td>
-                                                        <!-- <a href="<?= base_url('admin/edit_karyawan') ?>/<?= $karyawan->id ?>"
-                                                            class="btn btn-edit">Edit</a>
-                                                        <a href="<?= base_url('admin/hapus.php') ?>?id=<?= $karyawan->id ?>"
-                                                            onclick="return confirm('Yakin akan menghapus?');"
-                                                            class="btn btn-hapus">Hapus</a> -->
-                                                        <button type="button"
-                                                            class=" btn-sm btn-square btn-edit text-danger-hover-none">
-                                                            <a class="text-light text-decoration-none"
-                                                                href="<?php echo base_url('admin/edit_karyawan/' . $karyawan->id) ?>">
-                                                                <i class="fas fa-edit"></i>
-                                                            </a>
-                                                        </button>
-                                                        <button type="button" onclick="hapus(<?php echo $karyawan->id ?>)"
-                                                            class="btn-sm btn-square btn-danger text-danger-hover-none">
-                                                            <i class="fa-solid fa-trash"></i>
-                                                        </button>
-                                                    </td>
-                                                </tr>
-                                                <?php $no++ ?>
-                                            <?php endforeach; ?>
-                                        </tbody>
+                                        <tr>
+                                            <th>Nomor Telepon</th>
+                                            <td>
+                                                <?= $data->no_telp_ck ?>
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+                                            <th>Alamat</th>
+                                            <td>
+                                                <?= $data->alamat_ck ?>
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+                                            <th>Order Masuk</th>
+                                            <td>
+                                                <?= $data->tgl_masuk_ck ?>
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+                                            <th>Diambil Pada</th>
+                                            <td>
+                                                <?= $data->tgl_keluar_ck ?>
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+                                            <th>Durasi Kerja</th>
+                                            <td>
+                                                <?= $data->wkt_krj_ck ?>
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+                                            <th>Jenis Paket</th>
+                                            <td>
+                                                <?= $data->jenis_paket_ck ?>
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+                                            <th>Status</th>
+                                            <td><span class="success">
+                                                    <?= $data->status ?>
+                                                </span></td>
+                                        </tr>
                                     </table>
-                                </div>
+
+                                    <div class="mt-1"></div>
+
+                                    <div class="jdl-or">
+                                        <h4>Order</h4>
+                                    </div>
+
+                                    <table class="tb-detail_order">
+                                        <tr>
+                                            <th>Berat (Kg)</th>
+                                            <th>Harga Per-Kg</th>
+                                            <th>Total Bayar</th>
+                                        </tr>
+
+                                        <tr>
+                                            <td>
+                                                <?= $data->berat_qty_ck . " Kg" ?>
+                                            </td>
+                                            <td>
+                                                <?= "Rp. " . $data->harga_perkilo ?>
+                                            </td>
+                                            <td><input type="text" name="tot_bayar" disabled value="<?php
+                                                if ($data->tot_bayar !== null) {
+                                                    echo 'Rp. ' . number_format($data->tot_bayar, 2);
+                                                } else {
+                                                    echo 'Rp. 0.00';
+                                                }
+                                                ?>"></td>
+                                        </tr>
+
+                                        <tr>
+                                            <th colspan="2" style="text-align: center;">Nominal Bayar</th>
+                                            <td>
+                                                <?= "Rp. " . $data->nominal_byr ?>
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+                                            <th colspan="2" style="text-align: center;">Uang Kembali</th>
+                                            <td>
+                                                <?= "Rp. " . $data->kembalian ?>
+                                            </td>
+                                        </tr>
+                                    </table>
+
+                                    <div class="details">
+                                        <h4 class="mb-01">Keterangan:</h4>
+                                        <p class="lead">
+                                            <?= $data->keterangan_ck ?>
+                                        </p>
+                                    </div>
+
+                                    <div class="form-footer_detail">
+                                        <div class="buttons">
+                                            <a class="btn-sm bg-primary"
+                                                href="<?= base_url('riwayat_transaksi/riwayat_ck/cetak_info.php') ?>?id_ck=<?= $data->id_ck ?>">Cetak
+                                                Invoice</a>
+                                            <a class="btn-sm bg-transparent"
+                                                href="<?= base_url('admin/riwayat') ?>">Kembali</a>
+                                        </div>
+                                    </div>
+                                    </form>
+                                <?php endforeach ?>
                             </div>
                         </div>
                     </div>
@@ -1375,39 +1416,6 @@
             </div>
         </div>
     </div>
-    <script>
-        function hapus(id) {
-            swal.fire({
-                title: 'Yakin untuk menghapus data ini?',
-                icon: 'warning',
-                background: '#fff',
-                showCancelButton: true,
-                confirmButtonColor: '#3085d6',
-                cancelButtonColor: '#d33',
-                cancelButtonText: 'Batal',
-                confirmButtonText: 'Ya Hapus', customClass: {
-                    title: 'text-dark',
-                    content: 'text-dark'
-                }
-            }).then((result) => {
-                if (result.isConfirmed) {
-                    Swal.fire({
-                        icon: 'success',
-                        title: 'Berhasil Dihapus',
-                        showConfirmButton: false,
-                        background: '#fff',
-                        timer: 1500, customClass: {
-                            title: 'text-dark',
-                            content: 'text-dark'
-                        }
-
-                    }).then(function () {
-                        window.location.href = "<?php echo base_url('admin/hapus_karyawan/') ?>" + id;
-                    });
-                }
-            });
-        }
-    </script>
     <script src="http://maps.google.com/maps/api/js?sensor=true"></script>
     <script type="text/javascript"
         src="https://demo.dashboardpack.com/architectui-html-free/assets/scripts/main.js"></script>

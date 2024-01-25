@@ -21,228 +21,6 @@
     <link href='https://dtdrycleaning.wpengine.com/wp-content/themes/dry-cleaning/images/favicon.ico'
         rel='shortcut icon' type='image/x-icon' />
     <meta name="robots" content="noindex, follow">
-    <!-- <style>
-        body {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            width: 100%;
-            height: 100vh;
-            /* overflow: hidden; */
-            font-family: 'Open sans', sans-serif;
-            background: linear-gradient(to bottom right, #72bdf7, #467ce8);
-        }
-
-        h1,
-        h2,
-        h3,
-        h4,
-        h5,
-        h6,
-        p {
-            margin: 0;
-        }
-
-        .card-payment {
-            border-radius: 20px;
-            width: 30%;
-            padding: 15px;
-            background-color: #fff;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.14);
-        }
-
-        .icon-header {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 40px 0 25px;
-        }
-
-        .txt {
-            text-align: center;
-            width: 80%;
-            margin: auto;
-        }
-
-        .txt h3 {
-            font-size: 20px;
-            color: #424346;
-        }
-
-        .txt p {
-            margin-top: 10px;
-            font-size: 14px;
-            color: #7d7e82;
-        }
-
-        .card-payment form {
-            margin: 40px auto;
-            display: flex;
-            flex-direction: column;
-            width: 80%;
-        }
-
-        .card-payment form input {
-            margin: 10px 0;
-            padding: 10px;
-            font-size: 20px;
-            font-weight: 600;
-            color: #424346;
-            text-align: center;
-            font-family: 'Open sans', sans-serif;
-            border: 0;
-            outline: none;
-        }
-
-        .card-payment form input::placeholder {
-            color: #e0e0e0;
-        }
-
-        .card-payment form button {
-            padding: 15px;
-            border: 0;
-            background-color: #58ca50;
-            color: #fff;
-            font-size: 16px;
-            font-family: 'Open sans', sans-serif;
-            letter-spacing: 1.2px;
-            font-weight: 600;
-            text-transform: uppercase;
-            cursor: pointer;
-            border-radius: 7px;
-            outline: none;
-            transition: all .4s ease-out;
-        }
-
-        .card-payment form button:hover {
-            background-color: #45ab3d;
-        }
-
-        @media (max-width:768px) {
-            .card-payment {
-                width: 60%;
-            }
-        }
-
-        @media (max-width:550px) {
-            .card-payment {
-                width: 70%;
-            }
-
-            .card-payment form input,
-            .card-payment form button {
-                font-size: 16px;
-            }
-        }
-
-        @media (max-width:375px) {
-            .card-payment {
-                width: 80%;
-            }
-
-            .card-payment form,
-            .txt {
-                width: 90%;
-            }
-
-            .txt h3 {
-                font-size: 18px;
-                color: #424346;
-            }
-
-            .icon-header,
-            .card-payment form {
-                margin: 25px auto;
-            }
-        }
-
-        /* Pesan Alert */
-        .alert {
-            background: rgba(0, 0, 0, 0.4);
-            position: fixed;
-            width: 100%;
-            height: 100vh;
-            top: 0;
-            left: 0;
-            z-index: 1000;
-            transition: all .4s ease;
-        }
-
-        .box {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            width: 25%;
-            min-height: 80px;
-            margin: 70px auto 0;
-            position: relative;
-            padding: 20px 15px;
-            background-color: #ffffff;
-            border-radius: 5px;
-        }
-
-        .box p {
-            color: #4d4d4d;
-        }
-
-        .alert .box {
-            animation: slide .8s;
-        }
-
-        .btn-alert {
-            border: none;
-            text-decoration: none;
-            display: inline-block;
-            margin-top: 15px;
-            padding: 8px 25px;
-            cursor: pointer;
-            outline: none;
-            border-radius: 4px;
-            text-transform: uppercase;
-            transition: all .4s ease;
-        }
-
-        .btn-success {
-            background-color: #58ca50;
-            color: #fff;
-        }
-
-        .btn-fail {
-            background-color: #f73e53;
-            color: #fff;
-        }
-
-        .close {
-            display: block;
-            text-decoration: none;
-            color: #fff;
-            position: absolute;
-            right: -15px;
-            top: -15px;
-            height: 30px;
-            width: 30px;
-            background-color: #ffb723;
-            font-size: 24px;
-            text-align: center;
-            line-height: 30px;
-            border-radius: 15px;
-        }
-
-        @keyframes slide {
-            0% {
-                margin: 50px auto 0;
-            }
-
-            100% {
-                margin: 70px auto 0;
-            }
-        }
-    </style> -->
     <style>
         * {
             margin: 0;
@@ -1477,34 +1255,15 @@
                 </span>
             </div>
             <div class="app-header__content">
-                <ul class="header-menu nav">
-                    <li class="nav-item">
-                        <a href="riwayat" class="nav-link">
-                            <!-- <i class="nav-link-icon fa fa-database"> </i> -->
-                            <i class="nav-link-icon fa-solid fa-clock-rotate-left"></i>
-                            Riwayat Transaksi
-                        </a>
-                    </li>
-                    <li class="btn-group nav-item">
-                        <a href="manage_karyawan" class="nav-link">
-                            <!-- <i class="nav-link-icon fa fa-edit"></i> -->
-                            <i class="nav-link-icon fa-solid fa-people-roof"></i>
-                            Manage Karyawan
-                        </a>
-                    </li>
-                    <li class="dropdown nav-item">
-                        <a href="daftar_paket" class="nav-link">
-                            <!-- <i class="nav-link-icon fa fa-cog"></i> -->
-                            <i class="nav-link-icon fa-solid fa-sliders"></i>
-                            Daftar Paket
-                        </a>
-                    </li>
-                </ul>
                 <div class="app-header-right">
                     <div class="widget-content-right header-user-info ml-3">
-                        <button type="button" class="btn-shadow p-1 btn btn-primary btn-sm show-toastr-example">
+                        <!-- <button type="button" class="btn-shadow p-1 btn btn-primary btn-sm show-toastr-example">
                             <i class="fa text-white fa-calendar pr-1 pl-1"></i>
-                        </button>
+                        </button> -->
+                        <button type="button" style="width: 50px;"
+                            class="btn-shadow p-1 btn btn-primary btn-sm show-toastr-example"><a
+                                href="<?php echo base_url('auth/logout') ?>"><i
+                                    class="fa text-white fa-solid fa-right-from-bracket"></i></a></button>
                     </div>
                 </div>
             </div>
@@ -1518,63 +1277,63 @@
                                 <div class="card-col">
                                     <h2>Detail Order</h2>
                                 </div>
-                                <div class="card-col txt-right">
-                                    <h3 class="no-order"><small>No Order : </small>
-                                        <!-- <?= $data['or_ck_number'] ?> -->
-                                    </h3>
+                                <?php foreach ($detail as $data): ?>
+                                    <div class="card-col txt-right">
+                                        <h3 class="no-order"><small>No Order : </small>
+                                            <?= $data->or_ck_number ?>
+                                        </h3>
+                                    </div>
                                 </div>
-                            </div>
-                            <?php foreach ($detail as $data): ?>
                                 <div class="card-body">
                                     <form method="post" action="<?php echo base_url('admin/detail_order_ck') ?>">
-                                        <!-- <input type="hidden" name="or_ck_number" value="<?= $data['or_ck_number'] ?>"> -->
+                                        <input type="hidden" name="or_ck_number" value="<?= $data->or_ck_number ?>">
                                         <div class="jdl-or">
                                             <h4>Customer</h4>
                                         </div>
                                         <table class="tb-detail_customer">
                                             <tr>
                                                 <th>Nama</th>
-                                                <!-- <td><input type="text" name="nama_pel_ck" disabled
-                                                    value="<?= $data['nama_pel_ck'] ?>"></td> -->
+                                                <td><input type="text" name="nama_pel_ck" disabled
+                                                        value="<?= $data->nama_pel_ck ?>"></td>
                                             </tr>
 
                                             <tr>
                                                 <th>Nomor Telepon</th>
-                                                <!-- <td><input type="text" name="no_telp_ck" disabled
-                                                    value="<?= $data['no_telp_ck'] ?>"></td> -->
+                                                <td><input type="text" name="no_telp_ck" disabled
+                                                        value="<?= $data->no_telp_ck ?>"></td>
                                             </tr>
 
                                             <tr>
                                                 <th>Alamat</th>
                                                 <td>
-                                                    <!-- <textarea name="alamat_ck" disabled class="txt-area">
-                                    <?= $data['alamat_ck'] ?> -->
-                                                    </textarea>
+                                                    <textarea name="alamat_ck" disabled class="txt-area">
+                                                                <?= $data->alamat_ck ?>
+                                                                                </textarea>
                                                 </td>
                                             </tr>
 
                                             <tr>
                                                 <th>Order Masuk</th>
-                                                <!-- <td><input type="text" name="tgl_masuk_ck" disabled
-                                                    value="<?= $data['tgl_masuk_ck'] ?>"></td> -->
+                                                <td><input type="text" name="tgl_masuk_ck" disabled
+                                                        value="<?= $data->tgl_masuk_ck ?>"></td>
                                             </tr>
 
                                             <tr>
                                                 <th>Diambil Pada</th>
                                                 <td><input type="text" name="tgl_keluar_ck" disabled
-                                                        value="<?= $data['tgl_keluar_ck'] ?>"></td>
+                                                        value="<?= $data->tgl_keluar_ck ?>"></td>
                                             </tr>
 
                                             <tr>
                                                 <th>Durasi Kerja</th>
-                                                <!-- <td><input type="text" name="wkt_krj_ck" disabled
-                                                    value="<?= $data['wkt_krj_ck'] ?>"></td> -->
+                                                <td><input type="text" name="wkt_krj_ck" disabled
+                                                        value="<?= $data->wkt_krj_ck ?>"></td>
                                             </tr>
 
                                             <tr>
                                                 <th>Jenis Paket</th>
-                                                <!-- <td><input type="text" name="jenis_paket_ck" disabled
-                                                    value="<?= $data['jenis_paket_ck'] ?>"></td> -->
+                                                <td><input type="text" name="jenis_paket_ck" disabled
+                                                        value="<?= $data->jenis_paket_ck ?>"></td>
                                             </tr>
                                         </table>
 
@@ -1593,11 +1352,16 @@
 
                                             <tr>
                                                 <td><input type="text" name="berat_qty_ck" disabled
-                                                        value="<?= $data['berat_qty_ck'] . ' Kg' ?>"></td>
+                                                        value="<?= $data->berat_qty_ck . ' Kg' ?>"></td>
                                                 <td><input type="text" name="harga_perkilo" disabled
-                                                        value="<?= 'Rp. ' . $data['harga_perkilo'] ?>"></td>
-                                                <td><input type="text" name="tot_bayar" disabled
-                                                        value="<?= 'Rp. ' . $data['tot_bayar'] ?>"></td>
+                                                        value="<?= 'Rp. ' . $data->harga_perkilo ?>"></td>
+                                                <td><input type="text" name="tot_bayar" disabled value="<?php
+                                                if ($data->tot_bayar !== null) {
+                                                    echo 'Rp. ' . number_format($data->tot_bayar, 2);
+                                                } else {
+                                                    echo 'Rp. 0.00';
+                                                }
+                                                ?>"></td>
                                             </tr>
                                         </table>
 
@@ -1605,15 +1369,16 @@
                                             <h4 class="mb-01">Keterangan:</h4>
                                             <p class="lead">
                                                 <textarea name="keterangan_ck" disabled class="txt-area">
-                                             <?= $data['keterangan_ck'] ?>
-                                          </textarea>
+                                                                                 <?= $data->keterangan_ck ?>
+                                                                              </textarea>
                                             </p>
                                         </div>
 
                                         <div class="form-footer_detail">
                                             <div class="buttons">
-                                                <button type="submit" name="bayar_ck" class="btn-sm bg-primary">Bayar
-                                                    Sekarang</button>
+                                                <button type="submit" name="bayar_ck" class="btn-sm bg-primary"><a
+                                                        style="color: white; text-decoration: none;"
+                                                        href="<?= base_url('admin/dashboard') ?>">Kembali</a></button>
                                             </div>
                                         </div>
                                     </form>

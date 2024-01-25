@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>manage_karyawan</title>
+    <title>Detail_ck</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- bootstrap -->
@@ -1220,11 +1220,252 @@
             line-height: 10px;
             color: white;
         }
+
+        @media (max-width: 768px) {
+            .container-paket {
+                flex-direction: column;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-around;
+                margin-right: 350px;
+            }
+
+            .col-paket {
+                flex: 1;
+                width: 250px;
+                /* Adjust the maximum width as needed */
+            }
+
+            .paket {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                text-decoration: none;
+                color: #4b4b4b;
+                border: 1px solid #ddd;
+                /* Optional: Add border for a better visual separation */
+                /* padding: 15px; */
+                border-radius: 5px;
+            }
+
+            .paket img {
+                width: 100%;
+                max-width: 160px;
+                /* Set the maximum image width */
+                height: auto;
+                transition: transform 0.2s ease-in-out;
+            }
+
+            .paket:hover img {
+                transform: translateY(-10px);
+            }
+        }
+    </style>
+
+    <!-- style payment -->
+    <style>
+        .card-payment {
+            border-radius: 20px;
+            width: 30%;
+            padding: 5px;
+            background-color: #fff;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.14);
+            margin-left: 35%;
+            margin-top: 85px;
+        }
+
+        .icon-header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 40px 0 25px;
+        }
+
+        .txt {
+            text-align: center;
+            width: 80%;
+            margin: auto;
+        }
+
+        .txt h3 {
+            font-size: 20px;
+            color: #424346;
+        }
+
+        .txt p {
+            margin-top: 10px;
+            font-size: 14px;
+            color: #7d7e82;
+        }
+
+        .card-payment form {
+            margin: 40px auto;
+            display: flex;
+            flex-direction: column;
+            width: 80%;
+        }
+
+        .card-payment form input {
+            margin: 10px 0;
+            padding: 10px;
+            font-size: 20px;
+            font-weight: 600;
+            color: #424346;
+            text-align: center;
+            font-family: 'Open sans', sans-serif;
+            border: 0;
+            outline: none;
+        }
+
+        .card-payment form input::placeholder {
+            color: #e0e0e0;
+        }
+
+        .card-payment form button {
+            padding: 15px;
+            border: 0;
+            background-color: #58ca50;
+            color: #fff;
+            font-size: 16px;
+            font-family: 'Open sans', sans-serif;
+            letter-spacing: 1.2px;
+            font-weight: 600;
+            text-transform: uppercase;
+            cursor: pointer;
+            border-radius: 7px;
+            outline: none;
+            transition: all .4s ease-out;
+        }
+
+        .card-payment form button:hover {
+            background-color: #45ab3d;
+        }
+
+        @media (max-width:768px) {
+            .card-payment {
+                width: 60%;
+            }
+        }
+
+        @media (max-width:550px) {
+            .card-payment {
+                width: 70%;
+            }
+
+            .card-payment form input,
+            .card-payment form button {
+                font-size: 16px;
+            }
+        }
+
+        @media (max-width:375px) {
+            .card-payment {
+                width: 80%;
+            }
+
+            .card-payment form,
+            .txt {
+                width: 90%;
+            }
+
+            .txt h3 {
+                font-size: 18px;
+                color: #424346;
+            }
+
+            .icon-header,
+            .card-payment form {
+                margin: 25px auto;
+            }
+        }
+
+        /* Pesan Alert */
+        .alert {
+            background: rgba(0, 0, 0, 0.4);
+            position: fixed;
+            width: 100%;
+            height: 100vh;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            transition: all .4s ease;
+        }
+
+        .box {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 25%;
+            min-height: 80px;
+            margin: 70px auto 0;
+            position: relative;
+            padding: 20px 15px;
+            background-color: #ffffff;
+            border-radius: 5px;
+        }
+
+        .box p {
+            color: #4d4d4d;
+        }
+
+        .alert .box {
+            animation: slide .8s;
+        }
+
+        .btn-alert {
+            border: none;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 15px;
+            padding: 8px 25px;
+            cursor: pointer;
+            outline: none;
+            border-radius: 4px;
+            text-transform: uppercase;
+            transition: all .4s ease;
+        }
+
+        .btn-success {
+            background-color: #58ca50;
+            color: #fff;
+        }
+
+        .btn-fail {
+            background-color: #f73e53;
+            color: #fff;
+        }
+
+        .close {
+            display: block;
+            text-decoration: none;
+            color: #fff;
+            position: absolute;
+            right: -15px;
+            top: -15px;
+            height: 30px;
+            width: 30px;
+            background-color: #ffb723;
+            font-size: 24px;
+            text-align: center;
+            line-height: 30px;
+            border-radius: 15px;
+        }
+
+        @keyframes slide {
+            0% {
+                margin: 50px auto 0;
+            }
+
+            100% {
+                margin: 70px auto 0;
+            }
+        }
     </style>
 </head>
 
 <body>
-    <div class="app-container app-theme-white body-tabs-shadow  fixed-header">
+    <div class="app-container app-theme-white body-tabs-shadow fixed-header ">
         <div class="app-header header-shadow">
             <div class="app-header__logo">
                 <div>
@@ -1255,34 +1496,11 @@
                 </span>
             </div>
             <div class="app-header__content">
-                <ul class="header-menu nav">
-                    <li class="nav-item">
-                        <a href="riwayat" class="nav-link">
-                            <!-- <i class="nav-link-icon fa fa-database"> </i> -->
-                            <i class="nav-link-icon fa-solid fa-clock-rotate-left"></i>
-                            Riwayat Transaksi
-                        </a>
-                    </li>
-                    <li class="btn-group nav-item">
-                        <a href="manage_karyawan" class="nav-link">
-                            <!-- <i class="nav-link-icon fa fa-edit"></i> -->
-                            <i class="nav-link-icon fa-solid fa-people-roof"></i>
-                            Manage Karyawan
-                        </a>
-                    </li>
-                    <li class="dropdown nav-item">
-                        <a href="daftar_paket" class="nav-link">
-                            <!-- <i class="nav-link-icon fa fa-cog"></i> -->
-                            <i class="nav-link-icon fa-solid fa-sliders"></i>
-                            Daftar Paket
-                        </a>
-                    </li>
-                </ul>
                 <div class="app-header-right">
                     <div class="widget-content-right header-user-info ml-3">
-                        <button type="button" class="btn-shadow p-1 btn btn-primary btn-sm show-toastr-example">
+                        <!-- <button type="button" class="btn-shadow p-1 btn btn-primary btn-sm show-toastr-example">
                             <i class="fa text-white fa-calendar pr-1 pl-1"></i>
-                        </button>
+                        </button> -->
                         <button type="button" style="width: 50px;"
                             class="btn-shadow p-1 btn btn-primary btn-sm show-toastr-example"><a
                                 href="<?php echo base_url('auth/logout') ?>"><i
@@ -1291,123 +1509,43 @@
                 </div>
             </div>
         </div>
-        <div id="karyawan" class="main-content">
-            <div class="container">
-                <div class="baris">
-                    <div class="selamat-datang">
-                        <div class="col-header">
-                            <h2 class="judul-md">Management Karyawan</h2>
-                        </div>
-
-                        <div class="col-header txt-right">
-                            <a href="<?= base_url('admin/tambah_karyawan') ?>" class="btn-lg bg-primary">+ Tambah
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="baris">
-                    <div class="col">
-                        <div class="card">
-                            <div class="card-title card-flex">
-                                <div class="card-col">
-                                    <h2>Daftar Karyawan</h2>
-                                </div>
-                            </div>
-
-                            <div class="card-body">
-                                <div class="tabel-kontainer">
-                                    <table class="tabel-transaksi">
-                                        <thead>
-                                            <tr>
-                                                <th class="sticky">No</th>
-                                                <th class="sticky">Nama Karyawan</th>
-                                                <th class="sticky">Username</th>
-                                                <th class="sticky">Email</th>
-                                                <th class="sticky">Action</th>
-                                            </tr>
-                                        </thead>
-
-                                        <tbody>
-                                            <?php $no = 1; ?>
-                                            <?php foreach ($data_karyawan as $karyawan): ?>
-                                                <tr>
-                                                    <td>
-                                                        <?= $no ?>
-                                                    </td>
-                                                    <td>
-                                                        <?= $karyawan->nama ?>
-                                                    </td>
-                                                    <td>
-                                                        <?= $karyawan->username ?>
-                                                    </td>
-                                                    <td>
-                                                        <?= $karyawan->email ?>
-                                                    </td>
-                                                    <td>
-                                                        <!-- <a href="<?= base_url('admin/edit_karyawan') ?>/<?= $karyawan->id ?>"
-                                                            class="btn btn-edit">Edit</a>
-                                                        <a href="<?= base_url('admin/hapus.php') ?>?id=<?= $karyawan->id ?>"
-                                                            onclick="return confirm('Yakin akan menghapus?');"
-                                                            class="btn btn-hapus">Hapus</a> -->
-                                                        <button type="button"
-                                                            class=" btn-sm btn-square btn-edit text-danger-hover-none">
-                                                            <a class="text-light text-decoration-none"
-                                                                href="<?php echo base_url('admin/edit_karyawan/' . $karyawan->id) ?>">
-                                                                <i class="fas fa-edit"></i>
-                                                            </a>
-                                                        </button>
-                                                        <button type="button" onclick="hapus(<?php echo $karyawan->id ?>)"
-                                                            class="btn-sm btn-square btn-danger text-danger-hover-none">
-                                                            <i class="fa-solid fa-trash"></i>
-                                                        </button>
-                                                    </td>
-                                                </tr>
-                                                <?php $no++ ?>
-                                            <?php endforeach; ?>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+        <div class="card-payment">
+            <div class="icon-header">
+                <img src="<?= base_url('_assets/img/payment.svg') ?>" alt="Icon Payment" width="178">
             </div>
-        </div>
-    </div>
-    <script>
-        function hapus(id) {
-            swal.fire({
-                title: 'Yakin untuk menghapus data ini?',
-                icon: 'warning',
-                background: '#fff',
-                showCancelButton: true,
-                confirmButtonColor: '#3085d6',
-                cancelButtonColor: '#d33',
-                cancelButtonText: 'Batal',
-                confirmButtonText: 'Ya Hapus', customClass: {
-                    title: 'text-dark',
-                    content: 'text-dark'
-                }
-            }).then((result) => {
-                if (result.isConfirmed) {
-                    Swal.fire({
-                        icon: 'success',
-                        title: 'Berhasil Dihapus',
-                        showConfirmButton: false,
-                        background: '#fff',
-                        timer: 1500, customClass: {
-                            title: 'text-dark',
-                            content: 'text-dark'
-                        }
 
-                    }).then(function () {
-                        window.location.href = "<?php echo base_url('admin/hapus_karyawan/') ?>" + id;
-                    });
-                }
-            });
-        }
-    </script>
+            <?php foreach ($bayar as $data): ?>
+                <div class="txt">
+                    <h3>#no_order:
+                        <?= $data->or_ck_number ?>
+                    </h3>
+                    <p>Masukkan nominal untuk melakukan transaksi</p>
+                </div>
+                <form method="post" action="<?php echo base_url('user/struk_ck') ?>">
+                    <input type="hidden" name="or_ck_number" value="<?= $data->or_ck_number ?>">
+                    <input type="hidden" name="nama_pel_ck" value="<?= $data->nama_pel_ck ?>">
+                    <input type="hidden" name="no_telp_ck" value="<?= $data->no_telp_ck ?>">
+                    <input type="hidden" name="alamat_ck" value="<?= $data->alamat_ck ?>">
+                    <input type="hidden" name="jenis_paket_ck" value="<?= $data->jenis_paket_ck ?>">
+                    <input type="hidden" name="wkt_krj_ck" value="<?= $data->wkt_krj_ck ?>">
+                    <input type="hidden" name="berat_qty_ck" value="<?= $data->berat_qty_ck ?>">
+                    <input type="hidden" name="harga_perkilo" value="<?= $data->harga_perkilo ?>">
+                    <input type="hidden" name="tgl_masuk_ck" value="<?= $data->tgl_masuk_ck ?>">
+                    <input type="hidden" name="tgl_keluar_ck" value="<?= $data->tgl_keluar_ck ?>">
+                    <input type="hidden" name="tot_bayar" value="<?= $data->tot_bayar ?>">
+                    <input type="hidden" name="keterangan_ck" value="<?= $data->keterangan_ck ?>">
+
+                    <input type="text" name="nominal" required autofocus autocomplete="off"
+                        value="<?= $data->nominal_byr ?>" placeholder="Nominal ex: '120000'">
+                    <!-- <button type="submit" name="bayar">Bayar</button> -->
+                    <button  type="submit" name="bayar"><a
+                            class="text-light text-decoration-none"
+                            href="<?php echo base_url('user/struk/' . $data->or_ck_number) ?>">Bayar
+                    </button>
+                </form>
+            </div>
+        <?php endforeach ?>
+    </div>
     <script src="http://maps.google.com/maps/api/js?sensor=true"></script>
     <script type="text/javascript"
         src="https://demo.dashboardpack.com/architectui-html-free/assets/scripts/main.js"></script>

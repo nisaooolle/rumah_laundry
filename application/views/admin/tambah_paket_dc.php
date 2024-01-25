@@ -1283,6 +1283,10 @@
                         <button type="button" class="btn-shadow p-1 btn btn-primary btn-sm show-toastr-example">
                             <i class="fa text-white fa-calendar pr-1 pl-1"></i>
                         </button>
+                        <button type="button" style="width: 50px;"
+                            class="btn-shadow p-1 btn btn-primary btn-sm show-toastr-example"><a
+                                href="<?php echo base_url('auth/logout') ?>"><i
+                                    class="fa text-white fa-solid fa-right-from-bracket"></i></a></button>
                     </div>
                 </div>
             </div>

@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-   <title>Daftar Paket</title>
+   <title>Order_cs</title>
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1">
    <!-- bootstrap -->
@@ -18,6 +18,8 @@
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
       integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
       crossorigin="anonymous" referrerpolicy="no-referrer" />
+   <link href='https://dtdrycleaning.wpengine.com/wp-content/themes/dry-cleaning/images/favicon.ico' rel='shortcut icon'
+      type='image/x-icon' />
    <meta name="robots" content="noindex, follow">
    <style>
       * {
@@ -1218,167 +1220,154 @@
          line-height: 10px;
          color: white;
       }
-
-      @media (max-width: 768px) {
-         .container-paket {
-            flex-direction: column;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-around;
-            margin-right: 350px;
-         }
-
-         .col-paket {
-            flex: 1;
-            width: 250px;
-            /* Adjust the maximum width as needed */
-         }
-
-         .paket {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-decoration: none;
-            color: #4b4b4b;
-            border: 1px solid #ddd;
-            /* Optional: Add border for a better visual separation */
-            /* padding: 15px; */
-            border-radius: 5px;
-         }
-
-         .paket img {
-            width: 100%;
-            max-width: 160px;
-            /* Set the maximum image width */
-            height: auto;
-            transition: transform 0.2s ease-in-out;
-         }
-
-         .paket:hover img {
-            transform: translateY(-10px);
-         }
-      }
    </style>
 </head>
 
 <body>
    <div class="app-container app-theme-white body-tabs-shadow  fixed-header">
-      <div class="app-header header-shadow">
-      <div class="app-header__logo">
-        <div>
-          <div id="logo"> <a href="dashboard" rel="home">
-              <img style="width: 200px;"
-                src="https://dtdrycleaning.wpengine.com/wp-content/themes/dry-cleaning/images/logo.png"
-                alt="Dry Cleaning" title="Dry Cleaning" />
-            </a></div>
-        </div>
-      </div>
-      <div class="app-header__mobile-menu">
-        <div>
-          <button type="button" class="hamburger hamburger--elastic mobile-toggle-nav">
-            <span class="hamburger-box">
-              <span class="hamburger-inner"></span>
+   <div class="app-header header-shadow">
+         <div class="app-header__logo">
+            <div>
+               <div id="logo"> <a href="dashboard" rel="home">
+                     <img style="width: 200px;"
+                        src="https://dtdrycleaning.wpengine.com/wp-content/themes/dry-cleaning/images/logo.png"
+                        alt="Dry Cleaning" title="Dry Cleaning" />
+                  </a></div>
+            </div>
+         </div>
+         <div class="app-header__mobile-menu">
+            <div>
+               <button type="button" class="hamburger hamburger--elastic mobile-toggle-nav">
+                  <span class="hamburger-box">
+                     <span class="hamburger-inner"></span>
+                  </span>
+               </button>
+            </div>
+         </div>
+         <div class="app-header__menu">
+            <span>
+               <button type="button" class="btn-icon btn-icon-only btn btn-primary btn-sm mobile-toggle-header-nav">
+                  <span class="btn-icon-wrapper">
+                     <i class="fa fa-ellipsis-v fa-w-6"></i>
+                  </span>
+               </button>
             </span>
-          </button>
-        </div>
+         </div>
+         <div class="app-header__content">
+            <div class="app-header-right">
+               <div class="widget-content-right header-user-info ml-3">
+                  <!-- <button type="button" class="btn-shadow p-1 btn btn-primary btn-sm show-toastr-example">
+                            <i class="fa text-white fa-calendar pr-1 pl-1"></i>
+                        </button> -->
+                  <button type="button" style="width: 50px;"
+                     class="btn-shadow p-1 btn btn-primary btn-sm show-toastr-example"><a
+                        href="<?php echo base_url('auth/logout') ?>"><i
+                           class="fa text-white fa-solid fa-right-from-bracket"></i></a></button>
+               </div>
+            </div>
+         </div>
       </div>
-      <div class="app-header__menu">
-        <span>
-          <button type="button" class="btn-icon btn-icon-only btn btn-primary btn-sm mobile-toggle-header-nav">
-            <span class="btn-icon-wrapper">
-              <i class="fa fa-ellipsis-v fa-w-6"></i>
-            </span>
-          </button>
-        </span>
-      </div>
-      <div class="app-header__content">
-        <ul class="header-menu nav">
-          <li class="nav-item">
-            <a href="riwayat" class="nav-link">
-              <!-- <i class="nav-link-icon fa fa-database"> </i> -->
-              <i class="nav-link-icon fa-solid fa-clock-rotate-left"></i>
-              Riwayat Transaksi
-            </a>
-          </li>
-          <li class="btn-group nav-item">
-            <a href="manage_karyawan" class="nav-link">
-              <!-- <i class="nav-link-icon fa fa-edit"></i> -->
-              <i class="nav-link-icon fa-solid fa-people-roof"></i>
-              Manage Karyawan
-            </a>
-          </li>
-          <li class="dropdown nav-item">
-            <a href="daftar_paket" class="nav-link">
-              <!-- <i class="nav-link-icon fa fa-cog"></i> -->
-              <i class="nav-link-icon fa-solid fa-sliders"></i>
-              Daftar Paket
-            </a>
-          </li>
-        </ul>
-        <div class="app-header-right">
-          <div class="widget-content-right header-user-info ml-3">
-            <button type="button" class="btn-shadow p-1 btn btn-primary btn-sm show-toastr-example">
-              <i class="fa text-white fa-calendar pr-1 pl-1"></i>
-            </button>
-            <button type="button" style="width: 50px;"
-              class="btn-shadow p-1 btn btn-primary btn-sm show-toastr-example"><a
-                href="<?php echo base_url('auth/logout') ?>"><i
-                  class="fa text-white fa-solid fa-right-from-bracket"></i></a></button>
-          </div>
-        </div>
-      </div>
-    </div>
-      <div class="main-content" id="id_order">
+      <div id="order_ck" class="main-content">
          <div class="container">
             <div class="baris">
                <div class="col mt-2">
                   <div class="card">
                      <div class="card-title card-flex">
                         <div class="card-col">
-                           <h2>Daftar Paket Tersedia</h2>
+                           <h2>Cuci Satuan</h2>
                         </div>
 
                         <div class="card-col txt-right">
-                           <a href="dashboard" class="btn-xs bg-primary">Kembali</a>
-                        </div>
+                        <button type="submit" name="bayar_ck" class="btn-sm bg-primary"><a
+                                 style="color: white; text-decoration: none;"
+                                 href="<?= base_url('user/paket_cs') ?>">Kembali</a></button>                        </div>
                      </div>
 
-                     <div class="card-body mt-2">
-                        <!-- <div class="col">
-                           <div class="order-sub-judul txt-center">
-                              <h3 class="mb-1">Pilih Paket</h3>
-                           </div> -->
+                     <div class="card-body">
+                        <form action="<?php echo base_url('User/aksi_tambah_order_cs') ?>" method="post">
+                           <div class="row-input">
+                              <div class="col-form m-1">
+                                 <div class="form-grup">
+                                    <label for="nama">Nama Pelanggan</label>
+                                    <input type="text" name="nama_pel_cs" placeholder="Nama lengkap" autocomplete="off"
+                                       id="nama">
+                                 </div>
 
-                        <div class="container-paket">
-                           <div class="col-paket">
-                              <a href="<?= base_url('admin/paket_ck') ?>" class="paket">
-                                 <img src="<?= base_url('_assets/img/cuci_komplit.png') ?>" alt="cuci komplit"
-                                    width="160">
-                                 <h4>Paket Cuci Komplit</h4>
-                              </a>
+                                 <div class="form-grup">
+                                    <label for="no-telp">Nomor Telepon</label>
+                                    <input type="text" name="no_telp_cs" placeholder="Nomor Telepon" autocomplete="off"
+                                       id="no-telp">
+                                 </div>
+
+                                 <div class="form-grup">
+                                    <label for="alamat">Alamat</label>
+                                    <textarea name="alamat_cs" rows="4" id="alamat"></textarea>
+                                 </div>
+                              </div>
+
+                              <div class="col-form m-1">
+                                 <div class="form-grup">
+                                    <label for="pilih_paket">Pilih Paket</label>
+                                    <select name="jenis_paket_cs" id="pilih_paket">
+                                       <option>-- Pilih Jenis Paket --</option>
+                                       <?php foreach ($tb_cuci_satuan as $cs): ?>
+                                          <option value="<?= $cs['nama_cs'] ?>">
+                                             <?= $cs['nama_cs'] ?>
+                                          </option>
+                                       <?php endforeach ?>
+                                       <!-- <option value="Cuci Komplit Reguler">Cuci Komplit Reguler</option>
+                                       <option value="Cuci Komplit Kilat">Cuci Komplit Kilat</option>
+                                       <option value="Cuci Komplit Express">Cuci Komplit Express</option> -->
+                                    </select>
+                                 </div>
+                                 <div class="form-grup">
+                                    <?php foreach ($tb_cuci_satuan as $cs): ?>
+                                       <input type="hidden" name="wkt_krj_cs" autocomplete="off" id="kuantitas"
+                                          value="<?= $cs['waktu_kerja_cs'] ?>">
+                                    <?php endforeach ?>
+                                 </div>
+                                 <div class="form-grup">
+                                    <?php foreach ($tb_cuci_satuan as $cs): ?>
+                                       <input type="hidden" name="harga_perpcs" autocomplete="off" id="kuantitas"
+                                          value="<?= $cs['tarif_cs'] ?>">
+                                    <?php endforeach ?>
+                                 </div>
+                                 <div class="form-grup">
+                                    <label for="kuantitas">Jumlah pcs</label>
+                                    <input type="number" name="jml_pcs" placeholder="Berat (Kg)" autocomplete="off"
+                                       id="kuantitas">
+                                 </div>
+
+                                 <div class="form-grup">
+                                    <label for="tgl_order_msk">Tanggal Order Masuk</label>
+                                    <input type="date" name="tgl_masuk_cs" autocomplete="off" id="tgl_order_msk">
+                                 </div>
+
+                                 <div class="form-grup">
+                                    <label for="tgl_order_klr">Tanggal Order Keluar</label>
+                                    <input type="date" name="tgl_keluar_cs" autocomplete="off" id="tgl_order_klr">
+                                 </div>
+
+                                 <div class="form-grup">
+                                    <label for="ket">Keterangan</label>
+                                    <textarea name="keterangan_cs" rows="4" id="ket"></textarea>
+                                 </div>
+                              </div>
                            </div>
 
-                           <div class="col-paket">
-                              <a href="<?= base_url('admin/paket_dc') ?>" class="paket">
-                                 <img src="<?= base_url('_assets/img/dry_clean.png') ?>" alt="dry clean" width="160">
-                                 <h4>Paket Dry Clean</h4>
-                              </a>
+                           <div class="form-footer">
+                              <div class="buttons">
+                                 <button type="submit" name="order_cs" class="btn-sm bg-primary">Pesan</button>
+                                 <button type="reset" class="btn-sm bg-transparent">Batal</button>
+                              </div>
                            </div>
-
-                           <div class="col-paket">
-                              <a href="<?= base_url('admin/paket_cs') ?>" class="paket">
-                                 <img src="<?= base_url('_assets/img/kemeja_2.png') ?>" alt="cuci satuan" width="160">
-                                 <h4>Paket Cuci Satuan</h4>
-                              </a>
-                           </div>
-                        </div>
+                        </form>
                      </div>
                   </div>
                </div>
             </div>
          </div>
       </div>
-   </div>
    </div>
    <script src="http://maps.google.com/maps/api/js?sensor=true"></script>
    <script type="text/javascript"

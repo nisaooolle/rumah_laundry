@@ -1225,14 +1225,14 @@
 
 <body>
     <div class="app-container app-theme-white body-tabs-shadow  fixed-header">
-        <div class="app-header header-shadow">
+       <div class="app-header header-shadow">
             <div class="app-header__logo">
                 <div>
-                <div id="logo"> <a href="dashboard" rel="home">
-              <img style="width: 200px;"
-                src="https://dtdrycleaning.wpengine.com/wp-content/themes/dry-cleaning/images/logo.png"
-                alt="Dry Cleaning" title="Dry Cleaning" />
-            </a></div>
+                    <div id="logo"> <a href="dashboard" rel="home">
+                            <img style="width: 200px;"
+                                src="https://dtdrycleaning.wpengine.com/wp-content/themes/dry-cleaning/images/logo.png"
+                                alt="Dry Cleaning" title="Dry Cleaning" />
+                        </a></div>
                 </div>
             </div>
             <div class="app-header__mobile-menu">
@@ -1255,34 +1255,15 @@
                 </span>
             </div>
             <div class="app-header__content">
-                <ul class="header-menu nav">
-                    <li class="nav-item">
-                        <a href="riwayat" class="nav-link">
-                            <!-- <i class="nav-link-icon fa fa-database"> </i> -->
-                            <i class="nav-link-icon fa-solid fa-clock-rotate-left"></i>
-                            Riwayat Transaksi
-                        </a>
-                    </li>
-                    <li class="btn-group nav-item">
-                        <a href="manage_karyawan" class="nav-link">
-                            <!-- <i class="nav-link-icon fa fa-edit"></i> -->
-                            <i class="nav-link-icon fa-solid fa-people-roof"></i>
-                            Manage Karyawan
-                        </a>
-                    </li>
-                    <li class="dropdown nav-item">
-                        <a href="daftar_paket" class="nav-link">
-                            <!-- <i class="nav-link-icon fa fa-cog"></i> -->
-                            <i class="nav-link-icon fa-solid fa-sliders"></i>
-                            Daftar Paket
-                        </a>
-                    </li>
-                </ul>
                 <div class="app-header-right">
                     <div class="widget-content-right header-user-info ml-3">
-                        <button type="button" class="btn-shadow p-1 btn btn-primary btn-sm show-toastr-example">
+                        <!-- <button type="button" class="btn-shadow p-1 btn btn-primary btn-sm show-toastr-example">
                             <i class="fa text-white fa-calendar pr-1 pl-1"></i>
-                        </button>
+                        </button> -->
+                        <button type="button" style="width: 50px;"
+                            class="btn-shadow p-1 btn btn-primary btn-sm show-toastr-example"><a
+                                href="<?php echo base_url('auth/logout') ?>"><i
+                                    class="fa text-white fa-solid fa-right-from-bracket"></i></a></button>
                     </div>
                 </div>
             </div>
@@ -1321,12 +1302,12 @@
                                     <table class="tabel-transaksi">
                                         <thead>
                                             <tr>
-                                                <th class="sticky">No</th>
-                                                <th class="sticky">Nama Paket</th>
-                                                <th class="sticky">Waktu Kerja</th>
-                                                <th class="sticky">Berat Min (Kg)</th>
-                                                <th class="sticky">Tarif</th>
-                                                <th class="sticky">Action</th>
+                                                <th class="text-center sticky">No</th>
+                                                <th class="text-center sticky">Nama Paket</th>
+                                                <th class="text-center sticky">Waktu Kerja</th>
+                                                <th class="text-center sticky">Berat Min (Kg)</th>
+                                                <th class="text-center sticky">Tarif</th>
+                                                <th class="text-center sticky">Action</th>
                                             </tr>
                                         </thead>
 
@@ -1335,27 +1316,38 @@
                                             <?php $no = 1; ?>
                                             <?php foreach ($data_ck as $ck): ?>
                                                 <tr>
-                                                    <td>
+                                                    <td class="text-center">
                                                         <?= $no ?>
                                                     </td>
-                                                    <td>
+                                                    <td class="text-center">
                                                         <?= $ck->nama_paket_ck ?>
                                                     </td>
-                                                    <td>
+                                                    <td class="text-center">
                                                         <?= $ck->waktu_kerja_ck ?>
                                                     </td>
-                                                    <td>
+                                                    <td class="text-center">
                                                         <?= $ck->kuantitas_ck . ' Kg' ?>
                                                     </td>
-                                                    <td>
+                                                    <td class="text-center">
                                                         <?= $ck->tarif_ck ?>
                                                     </td>
-                                                    <td>
-                                                        <a href="<?= base_url('paket/pkt_ck/edit.php') ?>?id_ck=<?= $ck->id_ck ?>"
+                                                    <td class="text-center">
+                                                        <!-- <a href="<?= base_url('admin/edit_paket_ck') ?>/<?= $ck->id_ck ?>"
                                                             class="btn btn-edit">Edit</a>
-                                                        <a href="<?= base_url('paket/pkt_ck/hapus.php') ?>?id_ck=<?= $ck->id_ck ?>"
+                                                        <a href="<?= base_url('admin/hapus_paket_ck') ?>/<?= $ck->id_ck ?>"
                                                             onclick="return confirm('Yakin akan menghapus?');"
-                                                            class="btn btn-hapus">Hapus</a>
+                                                            class="btn btn-hapus">Hapus</a> -->
+                                                        <button type="button"
+                                                            class=" btn-sm btn-square btn-edit text-danger-hover-none">
+                                                            <a class="text-light text-decoration-none"
+                                                                href="<?php echo base_url('admin/edit_paket_ck/' . $ck->id_ck) ?>">
+                                                                <i class="fas fa-edit"></i>
+                                                            </a>
+                                                        </button>
+                                                        <button type="button" onclick="hapus(<?php echo $ck->id_ck ?>)"
+                                                            class="btn-sm btn-square btn-danger text-danger-hover-none">
+                                                            <i class="fa-solid fa-trash"></i>
+                                                        </button>
                                                     </td>
                                                 </tr>
                                                 <?php $no++ ?>
@@ -1370,6 +1362,39 @@
             </div>
         </div>
     </div>
+    <script>
+        function hapus(id) {
+            swal.fire({
+                title: 'Yakin untuk menghapus data ini?',
+                icon: 'warning',
+                background: '#fff',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                cancelButtonText: 'Batal',
+                confirmButtonText: 'Ya Hapus', customClass: {
+                    title: 'text-dark',
+                    content: 'text-dark'
+                }
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Berhasil Dihapus',
+                        showConfirmButton: false,
+                        background: '#fff',
+                        timer: 1500, customClass: {
+                            title: 'text-dark',
+                            content: 'text-dark'
+                        }
+
+                    }).then(function () {
+                        window.location.href = "<?php echo base_url('admin/hapus_paket_ck/') ?>" + id;
+                    });
+                }
+            });
+        }
+    </script>
     <script src="http://maps.google.com/maps/api/js?sensor=true"></script>
     <script type="text/javascript"
         src="https://demo.dashboardpack.com/architectui-html-free/assets/scripts/main.js"></script>

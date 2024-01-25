@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>manage_karyawan</title>
+    <title>Daftar Paket</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- bootstrap -->
@@ -18,8 +18,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
         integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link href='https://dtdrycleaning.wpengine.com/wp-content/themes/dry-cleaning/images/favicon.ico'
-        rel='shortcut icon' type='image/x-icon' />
     <meta name="robots" content="noindex, follow">
     <style>
         * {
@@ -1220,6 +1218,46 @@
             line-height: 10px;
             color: white;
         }
+
+        @media (max-width: 768px) {
+            .container-paket {
+                flex-direction: column;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-around;
+                margin-right: 350px;
+            }
+
+            .col-paket {
+                flex: 1;
+                width: 250px;
+                /* Adjust the maximum width as needed */
+            }
+
+            .paket {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                text-decoration: none;
+                color: #4b4b4b;
+                border: 1px solid #ddd;
+                /* Optional: Add border for a better visual separation */
+                /* padding: 15px; */
+                border-radius: 5px;
+            }
+
+            .paket img {
+                width: 100%;
+                max-width: 160px;
+                /* Set the maximum image width */
+                height: auto;
+                transition: transform 0.2s ease-in-out;
+            }
+
+            .paket:hover img {
+                transform: translateY(-10px);
+            }
+        }
     </style>
 </head>
 
@@ -1255,118 +1293,53 @@
                 </span>
             </div>
             <div class="app-header__content">
-                <ul class="header-menu nav">
-                    <li class="nav-item">
-                        <a href="riwayat" class="nav-link">
-                            <!-- <i class="nav-link-icon fa fa-database"> </i> -->
-                            <i class="nav-link-icon fa-solid fa-clock-rotate-left"></i>
-                            Riwayat Transaksi
-                        </a>
-                    </li>
-                    <li class="btn-group nav-item">
-                        <a href="manage_karyawan" class="nav-link">
-                            <!-- <i class="nav-link-icon fa fa-edit"></i> -->
-                            <i class="nav-link-icon fa-solid fa-people-roof"></i>
-                            Manage Karyawan
-                        </a>
-                    </li>
-                    <li class="dropdown nav-item">
-                        <a href="daftar_paket" class="nav-link">
-                            <!-- <i class="nav-link-icon fa fa-cog"></i> -->
-                            <i class="nav-link-icon fa-solid fa-sliders"></i>
-                            Daftar Paket
-                        </a>
-                    </li>
-                </ul>
                 <div class="app-header-right">
                     <div class="widget-content-right header-user-info ml-3">
-                        <button type="button" class="btn-shadow p-1 btn btn-primary btn-sm show-toastr-example">
+                        <!-- <button type="button" class="btn-shadow p-1 btn btn-primary btn-sm show-toastr-example">
                             <i class="fa text-white fa-calendar pr-1 pl-1"></i>
-                        </button>
-                        <button type="button" style="width: 50px;"
-                            class="btn-shadow p-1 btn btn-primary btn-sm show-toastr-example"><a
-                                href="<?php echo base_url('auth/logout') ?>"><i
+                        </button> -->
+                        <button type="button" style="width: 50px;" class="btn-shadow p-1 btn btn-primary btn-sm show-toastr-example"><a href="<?php echo base_url('auth/logout') ?>"><i
                                     class="fa text-white fa-solid fa-right-from-bracket"></i></a></button>
                     </div>
                 </div>
             </div>
         </div>
-        <div id="karyawan" class="main-content">
+        <div class="main-content" id="id_order">
             <div class="container">
                 <div class="baris">
-                    <div class="selamat-datang">
-                        <div class="col-header">
-                            <h2 class="judul-md">Management Karyawan</h2>
-                        </div>
-
-                        <div class="col-header txt-right">
-                            <a href="<?= base_url('admin/tambah_karyawan') ?>" class="btn-lg bg-primary">+ Tambah
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="baris">
-                    <div class="col">
+                    <div class="col mt-2">
                         <div class="card">
                             <div class="card-title card-flex">
                                 <div class="card-col">
-                                    <h2>Daftar Karyawan</h2>
+                                    <h2>Daftar Paket Tersedia</h2>
                                 </div>
                             </div>
 
-                            <div class="card-body">
-                                <div class="tabel-kontainer">
-                                    <table class="tabel-transaksi">
-                                        <thead>
-                                            <tr>
-                                                <th class="sticky">No</th>
-                                                <th class="sticky">Nama Karyawan</th>
-                                                <th class="sticky">Username</th>
-                                                <th class="sticky">Email</th>
-                                                <th class="sticky">Action</th>
-                                            </tr>
-                                        </thead>
+                            <div class="card-body mt-2">
+                                <div class="container-paket">
+                                    <div class="col-paket">
+                                        <a href="<?= base_url('user/paket_ck') ?>" class="paket">
+                                            <img src="<?= base_url('_assets/img/cuci_komplit.png') ?>"
+                                                alt="cuci komplit" width="160">
+                                            <h4>Paket Cuci Komplit</h4>
+                                        </a>
+                                    </div>
 
-                                        <tbody>
-                                            <?php $no = 1; ?>
-                                            <?php foreach ($data_karyawan as $karyawan): ?>
-                                                <tr>
-                                                    <td>
-                                                        <?= $no ?>
-                                                    </td>
-                                                    <td>
-                                                        <?= $karyawan->nama ?>
-                                                    </td>
-                                                    <td>
-                                                        <?= $karyawan->username ?>
-                                                    </td>
-                                                    <td>
-                                                        <?= $karyawan->email ?>
-                                                    </td>
-                                                    <td>
-                                                        <!-- <a href="<?= base_url('admin/edit_karyawan') ?>/<?= $karyawan->id ?>"
-                                                            class="btn btn-edit">Edit</a>
-                                                        <a href="<?= base_url('admin/hapus.php') ?>?id=<?= $karyawan->id ?>"
-                                                            onclick="return confirm('Yakin akan menghapus?');"
-                                                            class="btn btn-hapus">Hapus</a> -->
-                                                        <button type="button"
-                                                            class=" btn-sm btn-square btn-edit text-danger-hover-none">
-                                                            <a class="text-light text-decoration-none"
-                                                                href="<?php echo base_url('admin/edit_karyawan/' . $karyawan->id) ?>">
-                                                                <i class="fas fa-edit"></i>
-                                                            </a>
-                                                        </button>
-                                                        <button type="button" onclick="hapus(<?php echo $karyawan->id ?>)"
-                                                            class="btn-sm btn-square btn-danger text-danger-hover-none">
-                                                            <i class="fa-solid fa-trash"></i>
-                                                        </button>
-                                                    </td>
-                                                </tr>
-                                                <?php $no++ ?>
-                                            <?php endforeach; ?>
-                                        </tbody>
-                                    </table>
+                                    <div class="col-paket">
+                                        <a href="<?= base_url('user/paket_dc') ?>" class="paket">
+                                            <img src="<?= base_url('_assets/img/dry_clean.png') ?>" alt="dry clean"
+                                                width="160">
+                                            <h4>Paket Dry Clean</h4>
+                                        </a>
+                                    </div>
+
+                                    <div class="col-paket">
+                                        <a href="<?= base_url('user/paket_cs') ?>" class="paket">
+                                            <img src="<?= base_url('_assets/img/kemeja_2.png') ?>" alt="cuci satuan"
+                                                width="160">
+                                            <h4>Paket Cuci Satuan</h4>
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -1375,39 +1348,7 @@
             </div>
         </div>
     </div>
-    <script>
-        function hapus(id) {
-            swal.fire({
-                title: 'Yakin untuk menghapus data ini?',
-                icon: 'warning',
-                background: '#fff',
-                showCancelButton: true,
-                confirmButtonColor: '#3085d6',
-                cancelButtonColor: '#d33',
-                cancelButtonText: 'Batal',
-                confirmButtonText: 'Ya Hapus', customClass: {
-                    title: 'text-dark',
-                    content: 'text-dark'
-                }
-            }).then((result) => {
-                if (result.isConfirmed) {
-                    Swal.fire({
-                        icon: 'success',
-                        title: 'Berhasil Dihapus',
-                        showConfirmButton: false,
-                        background: '#fff',
-                        timer: 1500, customClass: {
-                            title: 'text-dark',
-                            content: 'text-dark'
-                        }
-
-                    }).then(function () {
-                        window.location.href = "<?php echo base_url('admin/hapus_karyawan/') ?>" + id;
-                    });
-                }
-            });
-        }
-    </script>
+    </div>
     <script src="http://maps.google.com/maps/api/js?sensor=true"></script>
     <script type="text/javascript"
         src="https://demo.dashboardpack.com/architectui-html-free/assets/scripts/main.js"></script>

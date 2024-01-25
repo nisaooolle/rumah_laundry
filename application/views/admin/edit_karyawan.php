@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>manage_karyawan</title>
+    <title>Edit karyawan</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- bootstrap -->
@@ -1225,7 +1225,7 @@
 
 <body>
     <div class="app-container app-theme-white body-tabs-shadow  fixed-header">
-        <div class="app-header header-shadow">
+       <div class="app-header header-shadow">
             <div class="app-header__logo">
                 <div>
                     <div id="logo"> <a href="dashboard" rel="home">
@@ -1255,34 +1255,11 @@
                 </span>
             </div>
             <div class="app-header__content">
-                <ul class="header-menu nav">
-                    <li class="nav-item">
-                        <a href="riwayat" class="nav-link">
-                            <!-- <i class="nav-link-icon fa fa-database"> </i> -->
-                            <i class="nav-link-icon fa-solid fa-clock-rotate-left"></i>
-                            Riwayat Transaksi
-                        </a>
-                    </li>
-                    <li class="btn-group nav-item">
-                        <a href="manage_karyawan" class="nav-link">
-                            <!-- <i class="nav-link-icon fa fa-edit"></i> -->
-                            <i class="nav-link-icon fa-solid fa-people-roof"></i>
-                            Manage Karyawan
-                        </a>
-                    </li>
-                    <li class="dropdown nav-item">
-                        <a href="daftar_paket" class="nav-link">
-                            <!-- <i class="nav-link-icon fa fa-cog"></i> -->
-                            <i class="nav-link-icon fa-solid fa-sliders"></i>
-                            Daftar Paket
-                        </a>
-                    </li>
-                </ul>
                 <div class="app-header-right">
                     <div class="widget-content-right header-user-info ml-3">
-                        <button type="button" class="btn-shadow p-1 btn btn-primary btn-sm show-toastr-example">
+                        <!-- <button type="button" class="btn-shadow p-1 btn btn-primary btn-sm show-toastr-example">
                             <i class="fa text-white fa-calendar pr-1 pl-1"></i>
-                        </button>
+                        </button> -->
                         <button type="button" style="width: 50px;"
                             class="btn-shadow p-1 btn btn-primary btn-sm show-toastr-example"><a
                                 href="<?php echo base_url('auth/logout') ?>"><i
@@ -1291,123 +1268,58 @@
                 </div>
             </div>
         </div>
-        <div id="karyawan" class="main-content">
+        <div id="tambah_karyawan" class="main-content">
             <div class="container">
                 <div class="baris">
-                    <div class="selamat-datang">
-                        <div class="col-header">
-                            <h2 class="judul-md">Management Karyawan</h2>
-                        </div>
-
-                        <div class="col-header txt-right">
-                            <a href="<?= base_url('admin/tambah_karyawan') ?>" class="btn-lg bg-primary">+ Tambah
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="baris">
-                    <div class="col">
+                    <div class="col mt-2">
                         <div class="card">
                             <div class="card-title card-flex">
                                 <div class="card-col">
-                                    <h2>Daftar Karyawan</h2>
+                                    <h2>Update Data Karyawan</h2>
+                                </div>
+
+                                <div class="card-col txt-right">
+                                    <a href="karyawan.php" class="btn-xs bg-primary">Kembali</a>
                                 </div>
                             </div>
 
                             <div class="card-body">
-                                <div class="tabel-kontainer">
-                                    <table class="tabel-transaksi">
-                                        <thead>
-                                            <tr>
-                                                <th class="sticky">No</th>
-                                                <th class="sticky">Nama Karyawan</th>
-                                                <th class="sticky">Username</th>
-                                                <th class="sticky">Email</th>
-                                                <th class="sticky">Action</th>
-                                            </tr>
-                                        </thead>
+                                <?php foreach ($data_karyawan as $update): ?>
 
-                                        <tbody>
-                                            <?php $no = 1; ?>
-                                            <?php foreach ($data_karyawan as $karyawan): ?>
-                                                <tr>
-                                                    <td>
-                                                        <?= $no ?>
-                                                    </td>
-                                                    <td>
-                                                        <?= $karyawan->nama ?>
-                                                    </td>
-                                                    <td>
-                                                        <?= $karyawan->username ?>
-                                                    </td>
-                                                    <td>
-                                                        <?= $karyawan->email ?>
-                                                    </td>
-                                                    <td>
-                                                        <!-- <a href="<?= base_url('admin/edit_karyawan') ?>/<?= $karyawan->id ?>"
-                                                            class="btn btn-edit">Edit</a>
-                                                        <a href="<?= base_url('admin/hapus.php') ?>?id=<?= $karyawan->id ?>"
-                                                            onclick="return confirm('Yakin akan menghapus?');"
-                                                            class="btn btn-hapus">Hapus</a> -->
-                                                        <button type="button"
-                                                            class=" btn-sm btn-square btn-edit text-danger-hover-none">
-                                                            <a class="text-light text-decoration-none"
-                                                                href="<?php echo base_url('admin/edit_karyawan/' . $karyawan->id) ?>">
-                                                                <i class="fas fa-edit"></i>
-                                                            </a>
-                                                        </button>
-                                                        <button type="button" onclick="hapus(<?php echo $karyawan->id ?>)"
-                                                            class="btn-sm btn-square btn-danger text-danger-hover-none">
-                                                            <i class="fa-solid fa-trash"></i>
-                                                        </button>
-                                                    </td>
-                                                </tr>
-                                                <?php $no++ ?>
-                                            <?php endforeach; ?>
-                                        </tbody>
-                                    </table>
-                                </div>
+                                    <form action="<?php echo base_url('admin/aksi_edit_karyawan') ?>" method="post" class="form-input">
+                                        <input type="hidden" name="id" value="<?= $update->id ?>">
+                                        <input type="hidden" name="role" value="<?= $update->role ?>">
+                                        <div class="form-grup">
+                                            <label for="nama">Nama Karyawan</label>
+                                            <input type="text" name="nama" placeholder="Nama lengkap" autocomplete="off"
+                                                id="nama" value="<?= $update->nama ?>">
+                                        </div>
+
+                                        <div class="form-grup">
+                                            <label for="username">Username</label>
+                                            <input type="text" name="username" placeholder="Username" autocomplete="off"
+                                                id="username" value="<?= $update->username ?>">
+                                        </div>
+
+                                        <div class="form-grup">
+                                            <label for="email">Email</label>
+                                            <input type="text" name="email" placeholder="Email" autocomplete="off"
+                                                id="email" value="<?= $update->email ?>">
+                                        </div>
+
+                                        <div class="form-grup ">
+                                            <button type="submit" class="mt-1" name="update">Update Data</button>
+                                        </div>
+                                    </form>
+                                <?php endforeach ?>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <script>
-        function hapus(id) {
-            swal.fire({
-                title: 'Yakin untuk menghapus data ini?',
-                icon: 'warning',
-                background: '#fff',
-                showCancelButton: true,
-                confirmButtonColor: '#3085d6',
-                cancelButtonColor: '#d33',
-                cancelButtonText: 'Batal',
-                confirmButtonText: 'Ya Hapus', customClass: {
-                    title: 'text-dark',
-                    content: 'text-dark'
-                }
-            }).then((result) => {
-                if (result.isConfirmed) {
-                    Swal.fire({
-                        icon: 'success',
-                        title: 'Berhasil Dihapus',
-                        showConfirmButton: false,
-                        background: '#fff',
-                        timer: 1500, customClass: {
-                            title: 'text-dark',
-                            content: 'text-dark'
-                        }
 
-                    }).then(function () {
-                        window.location.href = "<?php echo base_url('admin/hapus_karyawan/') ?>" + id;
-                    });
-                }
-            });
-        }
-    </script>
+    </div>
     <script src="http://maps.google.com/maps/api/js?sensor=true"></script>
     <script type="text/javascript"
         src="https://demo.dashboardpack.com/architectui-html-free/assets/scripts/main.js"></script>

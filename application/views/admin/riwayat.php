@@ -1284,6 +1284,10 @@
                         <button type="button" class="btn-shadow p-1 btn btn-primary btn-sm show-toastr-example">
                             <i class="fa text-white fa-calendar pr-1 pl-1"></i>
                         </button>
+                        <button type="button" style="width: 50px;"
+                            class="btn-shadow p-1 btn btn-primary btn-sm show-toastr-example"><a
+                                href="<?php echo base_url('auth/logout') ?>"><i
+                                    class="fa text-white fa-solid fa-right-from-bracket"></i></a></button>
                     </div>
                 </div>
             </div>
@@ -1335,19 +1339,19 @@
                                                             <?= $i ?>
                                                         </td>
                                                         <td>
-                                                            <?= $data_ck->or_number ?>
+                                                            <?= $data_ck->or_ck_number ?>
                                                         </td>
                                                         <td style="max-width: 150px; overflow:hidden;">
-                                                            <?= $data_ck->pelanggan ?>
+                                                            <?= $data_ck->nama_pel_ck ?>
                                                         </td>
                                                         <td>
-                                                            <?= $data_ck->j_paket ?>
+                                                            <?= $data_ck->jenis_paket_ck ?>
                                                         </td>
                                                         <td>
-                                                            <?= $data_ck->berat . " Kg" ?>
+                                                            <?= $data_ck->berat_qty_ck . " Kg" ?>
                                                         </td>
                                                         <td>
-                                                            <?= "Rp. " . $data_ck->total ?>
+                                                            <?= "Rp. " . $data_ck->tot_bayar ?>
                                                         </td>
                                                         <td>
                                                             <?= "Rp. " . $data_ck->nominal_byr ?>
@@ -1359,10 +1363,17 @@
                                                                 <?= $data_ck->status ?>
                                                             </span></td>
                                                         <td align="center">
-                                                            <a href="<?= base_url('riwayat_transaksi/riwayat_ck/detail_ck.php') ?>?id_ck=<?= $data_ck->id_ck ?>"
-                                                                class="btn btn-edit">Detail</a><br />
-                                                            <a href="<?= base_url('riwayat_transaksi/riwayat_ck/cetak_info.php') ?>?id_ck=<?= $data_ck->id_ck ?>"
-                                                                class="btn btn-hapus">Cetak Bukti</a>
+                                                            <!-- <a href="<?= base_url('admin/detail_riwayat_ck') ?>/<?= $data_ck->id_ck ?>"
+                                                                class="btn btn-edit">Detail</a><br /> -->
+                                                            <!-- <a href="<?= base_url('riwayat_transaksi/riwayat_ck/cetak_info.php') ?>?id_ck=<?= $data_ck->id_ck ?>"
+                                                                class="btn btn-hapus">Cetak Bukti</a> -->
+                                                            <button type="button"
+                                                                class=" btn-sm btn-square btn-edit text-danger-hover-none">
+                                                                <a class="text-light text-decoration-none"
+                                                                    href="<?php echo base_url('admin/detail_riwayat_ck/' . $data_ck->id_ck) ?>">
+                                                                    <i class="fas fa-edit"></i>
+                                                                </a>
+                                                            </button>
                                                         </td>
                                                     </tr>
                                                     <?php $i++ ?>
@@ -1442,10 +1453,17 @@
                                                                 <?= $data_dc->status ?>
                                                             </span></td>
                                                         <td align="center">
-                                                            <a href="<?= url('riwayat_transaksi/riwayat_dc/detail_dc.php') ?>?id_dc=<?= $data_dc->id_dc ?>"
-                                                                class="btn btn-edit">Detail</a><br />
-                                                            <a href="<?= url('riwayat_transaksi/riwayat_dc/cetak_info.php') ?>?id_dc=<?= $data_dc->id_dc ?>"
-                                                                class="btn btn-hapus">Cetak Bukti</a>
+                                                            <!-- <a href="<?= base_url('riwayat_transaksi/riwayat_dc/detail_dc.php') ?>?id_dc=<?= $data_dc->id_dc ?>"
+                                                                class="btn btn-edit">Detail</a><br /> -->
+                                                            <!-- <a href="<?= base_url('riwayat_transaksi/riwayat_dc/cetak_info.php') ?>?id_dc=<?= $data_dc->id_dc ?>"
+                                                                class="btn btn-hapus">Cetak Bukti</a> -->
+                                                            <button type="button"
+                                                                class=" btn-sm btn-square btn-edit text-danger-hover-none">
+                                                                <a class="text-light text-decoration-none"
+                                                                    href="<?php echo base_url('admin/detail_riwayat_dc/' . $data_dc->id_dc) ?>">
+                                                                    <i class="fas fa-edit"></i>
+                                                                </a>
+                                                            </button>
                                                         </td>
                                                     </tr>
                                                     <?php $i++ ?>
@@ -1525,10 +1543,17 @@
                                                                 <?= $data_cs->status ?>
                                                             </span></td>
                                                         <td align="center">
-                                                            <a href="<?= base_url('riwayat_transaksi/riwayat_cs/detail_cs.php') ?>?id_cs=<?= $data_cs->id_cs ?>"
-                                                                class="btn btn-edit">Detail</a><br />
-                                                            <a href="<?= base_url('riwayat_transaksi/riwayat_cs/cetak_info.php') ?>?id_cs=<?= $data_cs->id_cs ?>"
-                                                                class="btn btn-hapus">Cetak Bukti</a>
+                                                            <!-- <a href="<?= base_url('riwayat_transaksi/riwayat_cs/detail_cs.php') ?>?id_cs=<?= $data_cs->id_cs ?>"
+                                                                class="btn btn-edit">Detail</a><br /> -->
+                                                            <!-- <a href="<?= base_url('riwayat_transaksi/riwayat_cs/cetak_info.php') ?>?id_cs=<?= $data_cs->id_cs ?>"
+                                                                class="btn btn-hapus">Cetak Bukti</a> -->
+                                                            <button type="button"
+                                                                class=" btn-sm btn-square btn-edit text-danger-hover-none">
+                                                                <a class="text-light text-decoration-none"
+                                                                    href="<?php echo base_url('admin/detail_riwayat_cs/' . $data_cs->id_cs) ?>">
+                                                                    <i class="fas fa-edit"></i>
+                                                                </a>
+                                                            </button>
                                                         </td>
                                                     </tr>
                                                     <?php $i++ ?>

@@ -1,27 +1,24 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 
 <head>
-    <title>manage_karyawan</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <!-- sweetalert2 -->
-    <link href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@4/dark.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <link href='https://dtdrycleaning.wpengine.com/wp-content/themes/dry-cleaning/images/favicon.ico'
-        rel='shortcut icon' type='image/x-icon' />
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Language" content="en">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Dash</title>
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, shrink-to-fit=no" />
+    <meta name="description" content="This is an example dashboard created using build-in elements and components.">
+    <meta name="msapplication-tap-highlight" content="no">
     <link href="https://demo.dashboardpack.com/architectui-html-free/main.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
         integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href='https://dtdrycleaning.wpengine.com/wp-content/themes/dry-cleaning/images/favicon.ico'
         rel='shortcut icon' type='image/x-icon' />
-    <meta name="robots" content="noindex, follow">
-    <style>
+</head>
+<style>
         * {
             margin: 0;
             padding: 0;
@@ -1221,8 +1218,6 @@
             color: white;
         }
     </style>
-</head>
-
 <body>
     <div class="app-container app-theme-white body-tabs-shadow  fixed-header">
         <div class="app-header header-shadow">
@@ -1255,34 +1250,11 @@
                 </span>
             </div>
             <div class="app-header__content">
-                <ul class="header-menu nav">
-                    <li class="nav-item">
-                        <a href="riwayat" class="nav-link">
-                            <!-- <i class="nav-link-icon fa fa-database"> </i> -->
-                            <i class="nav-link-icon fa-solid fa-clock-rotate-left"></i>
-                            Riwayat Transaksi
-                        </a>
-                    </li>
-                    <li class="btn-group nav-item">
-                        <a href="manage_karyawan" class="nav-link">
-                            <!-- <i class="nav-link-icon fa fa-edit"></i> -->
-                            <i class="nav-link-icon fa-solid fa-people-roof"></i>
-                            Manage Karyawan
-                        </a>
-                    </li>
-                    <li class="dropdown nav-item">
-                        <a href="daftar_paket" class="nav-link">
-                            <!-- <i class="nav-link-icon fa fa-cog"></i> -->
-                            <i class="nav-link-icon fa-solid fa-sliders"></i>
-                            Daftar Paket
-                        </a>
-                    </li>
-                </ul>
                 <div class="app-header-right">
                     <div class="widget-content-right header-user-info ml-3">
-                        <button type="button" class="btn-shadow p-1 btn btn-primary btn-sm show-toastr-example">
+                        <!-- <button type="button" class="btn-shadow p-1 btn btn-primary btn-sm show-toastr-example">
                             <i class="fa text-white fa-calendar pr-1 pl-1"></i>
-                        </button>
+                        </button> -->
                         <button type="button" style="width: 50px;"
                             class="btn-shadow p-1 btn btn-primary btn-sm show-toastr-example"><a
                                 href="<?php echo base_url('auth/logout') ?>"><i
@@ -1295,12 +1267,12 @@
             <div class="container">
                 <div class="baris">
                     <div class="selamat-datang">
-                        <div class="col-header">
-                            <h2 class="judul-md">Management Karyawan</h2>
-                        </div>
+                        <!-- <div class="col-header">
+                            <h2 class="judul-md">Order Cuci Komplit</h2>
+                        </div> -->
 
                         <div class="col-header txt-right">
-                            <a href="<?= base_url('admin/tambah_karyawan') ?>" class="btn-lg bg-primary">+ Tambah
+                            <a href="<?= base_url('user/paket_ck') ?>" class="btn-xs bg-primary">Kembali</a>
                             </a>
                         </div>
                     </div>
@@ -1311,7 +1283,7 @@
                         <div class="card">
                             <div class="card-title card-flex">
                                 <div class="card-col">
-                                    <h2>Daftar Karyawan</h2>
+                                    <h2 class="judul-md">Order Cuci Komplit</h2>
                                 </div>
                             </div>
 
@@ -1320,51 +1292,70 @@
                                     <table class="tabel-transaksi">
                                         <thead>
                                             <tr>
-                                                <th class="sticky">No</th>
-                                                <th class="sticky">Nama Karyawan</th>
-                                                <th class="sticky">Username</th>
-                                                <th class="sticky">Email</th>
-                                                <th class="sticky">Action</th>
+                                                <th class="text-center">No</th>
+                                                <th class="text-center">Nama Pelanggan</th>
+                                                <th class="text-center">No Order</th>
+                                                <th class="text-center">Tgl Order</th>
+                                                <th class="text-center">Jenis Paket</th>
+                                                <th class="text-center">Waktu Kerja</th>
+                                                <th class="text-center">Berat (KG)</th>
+                                                <th class="text-center">Action</th>
                                             </tr>
                                         </thead>
 
                                         <tbody>
-                                            <?php $no = 1; ?>
-                                            <?php foreach ($data_karyawan as $karyawan): ?>
+                                            <?php $no = 0;
+                                            if (!empty($pesanan_terbaru)):
+                                                $no++ ?>
                                                 <tr>
-                                                    <td>
-                                                        <?= $no ?>
+                                                    <td class="text-center text-muted">
+                                                        <?php echo $no ?>
                                                     </td>
-                                                    <td>
-                                                        <?= $karyawan->nama ?>
+                                                    <td class="text-center">
+                                                        <div class="widget-content p-0">
+                                                            <div class="widget-content-wrapper">
+                                                                <div class="widget-content-left mr-3">
+                                                                    <!-- <div class="widget-content-left">
+                                                            <img width="40" class="rounded-circle"
+                                                                src="assets/images/avatars/4.jpg" alt="">
+                                                        </div> -->
+                                                                </div>
+                                                                <div class="widget-content-left flex2">
+                                                                    <?php echo $pesanan_terbaru->nama_pel_ck ?>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    <td class="text-center">
+                                                        <?php echo $pesanan_terbaru->or_ck_number ?>
                                                     </td>
-                                                    <td>
-                                                        <?= $karyawan->username ?>
                                                     </td>
-                                                    <td>
-                                                        <?= $karyawan->email ?>
+                                                    <td class="text-center">
+                                                        <?php echo $pesanan_terbaru->tgl_masuk_ck ?>
                                                     </td>
-                                                    <td>
-                                                        <!-- <a href="<?= base_url('admin/edit_karyawan') ?>/<?= $karyawan->id ?>"
-                                                            class="btn btn-edit">Edit</a>
-                                                        <a href="<?= base_url('admin/hapus.php') ?>?id=<?= $karyawan->id ?>"
-                                                            onclick="return confirm('Yakin akan menghapus?');"
-                                                            class="btn btn-hapus">Hapus</a> -->
+                                                    <td class="text-center">
+                                                        <?php echo $pesanan_terbaru->jenis_paket_ck ?>
+                                                    </td>
+                                                    <td class="text-center">
+                                                        <?php echo $pesanan_terbaru->wkt_krj_ck ?>
+                                                    </td>
+                                                    <td class="text-center">
+                                                        <?php echo $pesanan_terbaru->berat_qty_ck ?>
+                                                    </td>
+                                                    <td class="text-center">
                                                         <button type="button"
                                                             class=" btn-sm btn-square btn-edit text-danger-hover-none">
                                                             <a class="text-light text-decoration-none"
-                                                                href="<?php echo base_url('admin/edit_karyawan/' . $karyawan->id) ?>">
-                                                                <i class="fas fa-edit"></i>
+                                                                href="<?php echo base_url('user/detail_order_ck/' . $pesanan_terbaru->or_ck_number) ?>">
+                                                                <i class="fas fa-solid fa-circle-info"></i>
                                                             </a>
                                                         </button>
-                                                        <button type="button" onclick="hapus(<?php echo $karyawan->id ?>)"
-                                                            class="btn-sm btn-square btn-danger text-danger-hover-none">
-                                                            <i class="fa-solid fa-trash"></i>
-                                                        </button>
+                                                        <!-- <button type="button" onclick="hapus(<?php echo $karyawan->id ?>)"
+                                                class="btn-sm btn-square btn-danger text-danger-hover-none">
+                                                <i class="fa-solid fa-trash"></i>
+                                            </button> -->
                                                     </td>
                                                 </tr>
-                                                <?php $no++ ?>
-                                            <?php endforeach; ?>
+                                            <?php endif ?>
                                         </tbody>
                                     </table>
                                 </div>
@@ -1375,40 +1366,9 @@
             </div>
         </div>
     </div>
-    <script>
-        function hapus(id) {
-            swal.fire({
-                title: 'Yakin untuk menghapus data ini?',
-                icon: 'warning',
-                background: '#fff',
-                showCancelButton: true,
-                confirmButtonColor: '#3085d6',
-                cancelButtonColor: '#d33',
-                cancelButtonText: 'Batal',
-                confirmButtonText: 'Ya Hapus', customClass: {
-                    title: 'text-dark',
-                    content: 'text-dark'
-                }
-            }).then((result) => {
-                if (result.isConfirmed) {
-                    Swal.fire({
-                        icon: 'success',
-                        title: 'Berhasil Dihapus',
-                        showConfirmButton: false,
-                        background: '#fff',
-                        timer: 1500, customClass: {
-                            title: 'text-dark',
-                            content: 'text-dark'
-                        }
-
-                    }).then(function () {
-                        window.location.href = "<?php echo base_url('admin/hapus_karyawan/') ?>" + id;
-                    });
-                }
-            });
-        }
-    </script>
     <script src="http://maps.google.com/maps/api/js?sensor=true"></script>
+    </div>
+    </div>
     <script type="text/javascript"
         src="https://demo.dashboardpack.com/architectui-html-free/assets/scripts/main.js"></script>
 </body>

@@ -43,7 +43,7 @@ class Auth extends CI_Controller
                 redirect(base_url() . "admin/dashboard");
             }
             if ($this->session->userdata('role') == 'user') {
-                redirect(base_url() . "home");
+                redirect(base_url() . "user/dashboard");
             } else {
                 redirect(base_url() . "auth/login");
             }
@@ -54,7 +54,7 @@ class Auth extends CI_Controller
     function logout()
     {
         $this->session->sess_destroy();
-        redirect(base_url('auth/login'));
+        redirect(base_url('home'));
     }
 
     public function register()

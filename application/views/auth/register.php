@@ -10282,6 +10282,12 @@
         </div>
         <form class="login100-form validate-form" action="<?php echo base_url('Auth/aksi_register') ?>" method="post">
           <div class="wrap-input100 validate-input m-b-26" data-validate="Username is required">
+            <span class="label-input100">Nama</span>
+            <input class="input100" type="text" name="nama" placeholder="Enter nama" value="<?php echo set_value('nama') ?>" class="form-control">
+                    <?= form_error('nama', '<div class="text-danger">', '</div>'); ?>
+            <span class="focus-input100"></span>
+          </div>
+          <div class="wrap-input100 validate-input m-b-26" data-validate="Username is required">
             <span class="label-input100">Username</span>
             <input class="input100" type="text" name="username" placeholder="Enter username" value="<?php echo set_value('email') ?>" class="form-control">
                     <?= form_error('email', '<div class="text-danger">', '</div>'); ?>
@@ -10300,6 +10306,10 @@
                     <?= form_error('password', '<div class="text-danger">', '</div>'); ?>
             <span class="focus-input100"></span>
           </div>
+          <div class="input-group mb-3">
+                        <input type="hidden" class="form-control form-control-lg bg-light fs-6" name="role"
+                            placeholder="Role" value="admin">
+                    </div>
           <div class="flex-sb-m w-full p-b-30">
             <div class="contact100-form-checkbox">
               <input class="input-checkbox100" id="ckb1" type="checkbox" name="remember-me">
@@ -10315,7 +10325,7 @@
           </div>
           <div class="container-login100-form-btn">
             <button class="login100-form-btn" type="submit">
-              Login
+              Register
             </button>
           </div>
         </form>

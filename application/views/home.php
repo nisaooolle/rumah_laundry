@@ -2520,7 +2520,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="vc_row wpb_row vc_row-fluid wpb_animate_when_almost_visible wpb_fadeInUp fadeInUp">
+                        <!-- <div class="vc_row wpb_row vc_row-fluid wpb_animate_when_almost_visible wpb_fadeInUp fadeInUp">
                             <div class="wpb_column vc_column_container vc_col-sm-12">
                                 <div class="vc_column-inner ">
                                     <div class="wpb_wrapper">
@@ -2657,7 +2657,7 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
                         <div data-vc-full-width="true" data-vc-full-width-init="false"
                             class="vc_row wpb_row vc_row-fluid wpb_animate_when_almost_visible wpb_fadeInUp fadeInUp vc_custom_1505116310405 vc_row-has-fill">
                             <div
@@ -2986,8 +2986,9 @@
                                                     data-animation-duration="1" data-animation-iteration="1"
                                                     style="opacity:0;" data-opacity_start_effect="">
                                                     <div class='dt-sc-title script-with-sub-title '>
-                                                        <h2>Clean Job Always</h2>
-                                                        <h3>Our <strong>Blog</strong> </h3>
+                                                        <h2>Pekerjaan Bersih Selalu
+                                                        </h2>
+                                                        <h3>Blog <strong>kami</strong> </h3>
                                                     </div>
                                                 </div>
                                                 <div class="ult-spacer spacer-65a20dc1357c5" data-id="65a20dc1357c5"
@@ -3013,59 +3014,20 @@
                                                     style="opacity:0;" data-opacity_start_effect="">
                                                     <article id="post-173"
                                                         class="blog-entry  post-173 post type-post status-publish format-image has-post-thumbnail hentry category-stain-removal category-starching tag-premium tag-steam post_format-post-format-image">
-                                                        <div class="entry-thumb"> <a
-                                                                href="https://dtdrycleaning.wpengine.com/wedding-suit-deserves-special-treatment/"><img
-                                                                    width="1170" height="727"
+                                                        <div class="entry-thumb"> <a href=""><img width="1170"
+                                                                    height="727"
                                                                     src="https://dtdrycleaning.wpengine.com/wp-content/uploads/2015/06/blog1.jpg"
                                                                     class="attachment-full size-full wp-post-image"
                                                                     alt="" decoding="async"
                                                                     srcset="https://dtdrycleaning.wpengine.com/wp-content/uploads/2015/06/blog1.jpg 1170w, https://dtdrycleaning.wpengine.com/wp-content/uploads/2015/06/blog1-600x373.jpg 600w, https://dtdrycleaning.wpengine.com/wp-content/uploads/2015/06/blog1-300x186.jpg 300w, https://dtdrycleaning.wpengine.com/wp-content/uploads/2015/06/blog1-768x477.jpg 768w, https://dtdrycleaning.wpengine.com/wp-content/uploads/2015/06/blog1-1024x636.jpg 1024w"
                                                                     sizes="(max-width: 1170px) 100vw, 1170px" /></a>
-                                                            <div class="entry-format hidden"> <a class="ico-format"
-                                                                    href="https://dtdrycleaning.wpengine.com/type/image/"></a>
-                                                            </div>
+
                                                         </div>
-                                                        <div class="entry-details">
-                                                            <div class="entry-meta ">
-                                                                <div class="date ">Posted on 18 Jun 2015 </div>
-                                                                <div class="comments ">/ <a class="comments"
-                                                                        href="https://dtdrycleaning.wpengine.com/wedding-suit-deserves-special-treatment//#respond">
-                                                                        <i class="pe-icon pe-chat"></i> 0
-                                                                        Comments</a> </div>
-                                                                <div class="author "> / <i class="pe-icon pe-user">
-                                                                    </i> <a
-                                                                        href="https://dtdrycleaning.wpengine.com/author/ram/">ram</a>
-                                                                </div>
-                                                            </div>
-                                                            <div class="entry-title">
-                                                                <h4><a
-                                                                        href="https://dtdrycleaning.wpengine.com/wedding-suit-deserves-special-treatment/">Wedding
-                                                                        suit deserves special treatment</a></h4>
-                                                            </div>
-                                                            <div class="entry-body">
-                                                                <p>Lorem ipsum dolor sit amet, consectetur
-                                                                    adipiscing elit. Proin tincidunt nunc lorem, nec
-                                                                    faucibus...</p>
-                                                            </div>
-                                                            <div class="entry-meta-data hidden">
-                                                                <p class="tags hidden"> <i class="pe-icon pe-ticket">
-                                                                    </i><a
-                                                                        href="https://dtdrycleaning.wpengine.com/tag/premium/">premium</a>,
-                                                                    <a
-                                                                        href="https://dtdrycleaning.wpengine.com/tag/steam/">steam</a>
-                                                                </p>
-                                                                <p class="category hidden"> <i
-                                                                        class="pe-icon pe-network"> </i><a
-                                                                        href="https://dtdrycleaning.wpengine.com/category/stain-removal/">Stain
-                                                                        Removal</a>, <a
-                                                                        href="https://dtdrycleaning.wpengine.com/category/starching/">Starching</a>
-                                                                </p>
-                                                            </div><a
-                                                                href="https://dtdrycleaning.wpengine.com/wedding-suit-deserves-special-treatment/"
-                                                                target='_self' title=''
-                                                                class='dt-sc-button   small icon-right with-icon    transparent'>
-                                                                Continue Reading <span class='fa fa-caret-right'>
-                                                                </span></a>
+                                                        <div class="entry-title">
+                                                            <h4><a
+                                                                    href="https://dtdrycleaning.wpengine.com/wedding-suit-deserves-special-treatment/">Jas
+                                                                    pengantin layak mendapat perlakuan khusus</a>
+                                                            </h4>
                                                         </div>
                                                     </article>
                                                 </div>
@@ -3098,47 +3060,15 @@
                                                                         alt='' /></li>
                                                             </ul>
                                                             <div class="entry-format hidden"> <a class="ico-format"
-                                                                    href="https://dtdrycleaning.wpengine.com/type/gallery/"></a>
+                                                                    href=""></a>
                                                             </div>
                                                         </div>
                                                         <div class="entry-details">
-                                                            <div class="entry-meta ">
-                                                                <div class="date ">Posted on 18 Jun 2020 </div>
-                                                                <div class="comments ">/ <a class="comments"
-                                                                        href="https://dtdrycleaning.wpengine.com/power-laundry-service-at-its-best//#respond">
-                                                                        <i class="pe-icon pe-chat"></i> 0
-                                                                        Comments</a> </div>
-                                                                <div class="author "> / <i class="pe-icon pe-user">
-                                                                    </i> <a
-                                                                        href="https://dtdrycleaning.wpengine.com/author/ram/">ram</a>
-                                                                </div>
-                                                            </div>
                                                             <div class="entry-title">
                                                                 <h4><a
-                                                                        href="https://dtdrycleaning.wpengine.com/power-laundry-service-at-its-best/">Power
-                                                                        laundry service at its best!</a></h4>
+                                                                        href="https://dtdrycleaning.wpengine.com/power-laundry-service-at-its-best/">Layanan
+                                                                        binatu bertenaga yang terbaik!</a></h4>
                                                             </div>
-                                                            <div class="entry-body">
-                                                                <p>Lorem ipsum dolor sit amet, consectetur
-                                                                    adipiscing elit. Proin tincidunt nunc lorem, nec
-                                                                    faucibus...</p>
-                                                            </div>
-                                                            <div class="entry-meta-data hidden">
-                                                                <p class="tags hidden"> <i class="pe-icon pe-ticket">
-                                                                    </i><a
-                                                                        href="https://dtdrycleaning.wpengine.com/tag/steam/">steam</a>
-                                                                </p>
-                                                                <p class="category hidden"> <i
-                                                                        class="pe-icon pe-network"> </i><a
-                                                                        href="https://dtdrycleaning.wpengine.com/category/flavor-wash/">Flavor
-                                                                        wash</a></p>
-                                                            </div><a
-                                                                href="https://dtdrycleaning.wpengine.com/power-laundry-service-at-its-best/"
-                                                                target='_self' title=''
-                                                                class='dt-sc-button   small icon-right with-icon    transparent'>
-                                                                Continue Reading <span class='fa fa-caret-right'>
-                                                                </span></a>
-                                                        </div>
                                                     </article>
                                                 </div>
 
@@ -3158,59 +3088,20 @@
                                                     style="opacity:0;" data-opacity_start_effect="">
                                                     <article id="post-172"
                                                         class="blog-entry  post-172 post type-post status-publish format-quote has-post-thumbnail hentry category-steam-press category-wet-wash tag-flavor post_format-post-format-quote">
-                                                        <div class="entry-thumb"> <a
-                                                                href="https://dtdrycleaning.wpengine.com/dry-cleaning-saves-money-in-the-long-run/"><img
-                                                                    width="1170" height="727"
-                                                                    src="https://dtdrycleaning.wpengine.com/wp-content/uploads/2015/06/blog17.jpg"
+                                                        <div class="entry-thumb"> <a href=""><img width="1170"
+                                                                    height="727" src=""
                                                                     class="attachment-full size-full wp-post-image"
                                                                     alt="" decoding="async"
                                                                     srcset="https://dtdrycleaning.wpengine.com/wp-content/uploads/2015/06/blog17.jpg 1170w, https://dtdrycleaning.wpengine.com/wp-content/uploads/2015/06/blog17-600x373.jpg 600w, https://dtdrycleaning.wpengine.com/wp-content/uploads/2015/06/blog17-300x186.jpg 300w, https://dtdrycleaning.wpengine.com/wp-content/uploads/2015/06/blog17-768x477.jpg 768w, https://dtdrycleaning.wpengine.com/wp-content/uploads/2015/06/blog17-1024x636.jpg 1024w"
                                                                     sizes="(max-width: 1170px) 100vw, 1170px" /></a>
-                                                            <div class="entry-format hidden"> <a class="ico-format"
-                                                                    href="https://dtdrycleaning.wpengine.com/type/quote/"></a>
-                                                            </div>
                                                         </div>
                                                         <div class="entry-details">
-                                                            <div class="entry-meta ">
-                                                                <div class="date ">Posted on 18 Jun 2015 </div>
-                                                                <div class="comments ">/ <a class="comments"
-                                                                        href="https://dtdrycleaning.wpengine.com/dry-cleaning-saves-money-in-the-long-run//#respond">
-                                                                        <i class="pe-icon pe-chat"></i> 0
-                                                                        Comments</a> </div>
-                                                                <div class="author "> / <i class="pe-icon pe-user">
-                                                                    </i> <a
-                                                                        href="https://dtdrycleaning.wpengine.com/author/ram/">ram</a>
-                                                                </div>
-                                                            </div>
                                                             <div class="entry-title">
                                                                 <h4><a
-                                                                        href="https://dtdrycleaning.wpengine.com/dry-cleaning-saves-money-in-the-long-run/">Dry
-                                                                        cleaning saves money in the long run</a>
+                                                                        href="https://dtdrycleaning.wpengine.com/dry-cleaning-saves-money-in-the-long-run/">Pembersihan
+                                                                        kering menghemat uang dalam jangka panjang</a>
                                                                 </h4>
                                                             </div>
-                                                            <div class="entry-body">
-                                                                <p>Lorem ipsum dolor sit amet, consectetur
-                                                                    adipiscing elit. Proin tincidunt nunc lorem, nec
-                                                                    faucibus...</p>
-                                                            </div>
-                                                            <div class="entry-meta-data hidden">
-                                                                <p class="tags hidden"> <i class="pe-icon pe-ticket">
-                                                                    </i><a
-                                                                        href="https://dtdrycleaning.wpengine.com/tag/flavor/">flavor</a>
-                                                                </p>
-                                                                <p class="category hidden"> <i
-                                                                        class="pe-icon pe-network"> </i><a
-                                                                        href="https://dtdrycleaning.wpengine.com/category/steam-press/">Steam
-                                                                        Press</a>, <a
-                                                                        href="https://dtdrycleaning.wpengine.com/category/wet-wash/">Wet
-                                                                        wash</a></p>
-                                                            </div><a
-                                                                href="https://dtdrycleaning.wpengine.com/dry-cleaning-saves-money-in-the-long-run/"
-                                                                target='_self' title=''
-                                                                class='dt-sc-button   small icon-right with-icon    transparent'>
-                                                                Continue Reading <span class='fa fa-caret-right'>
-                                                                </span></a>
-                                                        </div>
                                                     </article>
                                                 </div>
 
@@ -3235,199 +3126,20 @@
                                 </div>
                             </div>
                         </div>
-                        <div data-vc-full-width="true" data-vc-full-width-init="false" data-vc-stretch-content="true"
-                            class="vc_row wpb_row vc_row-fluid vc_row-no-padding">
-                            <div class="dt_sc_vc_boxed_fullwidth wpb_column vc_column_container vc_col-sm-12">
-                                <div class="vc_column-inner ">
-                                    <div class="wpb_wrapper">
-                                        <div class="vc_row wpb_row vc_inner vc_row-fluid vc_row-no-padding">
-                                            <div
-                                                class="dt-sc-skin-highlight wpb_column vc_column_container vc_col-sm-4">
-                                                <div class="vc_column-inner ">
-                                                    <div class="wpb_wrapper">
-                                                        <div class="ult-animation  ult-animate-viewport  ult-no-mobile "
-                                                            data-animate="fadeIn" data-animation-delay="0.5"
-                                                            data-animation-duration="1" data-animation-iteration="1"
-                                                            style="opacity:0;" data-opacity_start_effect="">
-                                                            <div
-                                                                class='dt-sc-icon-box type1 without-icon dt-sc-dark-bg gradient-small'>
-                                                                <div class="icon-wrapper"><span class='fa fa-bus'>
-                                                                    </span></div>
-                                                                <div class="icon-content">
-                                                                    <h4>Call for a quick Pickup</h4>
-                                                                    <p>Our services is lightening quick from the
-                                                                        moment your package is picked up.
-                                                                        Satisfaction guaranteed!</p>
-                                                                    <div class="vc_empty_space" style="height: 10px">
-                                                                        <span class="vc_empty_space_inner"></span>
-                                                                    </div>
-                                                                    <p><a href='#' target='_self' title=''
-                                                                            class='dt-sc-button   medium   filled rounded-corner  '>
-                                                                            Click Here </a></p>
-                                                                </div><span class='fa fa-bus large-icon'> </span>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div
-                                                class="dt-sc-skin-highlight wpb_column vc_column_container vc_col-sm-4">
-                                                <div class="vc_column-inner ">
-                                                    <div class="wpb_wrapper">
-                                                        <div class="ult-animation  ult-animate-viewport  ult-no-mobile "
-                                                            data-animate="fadeIn" data-animation-delay="1.1"
-                                                            data-animation-duration="1" data-animation-iteration="1"
-                                                            style="opacity:0;" data-opacity_start_effect="">
-                                                            <div
-                                                                class='dt-sc-icon-box type1 without-icon dt-sc-dark-bg gradient-medium'>
-                                                                <div class="icon-wrapper"><span class='fa fa-female'>
-                                                                    </span></div>
-                                                                <div class="icon-content">
-                                                                    <h4>DryCleaners App</h4>
-                                                                    <p>Dry Cleaning pioneered the latest technology
-                                                                        in washing and dry cleaning. Use our App for
-                                                                        a super quick service.</p>
-                                                                    <div class="vc_empty_space" style="height: 10px">
-                                                                        <span class="vc_empty_space_inner"></span>
-                                                                    </div>
-                                                                    <p><a href='#' target='_self' title=''
-                                                                            class='dt-sc-button   medium   filled rounded-corner  '>
-                                                                            Quick Service </a></p>
-                                                                </div><span class='fa fa-female large-icon'> </span>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div
-                                                class="dt-sc-skin-highlight wpb_column vc_column_container vc_col-sm-4">
-                                                <div class="vc_column-inner ">
-                                                    <div class="wpb_wrapper">
-                                                        <div class="ult-animation  ult-animate-viewport  ult-no-mobile "
-                                                            data-animate="fadeIn" data-animation-delay="1.4"
-                                                            data-animation-duration="1" data-animation-iteration="1"
-                                                            style="opacity:0;" data-opacity_start_effect="">
-                                                            <div
-                                                                class='dt-sc-icon-box type1 without-icon dt-sc-dark-bg gradient-large'>
-                                                                <div class="icon-wrapper"><span class='fa fa-comments'>
-                                                                    </span></div>
-                                                                <div class="icon-content">
-                                                                    <h4>Special Requests</h4>
-                                                                    <p>If you have any special requirement like
-                                                                        stain removal, alteration, silk &amp; suede
-                                                                        or leather material, just call us.</p>
-                                                                    <div class="vc_empty_space" style="height: 10px">
-                                                                        <span class="vc_empty_space_inner"></span>
-                                                                    </div>
-                                                                    <p><a href='#' target='_self' title=''
-                                                                            class='dt-sc-button   medium   filled rounded-corner  '>
-                                                                            Call us Now </a></p>
-                                                                </div><span class='fa fa-comments large-icon'>
-                                                                </span>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
                         <div class="vc_row-full-width vc_clearfix"></div>
                 </div><!-- #post-8 -->
                 </section><!-- **Primary - End** -->
             </div><!-- **Container - End** -->
 
         </div><!-- **Main - End** --> <!-- **Footer** -->
-        <footer id="footer">
-            <div class="footer-widgets ">
-                <div class="container">
-                    <div class='column dt-sc-one-third first'>
-                        <aside id="text-2" class="widget widget_text">
-                            <h3 class="widgettitle">OUR CEO&#8217;s STATEMENT</h3>
-                            <div class="textwidget">
-                                <p style="padding-right:40px;">Fashion is not something that exists only in dresses.
-                                    It exists in people who are well dressed in clean crisp clothes. Therefore, make
-                                    your fashion statement with Dry Cleaners! </p>
-                                <div class="vc_empty_space" style="height: 30px"><span
-                                        class="vc_empty_space_inner"></span></div>
-                            </div>
-                        </aside>
-                    </div>
-                    <div class='column dt-sc-one-third '>
-                        <aside id="text-3" class="widget widget_text">
-                            <h3 class="widgettitle">QUICK LINKS</h3>
-                            <div class="textwidget">
-                                <div class="column dt-sc-one-column vc_footer-column" style="padding-right:40px">
-                                    <div class="column dt-sc-one-half first">
-
-                                        <ul class="dt-sc-quick-links">
-                                            <li><a href="">Steam Ironing</a></li>
-                                            <li><a href="">Dry Cleaning</a></li>
-                                            <li><a href="">Stain Removal</a></li>
-                                            <li><a href="">Drapery Cleaning</a></li>
-                                        </ul>
-                                    </div>
-                                    <div class="column dt-sc-one-half">
-                                        <ul class="dt-sc-quick-links">
-                                            <li><a href="">Wet Washing</a></li>
-                                            <li><a href="">Silk and Suede</a></li>
-                                            <li><a href="">Commercial Laundry</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </aside>
-                    </div>
-                    <div class='column dt-sc-one-third '>
-                        <aside id="text-4" class="widget widget_text">
-                            <h3 class="widgettitle">NEWSLETTER SIGNUP</h3>
-                            <div class="textwidget">
-                                <p>If you want receive our all weekly updates about new
-                                    offers and discount, signup below.
-                                </p>
-
-                                <div class='dt-sc-newsletter-section type2 '>
-                                    <form class="dt-sc-subscribe-frm" name="frmsubscribe" action="#" method="post">
-                                        <input type='email' name='dt_mc_emailid' required='required'
-                                            placeholder='Email Address'><input type='hidden' name='dt_mc_apikey'
-                                            value='' /><input type='hidden' name='dt_mc_listid' value='' /><input
-                                            type='submit' name='mc_submit' value='Submit'>
-                                    </form>
-                                    <div class="dt_ajax_subscribe_msg"></div>
-                                </div>
-                            </div>
-                        </aside>
-                    </div>
-                </div>
-            </div>
+        <footer id="footer"
             <div class="footer-copyright ">
                 <div class="container">
-                    <div class="column dt-sc-one-half first ">&copy; 2017 Dry Cleaning. All rights reserved. Design
-                        by <a href="http://themeforest.net/user/designthemes">DesignThemes</a> </div>
-
-
-                    <div class="column dt-sc-one-half ">
-                        <ul id="menu-footer-menu" class="menu-links">
-                            <li id="menu-item-7750"
-                                class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-8 current_page_item menu-item-7750">
-                                <a href="https://dtdrycleaning.wpengine.com/" aria-current="page">Home</a>
-                            </li>
-                            <li id="menu-item-7749"
-                                class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7749"><a
-                                    href="https://dtdrycleaning.wpengine.com/about/">About</a></li>
-                            <li id="menu-item-7748"
-                                class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7748"><a
-                                    href="https://dtdrycleaning.wpengine.com/services/">Services</a></li>
-                            <li id="menu-item-7747"
-                                class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7747"><a
-                                    href="https://dtdrycleaning.wpengine.com/contact/">Contact</a></li>
-                        </ul>
+                    <div class="column dt-sc-one-half first ">&copy; 2017 Cuci kering. Seluruh hak cipta.
                     </div>
                 </div>
-            </div>
-        </footer><!-- **Footer - End** -->
+        </footer>
+        <!-- **Footer - End** -->
     </div><!-- **Inner Wrapper - End** -->
     </div><!-- **Wrapper - End** -->
     <script>
