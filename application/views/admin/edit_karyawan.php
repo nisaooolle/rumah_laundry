@@ -20,6 +20,11 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href='https://dtdrycleaning.wpengine.com/wp-content/themes/dry-cleaning/images/favicon.ico'
         rel='shortcut icon' type='image/x-icon' />
+    <!-- Include SweetAlert2 CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11">
+
+    <!-- Include SweetAlert2 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <meta name="robots" content="noindex, follow">
     <style>
         * {
@@ -1225,49 +1230,69 @@
 
 <body>
     <div class="app-container app-theme-white body-tabs-shadow  fixed-header">
-       <div class="app-header header-shadow">
-            <div class="app-header__logo">
-                <div>
-                    <div id="logo"> <a href="dashboard" rel="home">
-                            <img style="width: 200px;"
-                                src="https://dtdrycleaning.wpengine.com/wp-content/themes/dry-cleaning/images/logo.png"
-                                alt="Dry Cleaning" title="Dry Cleaning" />
-                        </a></div>
-                </div>
-            </div>
-            <div class="app-header__mobile-menu">
-                <div>
-                    <button type="button" class="hamburger hamburger--elastic mobile-toggle-nav">
-                        <span class="hamburger-box">
-                            <span class="hamburger-inner"></span>
-                        </span>
-                    </button>
-                </div>
-            </div>
-            <div class="app-header__menu">
-                <span>
-                    <button type="button"
-                        class="btn-icon btn-icon-only btn btn-primary btn-sm mobile-toggle-header-nav">
-                        <span class="btn-icon-wrapper">
-                            <i class="fa fa-ellipsis-v fa-w-6"></i>
-                        </span>
-                    </button>
-                </span>
-            </div>
-            <div class="app-header__content">
-                <div class="app-header-right">
-                    <div class="widget-content-right header-user-info ml-3">
-                        <!-- <button type="button" class="btn-shadow p-1 btn btn-primary btn-sm show-toastr-example">
-                            <i class="fa text-white fa-calendar pr-1 pl-1"></i>
-                        </button> -->
-                        <button type="button" style="width: 50px;"
-                            class="btn-shadow p-1 btn btn-primary btn-sm show-toastr-example"><a
-                                href="<?php echo base_url('auth/logout') ?>"><i
-                                    class="fa text-white fa-solid fa-right-from-bracket"></i></a></button>
-                    </div>
-                </div>
-            </div>
+    <div class="app-header header-shadow">
+      <div class="app-header__logo">
+        <div>
+          <div id="logo"> <a href="dashboard" rel="home">
+              <img style="width: 200px;"
+                src="https://dtdrycleaning.wpengine.com/wp-content/themes/dry-cleaning/images/logo.png"
+                alt="Dry Cleaning" title="Dry Cleaning" />
+            </a></div>
         </div>
+      </div>
+      <div class="app-header__mobile-menu">
+        <div>
+          <button type="button" class="btn-shadow p-1 btn btn-primary btn-sm show-toastr-example"><a
+              href="<?php echo base_url('auth/logout') ?>"><i
+                class="fa text-white fa-solid fa-right-from-bracket"></i></a></button>
+        </div>
+      </div>
+      <div class="app-header__menu">
+        <span>
+          <button type="button" class="btn-icon btn-icon-only btn btn-primary btn-sm mobile-toggle-header-nav">
+            <span class="btn-icon-wrapper">
+              <i class="fa fa-ellipsis-v fa-w-6"></i>
+            </span>
+          </button>
+        </span>
+      </div>
+      <div class="app-header__content">
+        <ul class="header-menu nav">
+          <li class="nav-item">
+            <a href="riwayat" class="nav-link">
+              <!-- <i class="nav-link-icon fa fa-database"> </i> -->
+              <i class="nav-link-icon fa-solid fa-clock-rotate-left"></i>
+              Riwayat Transaksi
+            </a>
+          </li>
+          <li class="btn-group nav-item">
+            <a href="manage_karyawan" class="nav-link">
+              <!-- <i class="nav-link-icon fa fa-edit"></i> -->
+              <i class="nav-link-icon fa-solid fa-people-roof"></i>
+              Manage Karyawan
+            </a>
+          </li>
+          <li class="dropdown nav-item">
+            <a href="daftar_paket" class="nav-link">
+              <!-- <i class="nav-link-icon fa fa-cog"></i> -->
+              <i class="nav-link-icon fa-solid fa-sliders"></i>
+              Daftar Paket
+            </a>
+          </li>
+        </ul>
+        <div class="app-header-right">
+          <div class="widget-content-right header-user-info ml-10">
+            <button type="button" class="btn-shadow p-1 btn btn-primary btn-sm show-toastr-example">
+              <i class="fa text-white fa-calendar pr-1 pl-1"></i>
+            </button>
+            <button type="button" style="width: 50px;"
+              class="btn-shadow p-1 btn btn-primary btn-sm show-toastr-example"><a
+                href="<?php echo base_url('auth/logout') ?>"><i
+                  class="fa text-white fa-solid fa-right-from-bracket"></i></a></button>
+          </div>
+        </div>
+      </div>
+    </div>
         <div id="tambah_karyawan" class="main-content">
             <div class="container">
                 <div class="baris">
@@ -1279,14 +1304,17 @@
                                 </div>
 
                                 <div class="card-col txt-right">
-                                    <a href="karyawan.php" class="btn-xs bg-primary">Kembali</a>
+                                    <a href="http://localhost/laundry/admin/manage_karyawan"
+                                        style="color: white; text-decoration: none;"
+                                        class="btn-xs bg-primary">Kembali</a>
                                 </div>
                             </div>
 
                             <div class="card-body">
                                 <?php foreach ($data_karyawan as $update): ?>
 
-                                    <form action="<?php echo base_url('admin/aksi_edit_karyawan') ?>" method="post" class="form-input">
+                                    <form action="<?php echo base_url('admin/aksi_edit_karyawan') ?>" method="post"
+                                        class="form-input">
                                         <input type="hidden" name="id" value="<?= $update->id ?>">
                                         <input type="hidden" name="role" value="<?= $update->role ?>">
                                         <div class="form-grup">
@@ -1318,8 +1346,9 @@
                 </div>
             </div>
         </div>
-
     </div>
+
+
     <script src="http://maps.google.com/maps/api/js?sensor=true"></script>
     <script type="text/javascript"
         src="https://demo.dashboardpack.com/architectui-html-free/assets/scripts/main.js"></script>

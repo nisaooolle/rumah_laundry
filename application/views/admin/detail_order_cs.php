@@ -1237,11 +1237,9 @@
             </div>
             <div class="app-header__mobile-menu">
                 <div>
-                    <button type="button" class="hamburger hamburger--elastic mobile-toggle-nav">
-                        <span class="hamburger-box">
-                            <span class="hamburger-inner"></span>
-                        </span>
-                    </button>
+                    <button type="button" class="btn-shadow p-1 btn btn-primary btn-sm show-toastr-example"><a
+                            href="<?php echo base_url('auth/logout') ?>"><i
+                                class="fa text-white fa-solid fa-right-from-bracket"></i></a></button>
                 </div>
             </div>
             <div class="app-header__menu">
@@ -1255,11 +1253,34 @@
                 </span>
             </div>
             <div class="app-header__content">
+                <ul class="header-menu nav">
+                    <li class="nav-item">
+                        <a href="riwayat" class="nav-link">
+                            <!-- <i class="nav-link-icon fa fa-database"> </i> -->
+                            <i class="nav-link-icon fa-solid fa-clock-rotate-left"></i>
+                            Riwayat Transaksi
+                        </a>
+                    </li>
+                    <li class="btn-group nav-item">
+                        <a href="manage_karyawan" class="nav-link">
+                            <!-- <i class="nav-link-icon fa fa-edit"></i> -->
+                            <i class="nav-link-icon fa-solid fa-people-roof"></i>
+                            Manage Karyawan
+                        </a>
+                    </li>
+                    <li class="dropdown nav-item">
+                        <a href="daftar_paket" class="nav-link">
+                            <!-- <i class="nav-link-icon fa fa-cog"></i> -->
+                            <i class="nav-link-icon fa-solid fa-sliders"></i>
+                            Daftar Paket
+                        </a>
+                    </li>
+                </ul>
                 <div class="app-header-right">
-                    <div class="widget-content-right header-user-info ml-3">
-                        <!-- <button type="button" class="btn-shadow p-1 btn btn-primary btn-sm show-toastr-example">
+                    <div class="widget-content-right header-user-info ml-10">
+                        <button type="button" class="btn-shadow p-1 btn btn-primary btn-sm show-toastr-example">
                             <i class="fa text-white fa-calendar pr-1 pl-1"></i>
-                        </button> -->
+                        </button>
                         <button type="button" style="width: 50px;"
                             class="btn-shadow p-1 btn btn-primary btn-sm show-toastr-example"><a
                                 href="<?php echo base_url('auth/logout') ?>"><i
@@ -1307,8 +1328,8 @@
                                                 <th>Alamat</th>
                                                 <td>
                                                     <textarea name="alamat_cs" disabled class="txt-area">
-                                                    <?= $data->alamat_cs ?>
-                                                                    </textarea>
+                                                        <?= $data->alamat_cs ?>
+                                                                        </textarea>
                                                 </td>
                                             </tr>
 
@@ -1353,8 +1374,13 @@
                                             <tr>
                                                 <td><input type="text" name="jml_pcs" disabled
                                                         value="<?= $data->jml_pcs . ' Kg' ?>"></td>
-                                                <td><input type="text" name="harga_perkilo" disabled
-                                                        value="<?= 'Rp. ' . $data->harga_perpcs ?>"></td>
+                                                <td><input type="text" name="harga_perpcs" disabled value="<?php
+                                                if ($data->harga_perpcs !== null) {
+                                                    echo 'Rp. ' . number_format($data->harga_perpcs, 2);
+                                                } else {
+                                                    echo 'Rp. 0.00';
+                                                }
+                                                ?>"></td>
                                                 <td><input type="text" name="tot_bayar" disabled value="<?php
                                                 if ($data->tot_bayar !== null) {
                                                     echo 'Rp. ' . number_format($data->tot_bayar, 2);
@@ -1369,15 +1395,16 @@
                                             <h4 class="mb-01">Keterangan:</h4>
                                             <p class="lead">
                                                 <textarea name="keterangan_cs" disabled class="txt-area">
-                                                                     <?= $data->keterangan_cs ?>
-                                                                  </textarea>
+                                                                         <?= $data->keterangan_cs ?>
+                                                                      </textarea>
                                             </p>
                                         </div>
 
                                         <div class="form-footer_detail">
                                             <div class="buttons">
-                                            <button type="submit" name="bayar_ck" class="btn-sm bg-primary"><a style="color: white; text-decoration: none;"
-                                                href="<?= base_url('admin/dashboard') ?>">Kembali</a></button>
+                                                <button type="submit" name="bayar_ck" class="btn-sm bg-primary"><a
+                                                        style="color: white; text-decoration: none;"
+                                                        href="<?= base_url('admin/dashboard') ?>">Kembali</a></button>
                                             </div>
                                         </div>
                                     </form>

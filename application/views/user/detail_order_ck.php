@@ -1307,8 +1307,8 @@
                                                 <th>Alamat</th>
                                                 <td>
                                                     <textarea name="alamat_ck" disabled class="txt-area">
-                                                                                                    <?= $data->alamat_ck ?>
-                                                                                                                    </textarea>
+                                                                                                                <?= $data->alamat_ck ?>
+                                                                                                                                </textarea>
                                                 </td>
                                             </tr>
 
@@ -1353,8 +1353,13 @@
                                             <tr>
                                                 <td><input type="text" name="berat_qty_ck" disabled
                                                         value="<?= $data->berat_qty_ck . ' Kg' ?>"></td>
-                                                <td><input type="text" name="harga_perkilo" disabled
-                                                        value="<?= 'Rp. ' . $data->harga_perkilo ?>"></td>
+                                                <td><input type="text" name="harga_perkilo" disabled value="<?php
+                                                if ($data->harga_perkilo !== null) {
+                                                    echo 'Rp. ' . number_format($data->harga_perkilo, 2);
+                                                } else {
+                                                    echo 'Rp. 0.00';
+                                                }
+                                                ?>"></td>
                                                 <td><input type="text" name="tot_bayar" disabled value="<?php
                                                 if ($data->tot_bayar !== null) {
                                                     echo 'Rp. ' . number_format($data->tot_bayar, 2);

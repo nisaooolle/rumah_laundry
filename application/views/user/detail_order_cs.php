@@ -1307,8 +1307,8 @@
                                                 <th>Alamat</th>
                                                 <td>
                                                     <textarea name="alamat_cs" disabled class="txt-area">
-                                                    <?= $data->alamat_cs ?>
-                                                                    </textarea>
+                                                                <?= $data->alamat_cs ?>
+                                                                                </textarea>
                                                 </td>
                                             </tr>
 
@@ -1353,8 +1353,13 @@
                                             <tr>
                                                 <td><input type="text" name="jml_pcs" disabled
                                                         value="<?= $data->jml_pcs . ' Kg' ?>"></td>
-                                                <td><input type="text" name="harga_perkilo" disabled
-                                                        value="<?= 'Rp. ' . $data->harga_perpcs ?>"></td>
+                                                <td><input type="text" name="harga_perkilo" disabled value="<?php
+                                                if ($data->harga_perpcs !== null) {
+                                                    echo 'Rp. ' . number_format($data->harga_perpcs, 2);
+                                                } else {
+                                                    echo 'Rp. 0.00';
+                                                }
+                                                ?>"></td>
                                                 <td><input type="text" name="tot_bayar" disabled value="<?php
                                                 if ($data->tot_bayar !== null) {
                                                     echo 'Rp. ' . number_format($data->tot_bayar, 2);
@@ -1369,15 +1374,18 @@
                                             <h4 class="mb-01">Keterangan:</h4>
                                             <p class="lead">
                                                 <textarea name="keterangan_cs" disabled class="txt-area">
-                                                                     <?= $data->keterangan_cs ?>
-                                                                  </textarea>
+                                                                                 <?= $data->keterangan_cs ?>
+                                                                              </textarea>
                                             </p>
                                         </div>
 
                                         <div class="form-footer_detail">
                                             <div class="buttons">
-                                                <button type="submit" name="bayar_cs" class="btn-sm bg-primary">Bayar
-                                                    Sekarang</button>
+                                                <button type="submit" name="bayar_cs" class="btn-sm bg-primary"><a
+                                                        class="text-light text-decoration-none"
+                                                        href="<?php echo base_url('user/bayar_order_cs/' . $data->or_cs_number) ?>">Bayar
+                                                        Sekarang
+                                                </button>
                                             </div>
                                         </div>
                                     </form>

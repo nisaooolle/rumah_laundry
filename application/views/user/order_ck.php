@@ -1225,49 +1225,48 @@
 
 <body>
    <div class="app-container app-theme-white body-tabs-shadow  fixed-header">
-   <div class="app-header header-shadow">
-            <div class="app-header__logo">
-                <div>
-                    <div id="logo"> <a href="dashboard" rel="home">
-                            <img style="width: 200px;"
-                                src="https://dtdrycleaning.wpengine.com/wp-content/themes/dry-cleaning/images/logo.png"
-                                alt="Dry Cleaning" title="Dry Cleaning" />
-                        </a></div>
-                </div>
+      <div class="app-header header-shadow">
+         <div class="app-header__logo">
+            <div>
+               <div id="logo"> <a href="dashboard" rel="home">
+                     <img style="width: 200px;"
+                        src="https://dtdrycleaning.wpengine.com/wp-content/themes/dry-cleaning/images/logo.png"
+                        alt="Dry Cleaning" title="Dry Cleaning" />
+                  </a></div>
             </div>
-            <div class="app-header__mobile-menu">
-                <div>
-                    <button type="button" class="hamburger hamburger--elastic mobile-toggle-nav">
-                        <span class="hamburger-box">
-                            <span class="hamburger-inner"></span>
-                        </span>
-                    </button>
-                </div>
+         </div>
+         <div class="app-header__mobile-menu">
+            <div>
+               <button type="button" class="hamburger hamburger--elastic mobile-toggle-nav">
+                  <span class="hamburger-box">
+                     <span class="hamburger-inner"></span>
+                  </span>
+               </button>
             </div>
-            <div class="app-header__menu">
-                <span>
-                    <button type="button"
-                        class="btn-icon btn-icon-only btn btn-primary btn-sm mobile-toggle-header-nav">
-                        <span class="btn-icon-wrapper">
-                            <i class="fa fa-ellipsis-v fa-w-6"></i>
-                        </span>
-                    </button>
-                </span>
-            </div>
-            <div class="app-header__content">
-                <div class="app-header-right">
-                    <div class="widget-content-right header-user-info ml-3">
-                        <!-- <button type="button" class="btn-shadow p-1 btn btn-primary btn-sm show-toastr-example">
+         </div>
+         <div class="app-header__menu">
+            <span>
+               <button type="button" class="btn-icon btn-icon-only btn btn-primary btn-sm mobile-toggle-header-nav">
+                  <span class="btn-icon-wrapper">
+                     <i class="fa fa-ellipsis-v fa-w-6"></i>
+                  </span>
+               </button>
+            </span>
+         </div>
+         <div class="app-header__content">
+            <div class="app-header-right">
+               <div class="widget-content-right header-user-info ml-3">
+                  <!-- <button type="button" class="btn-shadow p-1 btn btn-primary btn-sm show-toastr-example">
                             <i class="fa text-white fa-calendar pr-1 pl-1"></i>
                         </button> -->
-                        <button type="button" style="width: 50px;"
-                            class="btn-shadow p-1 btn btn-primary btn-sm show-toastr-example"><a
-                                href="<?php echo base_url('auth/logout') ?>"><i
-                                    class="fa text-white fa-solid fa-right-from-bracket"></i></a></button>
-                    </div>
-                </div>
+                  <button type="button" style="width: 50px;"
+                     class="btn-shadow p-1 btn btn-primary btn-sm show-toastr-example"><a
+                        href="<?php echo base_url('auth/logout') ?>"><i
+                           class="fa text-white fa-solid fa-right-from-bracket"></i></a></button>
+               </div>
             </div>
-        </div>
+         </div>
+      </div>
       <div id="order_ck" class="main-content">
          <div class="container">
             <div class="baris">
@@ -1353,6 +1352,15 @@
                                  <div class="form-grup">
                                     <label for="ket">Keterangan</label>
                                     <textarea name="keterangan_ck" rows="4" id="ket"></textarea>
+                                 </div>
+                                 <div class="form-grup">
+                                    <?php foreach ($tb_order_ck as $ck): ?>
+                                       <input type="hidden" name="tot_bayar" autocomplete="off" id="kuantitas" value="<?php if ($ck->tot_bayar !== null) {
+                                          echo 'Rp. ' . number_format($ck->tot_bayar, 2);
+                                       } else {
+                                          echo 'Rp. 0.00';
+                                       } ?>">
+                                    <?php endforeach ?>
                                  </div>
                               </div>
                            </div>

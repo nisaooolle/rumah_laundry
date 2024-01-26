@@ -1266,16 +1266,6 @@
         <div id="karyawan" class="main-content">
             <div class="container">
                 <div class="baris">
-                    <div class="selamat-datang">
-                        <!-- <div class="col-header">
-                            <h2 class="judul-md">Order Cuci Komplit</h2>
-                        </div> -->
-
-                        <div class="col-header txt-right">
-                            <a href="<?= base_url('user/paket_ck') ?>" class="btn-xs bg-primary">Kembali</a>
-                            </a>
-                        </div>
-                    </div>
                 </div>
 
                 <div class="baris">

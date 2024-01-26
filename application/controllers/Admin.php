@@ -37,21 +37,10 @@ class Admin extends CI_Controller
     public function detail_order_ck($id)
     {
         $data['detail'] = $this->m_model->get_by_id('tb_order_ck', 'or_ck_number', $id)->result();
-        foreach ($data['detail'] as &$pesanan) {
-            $pesanan->tot_bayar = $this->m_model->hitung_total_bayar($pesanan->berat_qty_ck, $pesanan->harga_perkilo);
-        }
+        // foreach ($data['detail'] as &$pesanan) {
+        //     $pesanan->tot_bayar = $this->m_model->hitung_total_bayar($pesanan->berat_qty_ck, $pesanan->harga_perkilo);
+        // }
         $this->load->view('admin/detail_order_ck', $data);
-    }
-    public function bayar_order_ck($id)
-    {
-        $data['bayar'] = $this->m_model->post('tb_order_ck', 'or_ck_number', $id)->result();
-        if ($this->input->post('bayar_ck')) {
-            $nomor_or = $this->input->post('no_ck');
-
-            // Gunakan fungsi redirect untuk mengarahkan ke URL yang diinginkan
-            redirect("http://localhost/laundry/admin/detail_order_ck/bayar_order_ck?or_ck_number={$nomor_or}");
-        }
-        $this->load->view('admin/bayar_order_ck', $data);
     }
 
     public function order_dc()
@@ -62,9 +51,9 @@ class Admin extends CI_Controller
     public function detail_order_dc($id)
     {
         $data['detail'] = $this->m_model->get_by_id('tb_order_dc', 'or_dc_number', $id)->result();
-        foreach ($data['detail'] as &$pesanan) {
-            $pesanan->tot_bayar = $this->m_model->hitung_total_bayar($pesanan->berat_qty_dc, $pesanan->harga_perkilo);
-        }
+        // foreach ($data['detail'] as &$pesanan) {
+        //     $pesanan->tot_bayar = $this->m_model->hitung_total_bayar($pesanan->berat_qty_dc, $pesanan->harga_perkilo);
+        // }
 
         $this->load->view('admin/detail_order_dc', $data);
     }
@@ -76,9 +65,9 @@ class Admin extends CI_Controller
     public function detail_order_cs($id)
     {
         $data['detail'] = $this->m_model->get_by_id('tb_order_cs', 'or_cs_number', $id)->result();
-        foreach ($data['detail'] as &$pesanan) {
-            $pesanan->tot_bayar = $this->m_model->hitung_total_bayar($pesanan->jml_pcs, $pesanan->harga_perpcs);
-        }
+        // foreach ($data['detail'] as &$pesanan) {
+        //     $pesanan->tot_bayar = $this->m_model->hitung_total_bayar($pesanan->jml_pcs, $pesanan->harga_perpcs);
+        // }
 
         $this->load->view('admin/detail_order_cs', $data);
     }
@@ -213,7 +202,11 @@ class Admin extends CI_Controller
         $this->m_model->delete('tb_cuci_komplit', 'id_ck', $id);
         redirect(base_url('admin/paket_ck'));
     }
-
+    public function struk_ck($id)
+    {
+        $data['struk'] = $this->m_model->get_by_id('tb_riwayat_ck', 'or_ck_number', $id)->result();
+        $this->load->view('admin/struk_ck', $data);
+    }
     // end ck
 
 
@@ -268,7 +261,11 @@ class Admin extends CI_Controller
         $this->m_model->delete('tb_cuci_satuan', 'id_cs', $id);
         redirect(base_url('admin/paket_cs'));
     }
-
+    public function struk_cs($id)
+    {
+        $data['struk'] = $this->m_model->get_by_id('tb_riwayat_cs', 'or_cs_number', $id)->result();
+        $this->load->view('admin/struk_cs', $data);
+    }
     // end cs
 
     // fungsi dc
@@ -320,7 +317,17 @@ class Admin extends CI_Controller
         $this->m_model->delete('tb_dry_clean', 'id_dc', $id);
         redirect(base_url('admin/paket_dc'));
     }
+    public function struk_dc($id)
+    {
+        // Load data for the 'struk_dc' view
+        $data['struk'] = $this->m_model->get_by_id('tb_riwayat_dc', 'or_dc_number', $id)->result();
 
+        // Generate PDF
+        // $this->generate_pdf($id);
+
+        // Load the 'struk_dc' view
+        $this->load->view('admin/struk_dc', $data);
+    }
     // end dc 
 
     // public function aksi_manage_karyawan()
@@ -328,7 +335,7 @@ class Admin extends CI_Controller
     //     $this->form_validation->set_rules('nama', 'Nama', 'required|trim|is_unique[akun.nama]', [
     //         'is_unique' => 'Nama Ini Sudah Ada'
     //     ]);
-    //     $this->form_validation->set_rules('username', 'Username', 'required|trim|is_unique[akun.username]', [
+    //     $this->form_validation->set_rules('adminname', 'Username', 'required|trim|is_unique[akun.username]', [
     //         'is_unique' => 'Username Ini Sudah Ada'
     //     ]);
     //     $this->form_validation->set_rules('email', 'Email', 'required|trim|valid_email|is_unique[akun.email]', [

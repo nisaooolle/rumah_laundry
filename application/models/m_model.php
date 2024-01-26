@@ -48,42 +48,31 @@ class M_model extends CI_Model
     }
     public function getAllCuciKeringData()
     {
-        $this->db->select('tb_dry_clean.*, tb_order_dc.jenis_paket_dc, tb_order_dc.wkt_krj_dc, tb_order_dc.harga_perkilo');
+        $this->db->select('tb_dry_clean.*, tb_order_dc.jenis_paket_dc');
         $this->db->from('tb_dry_clean');
-        $this->db->join('tb_order_dc', 'tb_dry_clean.waktu_kerja_dc = tb_order_dc.id_order_dc', 'left');
+        $this->db->join('tb_order_dc', 'tb_dry_clean.nama_paket_dc = tb_order_dc.id_order_dc', 'left');
         $query = $this->db->get();
         // Return the result as an array
         return $query->result_array();
     }
     public function getAllCuciKomplitData()
     {
-        $this->db->select('tb_cuci_komplit.*, tb_order_ck.jenis_paket_ck, tb_order_ck.wkt_krj_ck, tb_order_ck.harga_perkilo');
+        $this->db->select('tb_cuci_komplit.*, tb_order_ck.jenis_paket_ck');
         $this->db->from('tb_cuci_komplit');
-        $this->db->join('tb_order_ck', 'tb_cuci_komplit.id_ck = tb_order_ck.id_order_ck', 'left');
+        $this->db->join('tb_order_ck', 'tb_cuci_komplit.nama_paket_ck = tb_order_ck.id_order_ck', 'left');
         $query = $this->db->get();
         // Return the result as an array
         return $query->result_array();
     }
     public function getAllCuciSatuanData()
     {
-        $this->db->select('tb_cuci_satuan.*, tb_order_cs.jenis_paket_cs, tb_order_cs.wkt_krj_cs, tb_order_cs.harga_perpcs');
+        $this->db->select('tb_cuci_satuan.*, tb_order_cs.jenis_paket_cs');
         $this->db->from('tb_cuci_satuan');
-        $this->db->join('tb_order_cs', 'tb_cuci_satuan.id_cs = tb_order_cs.id_order_cs', 'left');
+        $this->db->join('tb_order_cs', 'tb_cuci_satuan.nama_cs = tb_order_cs.id_order_cs', 'left');
         $query = $this->db->get();
         // Return the result as an array
         return $query->result_array();
     }
-    // public function getDataPembayaran()
-    // {
-    //     // Query database untuk mengambil data
-    //     $this->db->select('pembayaran.*,siswa.nama_siswa,kelas.tingkat_kelas, kelas.jurusan_kelas');
-    //     $this->db->from('pembayaran');
-    //     $this->db->join('siswa', 'pembayaran.id_siswa = siswa.id_siswa', 'left');
-    //     $this->db->join('kelas', 'pembayaran.id_kelas = kelas.id', 'left');
-    //     $query = $this->db->get();
-    //     return $query->result();
-    // }
-
 
     public function generateRandomCodeCk($length = 6)
     {
@@ -140,20 +129,6 @@ class M_model extends CI_Model
         }
     }
 
-    // public function hanya_karyawann($role)
-    // {
-    //     if ($role === 'lainnya') {
-    //         $this->db->where_not_in('role', ['admin', 'karyawan']);
-    //     } else {
-    //         $this->db->where('role', $role);
-    //     }
-
-    //     return $this->db->count_all_results('akun');
-    // }
-
-    // File: M_model.php
-
-    // ...
 
     public function hitungJumlahKaryawan()
     {
@@ -222,11 +197,11 @@ class M_model extends CI_Model
             return array(); // Mengembalikan array kosong jika tidak ada data yang sesuai
         }
     }
-    public function get_pesanan_by_nama_pelanggan($nama_pel_ck)
-    {
-        $this->db->where('nama_pel_ck', $nama_pel_ck);
-        return $this->db->get('tb_order_ck')->row();
-    }
+    // public function get_pesanan_by_nama_pelanggan($nama_pel_ck)
+    // {
+    //     $this->db->where('nama_pel_ck', $nama_pel_ck);
+    //     return $this->db->get('tb_order_ck')->row();
+    // }
     public function get_pesanan_terbaru_ck()
     {
         $this->db->order_by('id_order_ck', 'DESC');
@@ -246,58 +221,119 @@ class M_model extends CI_Model
         return $this->db->get('tb_order_dc')->row();
     }
 
-    public function hitung_total_bayar($berat_qty_ck, $harga_perkilo)
-    {
-        return $berat_qty_ck * $harga_perkilo;
-    }
+    // public function hitung_total_bayar($berat_qty_ck, $harga_perkilo)
+    // {
+    //     return $berat_qty_ck * $harga_perkilo;
+    // }
 
-    public function bayar_ck($nominal_byr)
+    public function bayar_ck($tot_bayar)
     {
-
-        $this->db->where('nominal_byr', $nominal_byr);
+        $this->db->where('tot_bayar', $tot_bayar);
         $this->db->delete('tb_order_ck');
+        // Add the actual payment logic if needed
     }
-
+    
     public function simpan_riwayat_ck($data)
     {
         $this->db->insert('tb_riwayat_ck', $data);
     }
-
-    // public function bayar_dan_simpan_riwayat($tot_bayar, $otherData)
-    // {
-    //     // Lakukan logika pembayaran, misalnya memperbarui status pembayaran di tabel order
-    //     // Sesuaikan dengan kebutuhan proyek Anda
-    //     $this->bayar_ck($tot_bayar);
-
-    //     // Simpan data ke dalam tabel riwayat
-    //     $data = array(
-    //         'tot_bayar' => $tot_bayar,
-    //         // Tambahkan data lainnya sesuai kebutuhan
-    //         'or_ck_number' => $otherData['or_ck_number'],
-    //         'nama_pel_ck' => $otherData['nama_pel_ck'],
-    //         'no_telp_ck' => $otherData['no_telp_ck'],
-    //         'alamat_ck' => $otherData['alamat_ck'],
-    //         'jenis_paket_ck' => $otherData['jenis_paket_ck'],
-    //         'wkt_krj_ck' => $otherData['wkt_krj_ck'],
-    //         'berat_qty_ck' => $otherData['berat_qty_ck'],
-    //         'harga_perkilo' => $otherData['harga_perkilo'],
-    //         'tgl_masuk_ck' => $otherData['tgl_masuk_ck'],
-    //         'tgl_keluar_ck' => $otherData['tgl_keluar_ck'],
-    //         'keterangan_ck' => $otherData['keterangan_ck'],
-    //         // ...
-    //     );
-
-    //     $this->db->insert('tb_riwayat_ck', $data);
-    // }
-
-    public function getRiwayat($nominal_byr)
+    
+    public function hapus_data_by_or_ck_number($tot_bayar)
     {
-        $this->db->select('or_ck_number,nama_pel_ck,jenis_paket_ck,berat_qty_ck,tot_bayar');
-        $this->db->from('tb_order_ck');
-        $this->db->where('nominal_byr', $nominal_byr);
-        $query = $this->db->get();
-        // Return the result as an array
-        return $query->result_array();
+        $this->db->where('tot_bayar',$tot_bayar);
+        $this->db->delete('tb_order_ck');
+    }
+    public function bayar_cs($tot_bayar)
+    {
+        $this->db->where('tot_bayar', $tot_bayar);
+        $this->db->delete('tb_order_cs');
+        // Add the actual payment logic if needed
+    }
+    
+    public function simpan_riwayat_cs($data)
+    {
+        $this->db->insert('tb_riwayat_cs', $data);
+    }
+    
+    public function hapus_data_by_or_cs_number($tot_bayar)
+    {
+        $this->db->where('tot_bayar',$tot_bayar);
+        $this->db->delete('tb_order_cs');
+    }
+    public function bayar_dc($tot_bayar)
+    {
+        $this->db->where('tot_bayar', $tot_bayar);
+        $this->db->delete('tb_order_dc');
+        // Add the actual payment logic if needed
+    }
+    
+    public function simpan_riwayat_dc($data)
+    {
+        $this->db->insert('tb_riwayat_dc', $data);
+    }
+    
+    public function hapus_data_by_or_dc_number($tot_bayar)
+    {
+        $this->db->where('tot_bayar',$tot_bayar);
+        $this->db->delete('tb_order_dc');
+    }
+
+    public function getPaketDetailsCk($jenis_paket_ck)
+    {
+        // Asumsi tabel cuci komplit memiliki kolom 'jenis_paket', 'waktu_kerja', dan 'harga_per_kilo'
+        $this->db->select('waktu_kerja_ck, tarif_ck');
+        $this->db->where('nama_paket_ck', $jenis_paket_ck);
+        $query = $this->db->get('tb_cuci_komplit');
+
+        if ($query->num_rows() > 0) {
+            // Ambil data paket dari hasil query
+            $row = $query->row_array();
+            $details['waktu_kerja_ck'] = $row['waktu_kerja_ck'];
+            $details['tarif_ck'] = $row['tarif_ck'];
+        } else {
+            // Paket tidak ditemukan, atur nilai default atau melempar error sesuai kebutuhan.
+            $details = false;
+        }
+
+        return $details;
+    }
+    public function getPaketDetailscs($jenis_paket_cs)
+    {
+        // Asumsi tabel cuci komplit memiliki kolom 'jenis_paket', 'waktu_kerja', dan 'harga_per_kilo'
+        $this->db->select('waktu_kerja_cs, tarif_cs');
+        $this->db->where('nama_cs', $jenis_paket_cs);
+        $query = $this->db->get('tb_cuci_satuan');
+
+        if ($query->num_rows() > 0) {
+            // Ambil data paket dari hasil query
+            $row = $query->row_array();
+            $details['waktu_kerja_cs'] = $row['waktu_kerja_cs'];
+            $details['tarif_cs'] = $row['tarif_cs'];
+        } else {
+            // Paket tidak ditemukan, atur nilai default atau melempar error sesuai kebutuhan.
+            $details = false;
+        }
+
+        return $details;
+    }
+    public function getPaketDetailsdc($jenis_paket_dc)
+    {
+        // Asumsi tabel cuci komplit memiliki kolom 'jenis_paket', 'waktu_kerja', dan 'harga_per_kilo'
+        $this->db->select('waktu_kerja_dc, tarif_dc');
+        $this->db->where('nama_paket_dc', $jenis_paket_dc);
+        $query = $this->db->get('tb_dry_clean');
+
+        if ($query->num_rows() > 0) {
+            // Ambil data paket dari hasil query
+            $row = $query->row_array();
+            $details['waktu_kerja_dc'] = $row['waktu_kerja_dc'];
+            $details['tarif_dc'] = $row['tarif_dc'];
+        } else {
+            // Paket tidak ditemukan, atur nilai default atau melempar error sesuai kebutuhan.
+            $details = false;
+        }
+
+        return $details;
     }
 }
 ?>

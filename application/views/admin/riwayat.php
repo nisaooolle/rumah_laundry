@@ -1226,72 +1226,69 @@
 
 <body>
     <div class="app-container app-theme-white body-tabs-shadow  fixed-header">
-        <div class="app-header header-shadow">
-            <div class="app-header__logo">
-                <div>
-                    <div id="logo"> <a href="dashboard" rel="home">
-                            <img style="width: 200px;"
-                                src="https://dtdrycleaning.wpengine.com/wp-content/themes/dry-cleaning/images/logo.png"
-                                alt="Dry Cleaning" title="Dry Cleaning" />
-                        </a></div>
-                </div>
-            </div>
-            <div class="app-header__mobile-menu">
-                <div>
-                    <button type="button" class="hamburger hamburger--elastic mobile-toggle-nav">
-                        <span class="hamburger-box">
-                            <span class="hamburger-inner"></span>
-                        </span>
-                    </button>
-                </div>
-            </div>
-            <div class="app-header__menu">
-                <span>
-                    <button type="button"
-                        class="btn-icon btn-icon-only btn btn-primary btn-sm mobile-toggle-header-nav">
-                        <span class="btn-icon-wrapper">
-                            <i class="fa fa-ellipsis-v fa-w-6"></i>
-                        </span>
-                    </button>
-                </span>
-            </div>
-            <div class="app-header__content">
-                <ul class="header-menu nav">
-                    <li class="nav-item">
-                        <a href="riwayat" class="nav-link">
-                            <!-- <i class="nav-link-icon fa fa-database"> </i> -->
-                            <i class="nav-link-icon fa-solid fa-clock-rotate-left"></i>
-                            Riwayat Transaksi
-                        </a>
-                    </li>
-                    <li class="btn-group nav-item">
-                        <a href="manage_karyawan" class="nav-link">
-                            <!-- <i class="nav-link-icon fa fa-edit"></i> -->
-                            <i class="nav-link-icon fa-solid fa-people-roof"></i>
-                            Manage Karyawan
-                        </a>
-                    </li>
-                    <li class="dropdown nav-item">
-                        <a href="daftar_paket" class="nav-link">
-                            <!-- <i class="nav-link-icon fa fa-cog"></i> -->
-                            <i class="nav-link-icon fa-solid fa-sliders"></i>
-                            Daftar Paket
-                        </a>
-                    </li>
-                </ul>
-                <div class="app-header-right">
-                    <div class="widget-content-right header-user-info ml-3">
-                        <button type="button" class="btn-shadow p-1 btn btn-primary btn-sm show-toastr-example">
-                            <i class="fa text-white fa-calendar pr-1 pl-1"></i>
-                        </button>
-                        <button type="button" style="width: 50px;"
-                            class="btn-shadow p-1 btn btn-primary btn-sm show-toastr-example"><a
-                                href="<?php echo base_url('auth/logout') ?>"><i
-                                    class="fa text-white fa-solid fa-right-from-bracket"></i></a></button>
-                    </div>
-                </div>
-            </div>
+    <div class="app-header header-shadow">
+      <div class="app-header__logo">
+        <div>
+          <div id="logo"> <a href="dashboard" rel="home">
+              <img style="width: 200px;"
+                src="https://dtdrycleaning.wpengine.com/wp-content/themes/dry-cleaning/images/logo.png"
+                alt="Dry Cleaning" title="Dry Cleaning" />
+            </a></div>
         </div>
+      </div>
+      <div class="app-header__mobile-menu">
+        <div>
+          <button type="button" class="btn-shadow p-1 btn btn-primary btn-sm show-toastr-example"><a
+              href="<?php echo base_url('auth/logout') ?>"><i
+                class="fa text-white fa-solid fa-right-from-bracket"></i></a></button>
+        </div>
+      </div>
+      <div class="app-header__menu">
+        <span>
+          <button type="button" class="btn-icon btn-icon-only btn btn-primary btn-sm mobile-toggle-header-nav">
+            <span class="btn-icon-wrapper">
+              <i class="fa fa-ellipsis-v fa-w-6"></i>
+            </span>
+          </button>
+        </span>
+      </div>
+      <div class="app-header__content">
+        <ul class="header-menu nav">
+          <li class="nav-item">
+            <a href="riwayat" class="nav-link">
+              <!-- <i class="nav-link-icon fa fa-database"> </i> -->
+              <i class="nav-link-icon fa-solid fa-clock-rotate-left"></i>
+              Riwayat Transaksi
+            </a>
+          </li>
+          <li class="btn-group nav-item">
+            <a href="manage_karyawan" class="nav-link">
+              <!-- <i class="nav-link-icon fa fa-edit"></i> -->
+              <i class="nav-link-icon fa-solid fa-people-roof"></i>
+              Manage Karyawan
+            </a>
+          </li>
+          <li class="dropdown nav-item">
+            <a href="daftar_paket" class="nav-link">
+              <!-- <i class="nav-link-icon fa fa-cog"></i> -->
+              <i class="nav-link-icon fa-solid fa-sliders"></i>
+              Daftar Paket
+            </a>
+          </li>
+        </ul>
+        <div class="app-header-right">
+          <div class="widget-content-right header-user-info ml-10">
+            <button type="button" class="btn-shadow p-1 btn btn-primary btn-sm show-toastr-example">
+              <i class="fa text-white fa-calendar pr-1 pl-1"></i>
+            </button>
+            <button type="button" style="width: 50px;"
+              class="btn-shadow p-1 btn btn-primary btn-sm show-toastr-example"><a
+                href="<?php echo base_url('auth/logout') ?>"><i
+                  class="fa text-white fa-solid fa-right-from-bracket"></i></a></button>
+          </div>
+        </div>
+      </div>
+    </div>
         <div class="riwayat" class="main-content">
             <div class="container">
                 <div class="baris">
@@ -1323,8 +1320,8 @@
                                                 <th class="sticky">Jenis Paket</th>
                                                 <th class="sticky">Jumlah</th>
                                                 <th class="sticky">Total</th>
-                                                <th class="sticky">Uang Bayar</th>
-                                                <th class="sticky">Kembalian</th>
+                                                <!-- <th class="sticky">Uang Bayar</th>
+                                                <th class="sticky">Kembalian</th> -->
                                                 <th class="sticky">Status</th>
                                                 <th class="sticky" style="text-align: center">Action</th>
                                             </tr>
@@ -1353,12 +1350,12 @@
                                                         <td>
                                                             <?= "Rp. " . $data_ck->tot_bayar ?>
                                                         </td>
-                                                        <td>
+                                                        <!-- <td>
                                                             <?= "Rp. " . $data_ck->nominal_byr ?>
                                                         </td>
                                                         <td>
                                                             <?= "Rp. " . $data_ck->kembalian ?>
-                                                        </td>
+                                                        </td> -->
                                                         <td><span class="success">
                                                                 <?= $data_ck->status ?>
                                                             </span></td>
@@ -1368,10 +1365,10 @@
                                                             <!-- <a href="<?= base_url('riwayat_transaksi/riwayat_ck/cetak_info.php') ?>?id_ck=<?= $data_ck->id_ck ?>"
                                                                 class="btn btn-hapus">Cetak Bukti</a> -->
                                                             <button type="button"
-                                                                class=" btn-sm btn-square btn-edit text-danger-hover-none">
+                                                                class=" btn-sm btn-square btn-detail text-danger-hover-none">
                                                                 <a class="text-light text-decoration-none"
-                                                                    href="<?php echo base_url('admin/detail_riwayat_ck/' . $data_ck->id_ck) ?>">
-                                                                    <i class="fas fa-edit"></i>
+                                                                    href="<?php echo base_url('admin/struk_ck/' . $data_ck->or_ck_number) ?>">
+                                                                    Cetak Bukti
                                                                 </a>
                                                             </button>
                                                         </td>
@@ -1413,8 +1410,8 @@
                                                 <th class="sticky">Jenis Paket</th>
                                                 <th class="sticky">Jumlah</th>
                                                 <th class="sticky">Total</th>
-                                                <th class="sticky">Uang Bayar</th>
-                                                <th class="sticky">Kembalian</th>
+                                                <!-- <th class="sticky">Uang Bayar</th>
+                                                <th class="sticky">Kembalian</th> -->
                                                 <th class="sticky">Status</th>
                                                 <th class="sticky" style="text-align: center">Action</th>
                                             </tr>
@@ -1429,39 +1426,35 @@
                                                             <?= $i ?>
                                                         </td>
                                                         <td>
-                                                            <?= $data_dc->or_number ?>
+                                                            <?= $data_dc->or_dc_number ?>
                                                         </td>
                                                         <td style="max-width: 150px; overflow:hidden;">
-                                                            <?= $data_dc->pelanggan ?>
+                                                            <?= $data_dc->nama_pel_dc ?>
                                                         </td>
                                                         <td>
-                                                            <?= $data_dc->j_paket ?>
+                                                            <?= $data_dc->jenis_paket_dc ?>
                                                         </td>
                                                         <td>
-                                                            <?= $data_dc->berat . " Kg" ?>
+                                                            <?= $data_dc->berat_qty_dc . " Kg" ?>
                                                         </td>
                                                         <td>
-                                                            <?= "Rp. " . $data_dc->total ?>
+                                                            <?= "Rp. " . $data_dc->tot_bayar ?>
                                                         </td>
-                                                        <td>
+                                                        <!-- <td>
                                                             <?= "Rp. " . $data_dc->nominal_byr ?>
                                                         </td>
                                                         <td>
                                                             <?= "Rp. " . $data_dc->kembalian ?>
-                                                        </td>
+                                                        </td> -->
                                                         <td><span class="success">
                                                                 <?= $data_dc->status ?>
                                                             </span></td>
                                                         <td align="center">
-                                                            <!-- <a href="<?= base_url('riwayat_transaksi/riwayat_dc/detail_dc.php') ?>?id_dc=<?= $data_dc->id_dc ?>"
-                                                                class="btn btn-edit">Detail</a><br /> -->
-                                                            <!-- <a href="<?= base_url('riwayat_transaksi/riwayat_dc/cetak_info.php') ?>?id_dc=<?= $data_dc->id_dc ?>"
-                                                                class="btn btn-hapus">Cetak Bukti</a> -->
                                                             <button type="button"
-                                                                class=" btn-sm btn-square btn-edit text-danger-hover-none">
+                                                                class=" btn-sm btn-square btn-detail text-danger-hover-none">
                                                                 <a class="text-light text-decoration-none"
-                                                                    href="<?php echo base_url('admin/detail_riwayat_dc/' . $data_dc->id_dc) ?>">
-                                                                    <i class="fas fa-edit"></i>
+                                                                    href="<?php echo base_url('admin/struk_dc/' . $data_dc->or_dc_number) ?>">
+                                                                    Cetak Bukti
                                                                 </a>
                                                             </button>
                                                         </td>
@@ -1503,8 +1496,8 @@
                                                 <th class="sticky">Jenis Paket</th>
                                                 <th class="sticky">Jumlah</th>
                                                 <th class="sticky">Total</th>
-                                                <th class="sticky">Uang Bayar</th>
-                                                <th class="sticky">Kembalian</th>
+                                                <!-- <th class="sticky">Uang Bayar</th>
+                                                <th class="sticky">Kembalian</th> -->
                                                 <th class="sticky">Status</th>
                                                 <th class="sticky" style="text-align: center;">Action</th>
                                             </tr>
@@ -1519,39 +1512,35 @@
                                                             <?= $i ?>
                                                         </td>
                                                         <td>
-                                                            <?= $data_cs->or_number ?>
+                                                            <?= $data_cs->or_cs_number ?>
                                                         </td>
                                                         <td style="max-width: 150px; overflow:hidden;">
-                                                            <?= $data_cs->pelanggan ?>
+                                                            <?= $data_cs->nama_pel_cs ?>
                                                         </td>
                                                         <td>
-                                                            <?= $data_cs->j_paket ?>
+                                                            <?= $data_cs->jenis_paket_cs ?>
                                                         </td>
                                                         <td>
                                                             <?= $data_cs->jml_pcs . " (Pcs)" ?>
                                                         </td>
                                                         <td>
-                                                            <?= "Rp. " . $data_cs->total ?>
+                                                            <?= "Rp. " . $data_cs->tot_bayar ?>
                                                         </td>
-                                                        <td>
+                                                        <!-- <td>
                                                             <?= "Rp. " . $data_cs->nominal_byr ?>
                                                         </td>
                                                         <td>
                                                             <?= "Rp. " . $data_cs->kembalian ?>
-                                                        </td>
+                                                        </td> -->
                                                         <td><span class="success">
                                                                 <?= $data_cs->status ?>
                                                             </span></td>
                                                         <td align="center">
-                                                            <!-- <a href="<?= base_url('riwayat_transaksi/riwayat_cs/detail_cs.php') ?>?id_cs=<?= $data_cs->id_cs ?>"
-                                                                class="btn btn-edit">Detail</a><br /> -->
-                                                            <!-- <a href="<?= base_url('riwayat_transaksi/riwayat_cs/cetak_info.php') ?>?id_cs=<?= $data_cs->id_cs ?>"
-                                                                class="btn btn-hapus">Cetak Bukti</a> -->
-                                                            <button type="button"
-                                                                class=" btn-sm btn-square btn-edit text-danger-hover-none">
+                                                        <button type="button"
+                                                                class=" btn-sm btn-square btn-detail text-danger-hover-none">
                                                                 <a class="text-light text-decoration-none"
-                                                                    href="<?php echo base_url('admin/detail_riwayat_cs/' . $data_cs->id_cs) ?>">
-                                                                    <i class="fas fa-edit"></i>
+                                                                    href="<?php echo base_url('admin/struk_cs/' . $data_cs->or_cs_number) ?>">
+                                                                    Cetak Bukti
                                                                 </a>
                                                             </button>
                                                         </td>

@@ -40,14 +40,18 @@ class Auth extends CI_Controller
             $this->session->set_userdata($data);
             // validasi dbwh mengecek apakah role itu "admin"
             if ($this->session->userdata('role') == 'admin') {
+                $this->session->set_flashdata('success_login_admin', 'Selamat datang sebagai admin');
                 redirect(base_url() . "admin/dashboard");
             }
             if ($this->session->userdata('role') == 'user') {
+                $this->session->set_flashdata('berhasil_login, Selamat datang sebagai user');
                 redirect(base_url() . "user/dashboard");
             } else {
+                $this->session->set_flashdata('gagal_login, Gagal login huuuuuu');
                 redirect(base_url() . "auth/login");
             }
         } else {
+            $this->session->set_flashdata('error', 'gagal login');
             redirect(base_url() . "auth/login");
         }
     }

@@ -1225,49 +1225,69 @@
 
 <body>
     <div class="app-container app-theme-white body-tabs-shadow  fixed-header">
-        <div class="app-header header-shadow">
-            <div class="app-header__logo">
-                <div>
-                    <div id="logo"> <a href="dashboard" rel="home">
-                            <img style="width: 200px;"
-                                src="https://dtdrycleaning.wpengine.com/wp-content/themes/dry-cleaning/images/logo.png"
-                                alt="Dry Cleaning" title="Dry Cleaning" />
-                        </a></div>
-                </div>
-            </div>
-            <div class="app-header__mobile-menu">
-                <div>
-                    <button type="button" class="hamburger hamburger--elastic mobile-toggle-nav">
-                        <span class="hamburger-box">
-                            <span class="hamburger-inner"></span>
-                        </span>
-                    </button>
-                </div>
-            </div>
-            <div class="app-header__menu">
-                <span>
-                    <button type="button"
-                        class="btn-icon btn-icon-only btn btn-primary btn-sm mobile-toggle-header-nav">
-                        <span class="btn-icon-wrapper">
-                            <i class="fa fa-ellipsis-v fa-w-6"></i>
-                        </span>
-                    </button>
-                </span>
-            </div>
-            <div class="app-header__content">
-                <div class="app-header-right">
-                    <div class="widget-content-right header-user-info ml-3">
-                        <!-- <button type="button" class="btn-shadow p-1 btn btn-primary btn-sm show-toastr-example">
-                            <i class="fa text-white fa-calendar pr-1 pl-1"></i>
-                        </button> -->
-                        <button type="button" style="width: 50px;"
-                            class="btn-shadow p-1 btn btn-primary btn-sm show-toastr-example"><a
-                                href="<?php echo base_url('auth/logout') ?>"><i
-                                    class="fa text-white fa-solid fa-right-from-bracket"></i></a></button>
-                    </div>
-                </div>
-            </div>
+    <div class="app-header header-shadow">
+      <div class="app-header__logo">
+        <div>
+          <div id="logo"> <a href="dashboard" rel="home">
+              <img style="width: 200px;"
+                src="https://dtdrycleaning.wpengine.com/wp-content/themes/dry-cleaning/images/logo.png"
+                alt="Dry Cleaning" title="Dry Cleaning" />
+            </a></div>
         </div>
+      </div>
+      <div class="app-header__mobile-menu">
+        <div>
+          <button type="button" class="btn-shadow p-1 btn btn-primary btn-sm show-toastr-example"><a
+              href="<?php echo base_url('auth/logout') ?>"><i
+                class="fa text-white fa-solid fa-right-from-bracket"></i></a></button>
+        </div>
+      </div>
+      <div class="app-header__menu">
+        <span>
+          <button type="button" class="btn-icon btn-icon-only btn btn-primary btn-sm mobile-toggle-header-nav">
+            <span class="btn-icon-wrapper">
+              <i class="fa fa-ellipsis-v fa-w-6"></i>
+            </span>
+          </button>
+        </span>
+      </div>
+      <div class="app-header__content">
+        <ul class="header-menu nav">
+          <li class="nav-item">
+            <a href="riwayat" class="nav-link">
+              <!-- <i class="nav-link-icon fa fa-database"> </i> -->
+              <i class="nav-link-icon fa-solid fa-clock-rotate-left"></i>
+              Riwayat Transaksi
+            </a>
+          </li>
+          <li class="btn-group nav-item">
+            <a href="manage_karyawan" class="nav-link">
+              <!-- <i class="nav-link-icon fa fa-edit"></i> -->
+              <i class="nav-link-icon fa-solid fa-people-roof"></i>
+              Manage Karyawan
+            </a>
+          </li>
+          <li class="dropdown nav-item">
+            <a href="daftar_paket" class="nav-link">
+              <!-- <i class="nav-link-icon fa fa-cog"></i> -->
+              <i class="nav-link-icon fa-solid fa-sliders"></i>
+              Daftar Paket
+            </a>
+          </li>
+        </ul>
+        <div class="app-header-right">
+          <div class="widget-content-right header-user-info ml-10">
+            <button type="button" class="btn-shadow p-1 btn btn-primary btn-sm show-toastr-example">
+              <i class="fa text-white fa-calendar pr-1 pl-1"></i>
+            </button>
+            <button type="button" style="width: 50px;"
+              class="btn-shadow p-1 btn btn-primary btn-sm show-toastr-example"><a
+                href="<?php echo base_url('auth/logout') ?>"><i
+                  class="fa text-white fa-solid fa-right-from-bracket"></i></a></button>
+          </div>
+        </div>
+      </div>
+    </div>
         <div id="detail_or_ck" class="main-content">
             <div class="container">
                 <div class="baris">
@@ -1354,7 +1374,13 @@
                                                 <td><input type="text" name="berat_qty_ck" disabled
                                                         value="<?= $data->berat_qty_ck . ' Kg' ?>"></td>
                                                 <td><input type="text" name="harga_perkilo" disabled
-                                                        value="<?= 'Rp. ' . $data->harga_perkilo ?>"></td>
+                                                        value="<?php
+                                                if ($data->harga_perkilo !== null) {
+                                                    echo 'Rp. ' . number_format($data->harga_perkilo, 2);
+                                                } else {
+                                                    echo 'Rp. 0.00';
+                                                }
+                                                ?>"></td>
                                                 <td><input type="text" name="tot_bayar" disabled value="<?php
                                                 if ($data->tot_bayar !== null) {
                                                     echo 'Rp. ' . number_format($data->tot_bayar, 2);

@@ -14,7 +14,10 @@
         <div class="invoice-content">
             <div class="invoice-header">
                 <div class="logo">
-                    <img src="<?= base_url('_assets/img/logo/logo.png') ?>" width="145" alt="Logo rumah laundry">
+                    <img style="width: 200px;"
+                        src="https://dtdrycleaning.wpengine.com/wp-content/themes/dry-cleaning/images/logo.png"
+                        alt="Dry Cleaning" title="Dry Cleaning" />
+                    </a>
                 </div>
                 <?php foreach ($struk as $data): ?>
                     <div class="invoice-no_order">
@@ -29,19 +32,19 @@
                 <div class="invoice-body">
                     <table class="table-invoice">
                         <tr>
-                            <th>Nama pelanggan</th>
+                            <th>Nama pelanggan : </th>
                             <td>
                                 <?= $data->nama_pel_ck ?>
                             </td>
                         </tr>
                         <tr>
-                            <th>Nomor telepon</th>
+                            <th>Nomor telepon : </th>
                             <td>
                                 <?= $data->no_telp_ck ?>
                             </td>
                         </tr>
                         <tr>
-                            <th>Alamat</th>
+                            <th>Alamat : </th>
                             <td>
                                 <?= $data->alamat_ck ?>
                             </td>
@@ -50,13 +53,13 @@
 
                     <table class="table-invoice">
                         <tr>
-                            <th>Tanggal order</th>
+                            <th>Tanggal order : </th>
                             <td>
                                 <?= $data->tgl_masuk_ck ?>
                             </td>
                         </tr>
                         <tr>
-                            <th>Diambil pada</th>
+                            <th>Diambil pada : </th>
                             <td>
                                 <?= $data->tgl_keluar_ck ?>
                             </td>
@@ -77,16 +80,29 @@
                                 <?= $data->berat_qty_ck . " Kg" ?>
                             </td>
                             <td>
-                                <?= "Rp. " . $data->harga_perkilo . " x " . $data->berat_qty_ck ?>
+                                <!-- <?= "Rp. " . $data->harga_perkilo . " x " . $data->berat_qty_ck ?> -->
+                                <?php
+                                if ($data->harga_perkilo !== null) {
+                                    echo 'Rp. ' . number_format($data->harga_perkilo, 2) . " x " . $data->berat_qty_ck ;
+                                } else {
+                                    echo 'Rp. 0.00';
+                                }
+                                ?>
                             </td>
                         </tr>
                         <tr>
                             <th colspan="2" class="ub">Total</th>
                             <td class="ub-col">
-                                <?= "Rp. " . $data->tot_bayar ?>
+                                <?php
+                                if ($data->tot_bayar !== null) {
+                                    echo 'Rp. ' . number_format($data->tot_bayar, 2);
+                                } else {
+                                    echo 'Rp. 0.00';
+                                }
+                                ?>
                             </td>
                         </tr>
-                        <tr>
+                        <!-- <tr>
                             <th colspan="2" class="ub">Nominal Bayar</th>
                             <td class="ub-col">
                                 <?= "Rp. " . $data->nominal_byr ?>
@@ -97,17 +113,17 @@
                             <td class="ub-col">
                                 <?= "Rp. " . $data->kembalian ?>
                             </td>
-                        </tr>
+                        </tr> -->
                     </table>
 
                     <div class="ket">
                         <p><span>Keterangan : </span>
-                            <?= $data->keterangan ?>
+                            <?= $data->keterangan_ck ?>
                         </p>
                     </div>
                 <?php endforeach ?>
                 <div class="invoice-footer">
-                    <h3 class="foot_logo"><span>Rumah</span> Laundry</h3>
+                    <h3 class="foot_logo"><span>Dry </span> Cleaning</h3>
                     <p>Terima kasih telah menggunakan jasa kami.</p>
                 </div>
 
@@ -119,7 +135,7 @@
             <span>Cetak Invoice</span>
         </div>
 
-        <a href="<?= base_url('riwayat_transaksi/riwayat.php') ?>" class="btn-back">Kembali</a>
+        <a href="<?= base_url('user/paket_ck') ?>" class="btn-back">Kembali</a>
     </div>
 
     <script>

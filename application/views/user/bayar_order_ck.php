@@ -20,6 +20,12 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href='https://dtdrycleaning.wpengine.com/wp-content/themes/dry-cleaning/images/favicon.ico'
         rel='shortcut icon' type='image/x-icon' />
+    <!-- Include SweetAlert2 CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11">
+
+    <!-- Include SweetAlert2 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
     <meta name="robots" content="noindex, follow">
     <style>
         * {
@@ -1521,7 +1527,7 @@
                     </h3>
                     <p>Masukkan nominal untuk melakukan transaksi</p>
                 </div>
-                <form method="post" action="<?php echo base_url('user/struk_ck') ?>">
+                <form method="post" action="<?php echo base_url('user/bayar_dan_simpan_riwayat/' . $data->or_ck_number) ?>">
                     <input type="hidden" name="or_ck_number" value="<?= $data->or_ck_number ?>">
                     <input type="hidden" name="nama_pel_ck" value="<?= $data->nama_pel_ck ?>">
                     <input type="hidden" name="no_telp_ck" value="<?= $data->no_telp_ck ?>">
@@ -1535,17 +1541,25 @@
                     <input type="hidden" name="tot_bayar" value="<?= $data->tot_bayar ?>">
                     <input type="hidden" name="keterangan_ck" value="<?= $data->keterangan_ck ?>">
 
-                    <input type="text" name="nominal" required autofocus autocomplete="off"
-                        value="<?= $data->nominal_byr ?>" placeholder="Nominal ex: '120000'">
-                    <!-- <button type="submit" name="bayar">Bayar</button> -->
-                    <button  type="submit" name="bayar"><a
-                            class="text-light text-decoration-none"
-                            href="<?php echo base_url('user/struk/' . $data->or_ck_number) ?>">Bayar
-                    </button>
+                    <input type="text" name="nominal" required autofocus autocomplete="off" value="<?= $data->tot_bayar ?>"
+                        placeholder="Nominal ex: '120000'">
+                    <button type="submit" name="bayar">Bayar</button>
+                    <!-- <button type="submit" name="bayar"><a class="text-light text-decoration-none"
+                            href="<?php echo base_url('user/bayar_dan_simpan_riwayat/' . $data->or_ck_number) ?>">Bayar
+                    </button> -->
                 </form>
             </div>
         <?php endforeach ?>
     </div>
+    <!-- <script>
+        // Display SweetAlert when the view loads
+        Swal.fire({
+            icon: 'success',
+            title: 'Payment successful!',
+            showConfirmButton: false,
+            timer: 1500
+        });
+    </script> -->
     <script src="http://maps.google.com/maps/api/js?sensor=true"></script>
     <script type="text/javascript"
         src="https://demo.dashboardpack.com/architectui-html-free/assets/scripts/main.js"></script>

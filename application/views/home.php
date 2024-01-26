@@ -1390,7 +1390,7 @@
                                         <ul class="menu">
                                             <li id="menu-item-26"
                                                 class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-8 current_page_item menu-item-depth-0 menu-item-simple-parent ">
-                                                <a href="#home">Tentang Kami</a>
+                                                <a href="">Tentang Kami</a>
                                             </li>
                                         </ul>
                                     </nav>

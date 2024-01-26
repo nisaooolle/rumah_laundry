@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Detail_dc</title>
+    <title>Detail_ck</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- bootstrap -->
@@ -20,6 +20,12 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href='https://dtdrycleaning.wpengine.com/wp-content/themes/dry-cleaning/images/favicon.ico'
         rel='shortcut icon' type='image/x-icon' />
+    <!-- Include SweetAlert2 CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11">
+
+    <!-- Include SweetAlert2 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
     <meta name="robots" content="noindex, follow">
     <style>
         * {
@@ -1220,218 +1226,339 @@
             line-height: 10px;
             color: white;
         }
+
+        @media (max-width: 768px) {
+            .container-paket {
+                flex-direction: column;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-around;
+                margin-right: 350px;
+            }
+
+            .col-paket {
+                flex: 1;
+                width: 250px;
+                /* Adjust the maximum width as needed */
+            }
+
+            .paket {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                text-decoration: none;
+                color: #4b4b4b;
+                border: 1px solid #ddd;
+                /* Optional: Add border for a better visual separation */
+                /* padding: 15px; */
+                border-radius: 5px;
+            }
+
+            .paket img {
+                width: 100%;
+                max-width: 160px;
+                /* Set the maximum image width */
+                height: auto;
+                transition: transform 0.2s ease-in-out;
+            }
+
+            .paket:hover img {
+                transform: translateY(-10px);
+            }
+        }
+    </style>
+
+    <!-- style payment -->
+    <style>
+        .card-payment {
+            border-radius: 20px;
+            width: 30%;
+            padding: 5px;
+            background-color: #fff;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.14);
+            margin-left: 35%;
+            margin-top: 85px;
+        }
+
+        .icon-header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 40px 0 25px;
+        }
+
+        .txt {
+            text-align: center;
+            width: 80%;
+            margin: auto;
+        }
+
+        .txt h3 {
+            font-size: 20px;
+            color: #424346;
+        }
+
+        .txt p {
+            margin-top: 10px;
+            font-size: 14px;
+            color: #7d7e82;
+        }
+
+        .card-payment form {
+            margin: 40px auto;
+            display: flex;
+            flex-direction: column;
+            width: 80%;
+        }
+
+        .card-payment form input {
+            margin: 10px 0;
+            padding: 10px;
+            font-size: 20px;
+            font-weight: 600;
+            color: #424346;
+            text-align: center;
+            font-family: 'Open sans', sans-serif;
+            border: 0;
+            outline: none;
+        }
+
+        .card-payment form input::placeholder {
+            color: #e0e0e0;
+        }
+
+        .card-payment form button {
+            padding: 15px;
+            border: 0;
+            background-color: #58ca50;
+            color: #fff;
+            font-size: 16px;
+            font-family: 'Open sans', sans-serif;
+            letter-spacing: 1.2px;
+            font-weight: 600;
+            text-transform: uppercase;
+            cursor: pointer;
+            border-radius: 7px;
+            outline: none;
+            transition: all .4s ease-out;
+        }
+
+        .card-payment form button:hover {
+            background-color: #45ab3d;
+        }
+
+        @media (max-width:768px) {
+            .card-payment {
+                width: 60%;
+            }
+        }
+
+        @media (max-width:550px) {
+            .card-payment {
+                width: 70%;
+            }
+
+            .card-payment form input,
+            .card-payment form button {
+                font-size: 16px;
+            }
+        }
+
+        @media (max-width:375px) {
+            .card-payment {
+                width: 80%;
+            }
+
+            .card-payment form,
+            .txt {
+                width: 90%;
+            }
+
+            .txt h3 {
+                font-size: 18px;
+                color: #424346;
+            }
+
+            .icon-header,
+            .card-payment form {
+                margin: 25px auto;
+            }
+        }
+
+        /* Pesan Alert */
+        .alert {
+            background: rgba(0, 0, 0, 0.4);
+            position: fixed;
+            width: 100%;
+            height: 100vh;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            transition: all .4s ease;
+        }
+
+        .box {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 25%;
+            min-height: 80px;
+            margin: 70px auto 0;
+            position: relative;
+            padding: 20px 15px;
+            background-color: #ffffff;
+            border-radius: 5px;
+        }
+
+        .box p {
+            color: #4d4d4d;
+        }
+
+        .alert .box {
+            animation: slide .8s;
+        }
+
+        .btn-alert {
+            border: none;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 15px;
+            padding: 8px 25px;
+            cursor: pointer;
+            outline: none;
+            border-radius: 4px;
+            text-transform: uppercase;
+            transition: all .4s ease;
+        }
+
+        .btn-success {
+            background-color: #58ca50;
+            color: #fff;
+        }
+
+        .btn-fail {
+            background-color: #f73e53;
+            color: #fff;
+        }
+
+        .close {
+            display: block;
+            text-decoration: none;
+            color: #fff;
+            position: absolute;
+            right: -15px;
+            top: -15px;
+            height: 30px;
+            width: 30px;
+            background-color: #ffb723;
+            font-size: 24px;
+            text-align: center;
+            line-height: 30px;
+            border-radius: 15px;
+        }
+
+        @keyframes slide {
+            0% {
+                margin: 50px auto 0;
+            }
+
+            100% {
+                margin: 70px auto 0;
+            }
+        }
     </style>
 </head>
 
 <body>
-    <div class="app-container app-theme-white body-tabs-shadow  fixed-header">
-    <div class="app-header header-shadow">
-      <div class="app-header__logo">
-        <div>
-          <div id="logo"> <a href="dashboard" rel="home">
-              <img style="width: 200px;"
-                src="https://dtdrycleaning.wpengine.com/wp-content/themes/dry-cleaning/images/logo.png"
-                alt="Dry Cleaning" title="Dry Cleaning" />
-            </a></div>
-        </div>
-      </div>
-      <div class="app-header__mobile-menu">
-        <div>
-          <button type="button" class="btn-shadow p-1 btn btn-primary btn-sm show-toastr-example"><a
-              href="<?php echo base_url('auth/logout') ?>"><i
-                class="fa text-white fa-solid fa-right-from-bracket"></i></a></button>
-        </div>
-      </div>
-      <div class="app-header__menu">
-        <span>
-          <button type="button" class="btn-icon btn-icon-only btn btn-primary btn-sm mobile-toggle-header-nav">
-            <span class="btn-icon-wrapper">
-              <i class="fa fa-ellipsis-v fa-w-6"></i>
-            </span>
-          </button>
-        </span>
-      </div>
-      <div class="app-header__content">
-        <ul class="header-menu nav">
-          <li class="nav-item">
-            <a href="riwayat" class="nav-link">
-              <!-- <i class="nav-link-icon fa fa-database"> </i> -->
-              <i class="nav-link-icon fa-solid fa-clock-rotate-left"></i>
-              Riwayat Transaksi
-            </a>
-          </li>
-          <li class="btn-group nav-item">
-            <a href="manage_karyawan" class="nav-link">
-              <!-- <i class="nav-link-icon fa fa-edit"></i> -->
-              <i class="nav-link-icon fa-solid fa-people-roof"></i>
-              Manage Karyawan
-            </a>
-          </li>
-          <li class="dropdown nav-item">
-            <a href="daftar_paket" class="nav-link">
-              <!-- <i class="nav-link-icon fa fa-cog"></i> -->
-              <i class="nav-link-icon fa-solid fa-sliders"></i>
-              Daftar Paket
-            </a>
-          </li>
-        </ul>
-        <div class="app-header-right">
-          <div class="widget-content-right header-user-info ml-10">
-            <button type="button" class="btn-shadow p-1 btn btn-primary btn-sm show-toastr-example">
-              <i class="fa text-white fa-calendar pr-1 pl-1"></i>
-            </button>
-            <button type="button" style="width: 50px;"
-              class="btn-shadow p-1 btn btn-primary btn-sm show-toastr-example"><a
-                href="<?php echo base_url('auth/logout') ?>"><i
-                  class="fa text-white fa-solid fa-right-from-bracket"></i></a></button>
-          </div>
-        </div>
-      </div>
-    </div>
-        <div id="detail_or_ck" class="main-content">
-            <div class="container">
-                <div class="baris">
-                    <div class="col mt-2">
-                        <div class="card-md">
-                            <div class="card-title card-flex">
-                                <div class="card-col">
-                                    <h2>Detail Order</h2>
-                                </div>
-                                <?php foreach ($detail as $data): ?>
-                                    <div class="card-col txt-right">
-                                        <h3 class="no-order"><small>No Order : </small>
-                                            <?= $data->or_number ?>
-                                        </h3>
-                                    </div>
-                                </div>
-
-                                <div class="card-body">
-                                    <div class="jdl-or">
-                                        <h4>Customer</h4>
-                                    </div>
-                                    <table class="tb-detail_customer">
-                                        <tr>
-                                            <th>Nama</th>
-                                            <td>
-                                                <?= $data->pelanggan ?>
-                                            </td>
-                                        </tr>
-
-                                        <tr>
-                                            <th>Nomor Telepon</th>
-                                            <td>
-                                                <?= $data->no_telp ?>
-                                            </td>
-                                        </tr>
-
-                                        <tr>
-                                            <th>Alamat</th>
-                                            <td>
-                                                <?= $data->alamat ?>
-                                            </td>
-                                        </tr>
-
-                                        <tr>
-                                            <th>Order Masuk</th>
-                                            <td>
-                                                <?= $data->tgl_msk ?>
-                                            </td>
-                                        </tr>
-
-                                        <tr>
-                                            <th>Diambil Pada</th>
-                                            <td>
-                                                <?= $data->tgl_klr ?>
-                                            </td>
-                                        </tr>
-
-                                        <tr>
-                                            <th>Durasi Kerja</th>
-                                            <td>
-                                                <?= $data->wkt_kerja ?>
-                                            </td>
-                                        </tr>
-
-                                        <tr>
-                                            <th>Jenis Paket</th>
-                                            <td>
-                                                <?= $data->j_paket ?>
-                                            </td>
-                                        </tr>
-
-                                        <tr>
-                                            <th>Status</th>
-                                            <td><span class="success">
-                                                    <?= $data->status ?>
-                                                </span></td>
-                                        </tr>
-                                    </table>
-
-                                    <div class="mt-1"></div>
-
-                                    <div class="jdl-or">
-                                        <h4>Order</h4>
-                                    </div>
-
-                                    <table class="tb-detail_order">
-                                        <tr>
-                                            <th>Berat (Kg)</th>
-                                            <th>Harga Per-Kg</th>
-                                            <th>Total Bayar</th>
-                                        </tr>
-
-                                        <tr>
-                                            <td>
-                                                <?= $data->berat . " Kg" ?>
-                                            </td>
-                                            <td>
-                                                <?= "Rp. " . $data->h_perkilo ?>
-                                            </td>
-                                            <td>
-                                                <?= "Rp. " . $data->total ?>
-                                            </td>
-                                        </tr>
-
-                                        <tr>
-                                            <th colspan="2" style="text-align: center;">Nominal Bayar</th>
-                                            <td>
-                                                <?= "Rp. " . $data->nominal_byr ?>
-                                            </td>
-                                        </tr>
-
-                                        <tr>
-                                            <th colspan="2" style="text-align: center;">Uang Kembali</th>
-                                            <td>
-                                                <?= "Rp. " . $data->kembalian ?>
-                                            </td>
-                                        </tr>
-                                    </table>
-
-                                    <div class="details">
-                                        <h4 class="mb-01">Keterangan:</h4>
-                                        <p class="lead">
-                                            <?= $data->keterangan ?>
-                                        </p>
-                                    </div>
-
-                                    <div class="form-footer_detail">
-                                        <div class="buttons">
-                                            <a class="btn-sm bg-primary"
-                                                href="<?= base_url('riwayat_transaksi/riwayat_ck/cetak_info.php') ?>?id_ck=<?= $data->id_ck ?>">Cetak
-                                                Invoice</a>
-                                            <a class="btn-sm bg-transparent"
-                                                href="<?= base_url('admin/riwayat') ?>">Kembali</a>
-                                        </div>
-                                    </div>
-                                    </form>
-                                <?php endforeach ?>
-                            </div>
-                        </div>
+    <div class="app-container app-theme-white body-tabs-shadow fixed-header ">
+        <div class="app-header header-shadow">
+            <div class="app-header__logo">
+                <div>
+                    <div id="logo"> <a href="dashboard" rel="home">
+                            <img style="width: 200px;"
+                                src="https://dtdrycleaning.wpengine.com/wp-content/themes/dry-cleaning/images/logo.png"
+                                alt="Dry Cleaning" title="Dry Cleaning" />
+                        </a></div>
+                </div>
+            </div>
+            <div class="app-header__mobile-menu">
+                <div>
+                    <button type="button" class="hamburger hamburger--elastic mobile-toggle-nav">
+                        <span class="hamburger-box">
+                            <span class="hamburger-inner"></span>
+                        </span>
+                    </button>
+                </div>
+            </div>
+            <div class="app-header__menu">
+                <span>
+                    <button type="button"
+                        class="btn-icon btn-icon-only btn btn-primary btn-sm mobile-toggle-header-nav">
+                        <span class="btn-icon-wrapper">
+                            <i class="fa fa-ellipsis-v fa-w-6"></i>
+                        </span>
+                    </button>
+                </span>
+            </div>
+            <div class="app-header__content">
+                <div class="app-header-right">
+                    <div class="widget-content-right header-user-info ml-3">
+                        <!-- <button type="button" class="btn-shadow p-1 btn btn-primary btn-sm show-toastr-example">
+                            <i class="fa text-white fa-calendar pr-1 pl-1"></i>
+                        </button> -->
+                        <button type="button" style="width: 50px;"
+                            class="btn-shadow p-1 btn btn-primary btn-sm show-toastr-example"><a
+                                href="<?php echo base_url('auth/logout') ?>"><i
+                                    class="fa text-white fa-solid fa-right-from-bracket"></i></a></button>
                     </div>
                 </div>
             </div>
         </div>
+        <div class="card-payment">
+            <div class="icon-header">
+                <img src="<?= base_url('_assets/img/payment.svg') ?>" alt="Icon Payment" width="178">
+            </div>
+
+            <?php foreach ($bayar as $data): ?>
+                <div class="txt">
+                    <h3>#no_order:
+                        <?= $data->or_dc_number ?>
+                    </h3>
+                    <p>Masukkan nominal untuk melakukan transaksi</p>
+                </div>
+                <form method="post"
+                    action="<?php echo base_url('user/bayar_dan_simpan_riwayat_dc/' . $data->or_dc_number) ?>">
+                    <input type="hidden" name="or_dc_number" value="<?= $data->or_dc_number ?>">
+                    <input type="hidden" name="nama_pel_dc" value="<?= $data->nama_pel_dc ?>">
+                    <input type="hidden" name="no_telp_dc" value="<?= $data->no_telp_dc ?>">
+                    <input type="hidden" name="alamat_dc" value="<?= $data->alamat_dc ?>">
+                    <input type="hidden" name="jenis_paket_dc" value="<?= $data->jenis_paket_dc ?>">
+                    <input type="hidden" name="wkt_krj_dc" value="<?= $data->wkt_krj_dc ?>">
+                    <input type="hidden" name="berat_qty_dc" value="<?= $data->berat_qty_dc ?>">
+                    <input type="hidden" name="harga_perkilo" value="<?= $data->harga_perkilo ?>">
+                    <input type="hidden" name="tgl_masuk_dc" value="<?= $data->tgl_masuk_dc ?>">
+                    <input type="hidden" name="tgl_keluar_dc" value="<?= $data->tgl_keluar_dc ?>">
+                    <input type="hidden" name="tot_bayar" value="<?= $data->tot_bayar ?>">
+                    <input type="hidden" name="keterangan_dc" value="<?= $data->keterangan_dc ?>">
+
+                    <input type="text" name="nominal" required autofocus autocomplete="off" value="<?= $data->tot_bayar ?>"
+                        placeholder="Nominal ex: '120000'">
+                        <p>Harap Memasukkan Uang Pas</p>
+                    <button type="submit" name="bayar">Bayar</button>
+                </form>
+            <?php endforeach ?>
+        </div>
     </div>
+    <script>
+        // Display SweetAlert when the view loads
+        Swal.fire({
+            icon: 'success',
+            title: 'Payment successful!',
+            showConfirmButton: false,
+            timer: 1500
+        });
+    </script>
     <script src="http://maps.google.com/maps/api/js?sensor=true"></script>
     <script type="text/javascript"
         src="https://demo.dashboardpack.com/architectui-html-free/assets/scripts/main.js"></script>
