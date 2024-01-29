@@ -1343,6 +1343,21 @@
             </div>
         </div>
     </div>
+    <?php if ($this->session->flashdata('berhasil_tambah_paket')): ?>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+        <script>
+            Swal.fire({
+                icon: 'success',
+                title: 'Paket Berhasil di Tambahkan ',
+                text: '<?= $this->session->flashdata('berhasil_tambah_paket') ?>',
+                background: '#fff',
+                customClass: {
+                    title: 'text-dark',
+                    content: 'text-dark'
+                }
+            }); 
+        </script>
+    <?php endif; ?>
     <script src="http://maps.google.com/maps/api/js?sensor=true"></script>
     <script type="text/javascript"
         src="https://demo.dashboardpack.com/architectui-html-free/assets/scripts/main.js"></script>

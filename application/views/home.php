@@ -1379,8 +1379,6 @@
                                             Daftar?<br>hubungi kami sekarang! </a></div>
 
                                     <div class='dt-sc-vertical-small-separator '></div>
-
-
                                 </div>
                                 <div id="menu-wrapper" class="menu-wrapper menu-active-border-with-arrow">
                                     <div class="dt-menu-toggle" id="dt-menu-toggle">
@@ -1477,7 +1475,7 @@
                                                 data-frame_1_mask="u:t;" data-frame_999="o:0;tp:600;st:w;"
                                                 data-frame_hover="c:#000;bgc:#fff;boc:#000;bor:3px,3px,3px,3px;bos:solid;oX:50;oY:50;sp:0;e:none;"
                                                 style="z-index:11;background-color:#70cf4a;font-family:Lato;cursor:pointer;outline:none;box-shadow:none;box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;">Get
-                                                Harga - Mulai dari $0,99/kg
+                                                Harga - Mulai dari $6000/kg
                                             </rs-layer><!--
 --> </rs-slide>
                                         <rs-slide data-key="rs-2" data-title="Slide"
@@ -1622,7 +1620,7 @@
                                                     data-rsp_ch="on" data-text="s:20;l:25;fw:300;a:inherit;"
                                                     data-frame_0="tp:600;" data-frame_1="tp:600;st:4000;"
                                                     data-frame_999="o:0;tp:600;st:w;sR:4700;"
-                                                    style="z-index:9;font-family:Lato;">01. Pengiriman Sangat Cepat
+                                                    style="z-index:9;font-family:Lato;">01. Pengeringan Sangat Cepat
                                                 </rs-layer><!--
 
                                 --><rs-layer id="slider-1-slide-4-layer-6" data-type="text" data-color="#f7b206"
@@ -1886,8 +1884,8 @@
                                                                     class="attachment-full" alt="" decoding="async" />
                                                             </div>
                                                             <div class="icon-content">
-                                                                <h4>Pengiriman Lebih Cepat</h4>
-                                                                <p>Kami memastikan pengiriman dalam waktu penyelesaian
+                                                                <h4>Pengerjaan Lebih Cepat</h4>
+                                                                <p>Kami memastikan pengerjaan dalam waktu penyelesaian
                                                                     tercepat di industri. Kualitas layanan unggul dengan
                                                                     kecepatan!</p>
                                                             </div>
@@ -1914,12 +1912,11 @@
                                                                     class="attachment-full" alt="" decoding="async" />
                                                             </div>
                                                             <div class="icon-content">
-                                                                <h4>Pengiriman di depan pintu!</h4>
-                                                                <p>Kami telah memelopori konsep penjemputan dan
-                                                                    pengantaran
-                                                                    dalam waktu sesingkat mungkin. Kami berniat
-                                                                    menyimpannya
-                                                                    lewat sana!</p>
+                                                                <h4>Layanan Lebih Cepat!</h4>
+                                                                <p>Jangan biarkan waktu menunggu yang lama
+                                                                    menghambat Anda. Pilih Layanan Lebih Cepat dan
+                                                                    dapatkan layanan cepat dan efisien yang layak Anda
+                                                                    dapatkan.!</p>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -2373,121 +2370,6 @@
                                 </div>
                             </div>
                             <div class="vc_row-full-width vc_clearfix"></div>
-                            <div class="vc_row wpb_row vc_row-fluid">
-                                <div class="wpb_column vc_column_container vc_col-sm-12">
-                                    <div class="vc_column-inner ">
-                                        <div class="wpb_wrapper">
-                                            <div class="wpb_text_column wpb_content_element ">
-                                                <div class="wpb_wrapper">
-                                                    <div class="ult-spacer spacer-65a20dc13046d" data-id="65a20dc13046d"
-                                                        data-height="80" data-height-mobile="80" data-height-tab="80"
-                                                        data-height-tab-portrait="" data-height-mobile-landscape=""
-                                                        style="clear:both;display:block;"></div>
-
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div style='z-index:9;' data-vc-full-width="true" data-vc-full-width-init="false"
-                                class="vc_row wpb_row vc_row-fluid vc_custom_1494227040181">
-                                <div class="wpb_column vc_column_container vc_col-sm-3">
-                                    <div class="vc_column-inner ">
-                                        <div class="wpb_wrapper">
-                                            <div class="wpb_text_column wpb_content_element ">
-                                                <div class="wpb_wrapper">
-                                                    <div class="ult-animation  ult-animate-viewport  ult-no-mobile "
-                                                        data-animate="fadeInUp" data-animation-delay="1.0"
-                                                        data-animation-duration="1" data-animation-iteration="1"
-                                                        style="opacity:0;" data-opacity_start_effect="">
-                                                        <div class='dt-sc-counter type1  aligncenter'>
-                                                            <div class='dt-sc-couter-icon-holder'>
-                                                                <div class='icon-wrapper'><span><img width="70"
-                                                                            height="60"
-                                                                            src="https://dtdrycleaning.wpengine.com/wp-content/uploads/2017/04/icon4.png"
-                                                                            class="attachment-full" alt=""
-                                                                            decoding="async" loading="lazy" /></span>
-                                                                </div>
-                                                                <div class='dt-sc-counter-number' data-value='50'
-                                                                    data-append='+'>50</div>
-                                                            </div>
-                                                            <h4>Karyawan</h4>
-                                                        </div>
-                                                    </div>
-
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="wpb_column vc_column_container vc_col-sm-3">
-                                    <div class="vc_column-inner ">
-                                        <div class="wpb_wrapper">
-                                            <div class="wpb_text_column wpb_content_element ">
-                                                <div class="wpb_wrapper">
-                                                    <div class="ult-animation  ult-animate-viewport  ult-no-mobile "
-                                                        data-animate="fadeInUp" data-animation-delay="1.3"
-                                                        data-animation-duration="1" data-animation-iteration="1"
-                                                        style="opacity:0;" data-opacity_start_effect="">
-                                                        <div class='dt-sc-counter type1  aligncenter'>
-                                                            <div class='dt-sc-couter-icon-holder'>
-                                                                <div class='icon-wrapper'><span><img width="70"
-                                                                            height="60"
-                                                                            src="https://dtdrycleaning.wpengine.com/wp-content/uploads/2017/04/icon5.png"
-                                                                            class="attachment-full" alt=""
-                                                                            decoding="async" loading="lazy" /></span>
-                                                                </div>
-                                                                <div class='dt-sc-counter-number' data-value='5'>5</div>
-                                                            </div>
-                                                            <h4>Ranting</h4>
-                                                        </div>
-                                                    </div>
-
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="wpb_column vc_column_container vc_col-sm-3">
-                                    <div class="vc_column-inner ">
-                                        <div class="wpb_wrapper">
-                                            <div class="wpb_text_column wpb_content_element ">
-                                                <div class="wpb_wrapper">
-                                                    <div class="ult-animation  ult-animate-viewport  ult-no-mobile "
-                                                        data-animate="fadeInUp" data-animation-delay="1.6"
-                                                        data-animation-duration="1" data-animation-iteration="1"
-                                                        style="opacity:0;" data-opacity_start_effect="">
-                                                        <div class='dt-sc-counter type1  aligncenter'>
-                                                            <div class='dt-sc-couter-icon-holder'>
-                                                                <div class='icon-wrapper'><span><img width="70"
-                                                                            height="60"
-                                                                            src="https://dtdrycleaning.wpengine.com/wp-content/uploads/2017/04/icon6.png"
-                                                                            class="attachment-full" alt=""
-                                                                            decoding="async" loading="lazy" /></span>
-                                                                </div>
-                                                                <div class='dt-sc-counter-number' data-value='700'
-                                                                    data-append='+'>700</div>
-                                                            </div>
-                                                            <h4>Pekerjaan Selesai</h4>
-                                                        </div>
-                                                    </div>
-
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="vc_row-full-width vc_clearfix"></div>
-                        <div data-vc-full-width="true" data-vc-full-width-init="false"
-                            class="vc_row wpb_row vc_row-fluid vc_wave-row wpb_animate_when_almost_visible wpb_fadeInUp fadeInUp vc_custom_1505116164423">
-                            <div class="wpb_column vc_column_container vc_col-sm-12">
-                                <div class="vc_column-inner ">
-                                    <div class="wpb_wrapper"></div>
-                                </div>
-                            </div>
                         </div>
                         <div class="vc_row-full-width vc_clearfix"></div><!-- Row Backgrounds -->
                         <div class="upb_bg_img"
@@ -2503,161 +2385,6 @@
                             data-rtl="false" data-custom-vc-row="" data-vc="6.5.0" data-is_old_vc=""
                             data-theme-support="" data-overlay="false" data-overlay-color="" data-overlay-pattern=""
                             data-overlay-pattern-opacity="" data-overlay-pattern-size=""></div>
-                        <div class="vc_row wpb_row vc_row-fluid">
-                            <div class="wpb_column vc_column_container vc_col-sm-12">
-                                <div class="vc_column-inner ">
-                                    <div class="wpb_wrapper">
-                                        <div class="wpb_text_column wpb_content_element ">
-                                            <div class="wpb_wrapper">
-                                                <div class="ult-spacer spacer-65a20dc131de9" data-id="65a20dc131de9"
-                                                    data-height="80" data-height-mobile="80" data-height-tab="80"
-                                                    data-height-tab-portrait="" data-height-mobile-landscape=""
-                                                    style="clear:both;display:block;"></div>
-
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- <div class="vc_row wpb_row vc_row-fluid wpb_animate_when_almost_visible wpb_fadeInUp fadeInUp">
-                            <div class="wpb_column vc_column_container vc_col-sm-12">
-                                <div class="vc_column-inner ">
-                                    <div class="wpb_wrapper">
-                                        <div class="dt-sc-testimonial-container ">
-                                            <ul class="dt-sc-testimonial-images">
-                                                <li>
-                                                    <div><a href=""><img width="120" height="120"
-                                                                src="https://dtdrycleaning.wpengine.com/wp-content/uploads/2017/04/testimonial-3.jpg"
-                                                                class="attachment-full" alt="" decoding="async"
-                                                                loading="lazy"
-                                                                srcset="https://dtdrycleaning.wpengine.com/wp-content/uploads/2017/04/testimonial-3.jpg 120w, https://dtdrycleaning.wpengine.com/wp-content/uploads/2017/04/testimonial-3-100x100.jpg 100w"
-                                                                sizes="(max-width: 120px) 100vw, 120px" /></a></div>
-                                                    <div class="dt-sc-testimonial-author"><strong>Mark
-                                                            Wood</strong><small>Clarion Hotel - Manager</small>
-                                                    </div>
-                                                </li>
-                                                <li>
-                                                    <div><a href=""><img width="120" height="120"
-                                                                src="https://dtdrycleaning.wpengine.com/wp-content/uploads/2017/04/testimonial-2.jpg"
-                                                                class="attachment-full" alt="" decoding="async"
-                                                                loading="lazy"
-                                                                srcset="https://dtdrycleaning.wpengine.com/wp-content/uploads/2017/04/testimonial-2.jpg 120w, https://dtdrycleaning.wpengine.com/wp-content/uploads/2017/04/testimonial-2-100x100.jpg 100w"
-                                                                sizes="(max-width: 120px) 100vw, 120px" /></a></div>
-                                                    <div class="dt-sc-testimonial-author"><strong>Jhon
-                                                            Joe</strong><small>Clarion Hotel - Manager</small></div>
-                                                </li>
-                                                <li>
-                                                    <div><a href=""><img width="120" height="120"
-                                                                src="https://dtdrycleaning.wpengine.com/wp-content/uploads/2017/04/testimonial-1.jpg"
-                                                                class="attachment-full" alt="" decoding="async"
-                                                                loading="lazy"
-                                                                srcset="https://dtdrycleaning.wpengine.com/wp-content/uploads/2017/04/testimonial-1.jpg 120w, https://dtdrycleaning.wpengine.com/wp-content/uploads/2017/04/testimonial-1-100x100.jpg 100w"
-                                                                sizes="(max-width: 120px) 100vw, 120px" /></a></div>
-                                                    <div class="dt-sc-testimonial-author"><strong>Jenny
-                                                            Stewe</strong><small>Clarion Hotel - Manager</small>
-                                                    </div>
-                                                </li>
-                                                <li>
-                                                    <div><a href=""><img width="120" height="120"
-                                                                src="https://dtdrycleaning.wpengine.com/wp-content/uploads/2017/04/testimonial-4.jpg"
-                                                                class="attachment-full" alt="" decoding="async"
-                                                                loading="lazy"
-                                                                srcset="https://dtdrycleaning.wpengine.com/wp-content/uploads/2017/04/testimonial-4.jpg 120w, https://dtdrycleaning.wpengine.com/wp-content/uploads/2017/04/testimonial-4-100x100.jpg 100w"
-                                                                sizes="(max-width: 120px) 100vw, 120px" /></a></div>
-                                                    <div class="dt-sc-testimonial-author"><strong>Tyrese
-                                                            Gibson</strong><small>Clarion Hotel - Manager</small>
-                                                    </div>
-                                                </li>
-                                                <li>
-                                                    <div><a href=""><img width="120" height="120"
-                                                                src="https://dtdrycleaning.wpengine.com/wp-content/uploads/2017/04/testimonial-5.jpg"
-                                                                class="attachment-full" alt="" decoding="async"
-                                                                loading="lazy"
-                                                                srcset="https://dtdrycleaning.wpengine.com/wp-content/uploads/2017/04/testimonial-5.jpg 120w, https://dtdrycleaning.wpengine.com/wp-content/uploads/2017/04/testimonial-5-100x100.jpg 100w"
-                                                                sizes="(max-width: 120px) 100vw, 120px" /></a></div>
-                                                    <div class="dt-sc-testimonial-author"><strong>Charlize
-                                                            Theron</strong><small>Clarion Hotel - Manager</small>
-                                                    </div>
-                                                </li>
-                                            </ul>
-                                            <div class="dt-sc-testimonial-special-wrapper">
-                                                <ul class="dt-sc-testimonial-special">
-                                                    <li class="dt-sc-testimonial-wrapper">
-                                                        <div class="dt-sc-testimonial special-testimonial-carousel">
-                                                            <div class="dt-sc-testimonial-quote">
-                                                                <blockquote><q>Anecllna tesque ac lectus nec leo
-                                                                        euismod ultrices. Lorem ipsum dolor sit
-                                                                        amet, consectetur adipiscing elit amet
-                                                                        risus. Pellentesque ac lectus nec leo
-                                                                        euismod ultrices. Lorem ipsum dolor sit
-                                                                        amet, consectetur adipiscing elit amet
-                                                                        risus.</q></blockquote>
-                                                            </div>
-                                                        </div>
-                                                    </li>
-                                                    <li class="dt-sc-testimonial-wrapper">
-                                                        <div class="dt-sc-testimonial special-testimonial-carousel">
-                                                            <div class="dt-sc-testimonial-quote">
-                                                                <blockquote><q>Lcleirtum ac lectus nec leo euismod
-                                                                        ultrices. Lorem ipsum dolor sit amet,
-                                                                        consectetur adipiscing elit amet risus.
-                                                                        Pellentesque ac lectus nec leo euismod
-                                                                        ultrices. Lorem ipsum dolor sit amet,
-                                                                        consectetur adipiscing elit amet risus.</q>
-                                                                </blockquote>
-                                                            </div>
-                                                        </div>
-                                                    </li>
-                                                    <li class="dt-sc-testimonial-wrapper">
-                                                        <div class="dt-sc-testimonial special-testimonial-carousel">
-                                                            <div class="dt-sc-testimonial-quote">
-                                                                <blockquote><q>Pellentesque ac lectus nec leo
-                                                                        euismod ultrices. Lorem ipsum dolor sit
-                                                                        amet, consectetur adipiscing elit amet
-                                                                        risus. Pellentesque ac lectus nec leo
-                                                                        euismod ultrices. Lorem ipsum dolor sit
-                                                                        amet, consectetur adipiscing elit amet
-                                                                        risus.</q></blockquote>
-                                                            </div>
-                                                        </div>
-                                                    </li>
-                                                    <li class="dt-sc-testimonial-wrapper">
-                                                        <div class="dt-sc-testimonial special-testimonial-carousel">
-                                                            <div class="dt-sc-testimonial-quote">
-                                                                <blockquote><q>Black mark ac lectus nec leo euismod
-                                                                        ultrices. Lorem ipsum dolor sit amet,
-                                                                        consectetur adipiscing elit amet risus.
-                                                                        Pellentesque ac lectus nec leo euismod
-                                                                        ultrices. Lorem ipsum dolor sit amet,
-                                                                        consectetur adipiscing elit amet risus.</q>
-                                                                </blockquote>
-                                                            </div>
-                                                        </div>
-                                                    </li>
-                                                    <li class="dt-sc-testimonial-wrapper">
-                                                        <div class="dt-sc-testimonial special-testimonial-carousel">
-                                                            <div class="dt-sc-testimonial-quote">
-                                                                <blockquote><q>Fast as Like ac lectus nec leo
-                                                                        euismod ultrices. Lorem ipsum dolor sit
-                                                                        amet, consectetur adipiscing elit amet
-                                                                        risus. Pellentesque ac lectus nec leo
-                                                                        euismod ultrices. Lorem ipsum dolor sit
-                                                                        amet, consectetur adipiscing elit amet
-                                                                        risus.</q></blockquote>
-                                                            </div>
-                                                        </div>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                            <div class="carousel-arrows"> <a href="#" class="testimonial-prev"> </a>
-                                                <a href="#" class="testimonial-next"> </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div> -->
                         <div data-vc-full-width="true" data-vc-full-width-init="false"
                             class="vc_row wpb_row vc_row-fluid wpb_animate_when_almost_visible wpb_fadeInUp fadeInUp vc_custom_1505116310405 vc_row-has-fill">
                             <div
@@ -2677,10 +2404,11 @@
                                                                     class="attachment-full" alt="" decoding="async"
                                                                     loading="lazy" /></span></div>
                                                         <div class="icon-content">
-                                                            <h4>We are certified </h4>
-                                                            <p>Offering innovative solutions is our passion. We
-                                                                endeavor to attain a high customer satisfaction in
-                                                                our field and want to exceed your expectations.</p>
+                                                            <h4>Kami bersertifikat </h4>
+                                                            <p>Menawarkan solusi inovatif adalah semangat kami. Kami
+                                                                berusaha keras untuk mencapai kepuasan pelanggan yang
+                                                                tinggi di bidang kami dan ingin melampaui harapan Anda.
+                                                            </p>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -2706,10 +2434,10 @@
                                                                     class="attachment-full" alt="" decoding="async"
                                                                     loading="lazy" /></span></div>
                                                         <div class="icon-content">
-                                                            <h4>Impeccable Track Record</h4>
-                                                            <p>Out of years of experience with the state of the art
-                                                                dry cleaning equipment, we have gained a unique
-                                                                track record.</p>
+                                                            <h4>Rekam Jejak Sempurna</h4>
+                                                            <p>Dari pengalaman bertahun-tahun dengan peralatan dry
+                                                                cleaning yang canggih, kami telah memperoleh rekam jejak
+                                                                yang unik.</p>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -2735,10 +2463,10 @@
                                                                     class="attachment-full" alt="" decoding="async"
                                                                     loading="lazy" /></span></div>
                                                         <div class="icon-content">
-                                                            <h4>Satisfaction guaranteed </h4>
-                                                            <p>With our innovative solutions and cost effectiveness,
-                                                                we strive to satisfy our customers and always
-                                                                succeed!</p>
+                                                            <h4>Kepuasan terjamin </h4>
+                                                            <p>Dengan solusi inovatif dan efektivitas biaya, kami
+                                                                berusaha untuk memuaskan pelanggan kami dan selalu
+                                                                berhasil!</p>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -2772,8 +2500,8 @@
                                                                 <span class="icon icon-search"> </span> </a></div>
                                                         <div class="image-overlay-details">
                                                             <h2><a title="Cras tristique purus non lacus"
-                                                                    href="https://dtdrycleaning.wpengine.com/dt_portfolios/cras-tristique-purus-non-lacus/">Cras
-                                                                    tristique purus non lacus</a></h2>
+                                                                    href="https://dtdrycleaning.wpengine.com/dt_portfolios/cras-tristique-purus-non-lacus/">Jas
+                                                                    pengantin layak mendapat perlakuan khusus</a></h2>
                                                             <p class='categories'><a
                                                                     href="https://dtdrycleaning.wpengine.com/portfolio_entries/steam-iron/"
                                                                     rel="tag">Steam Iron</a></p>
@@ -2796,8 +2524,8 @@
                                                                 <span class="icon icon-search"> </span> </a></div>
                                                         <div class="image-overlay-details">
                                                             <h2><a title="Duis fermentum felis"
-                                                                    href="https://dtdrycleaning.wpengine.com/dt_portfolios/duis-fermentum-felis/">Duis
-                                                                    fermentum felis</a></h2>
+                                                                    href="https://dtdrycleaning.wpengine.com/dt_portfolios/duis-fermentum-felis/">Untuk
+                                                                    memicu ragi</a></h2>
                                                             <p class='categories'><a
                                                                     href="https://dtdrycleaning.wpengine.com/portfolio_entries/silk-and-suede/"
                                                                     rel="tag">Silk and Suede</a></p>
@@ -2820,8 +2548,8 @@
                                                                 <span class="icon icon-search"> </span> </a></div>
                                                         <div class="image-overlay-details">
                                                             <h2><a title="Quisque id maximus leo"
-                                                                    href="https://dtdrycleaning.wpengine.com/dt_portfolios/quisque-id-maximus-leo/">Quisque
-                                                                    id maximus leo</a></h2>
+                                                                    href="https://dtdrycleaning.wpengine.com/dt_portfolios/quisque-id-maximus-leo/">Setiap
+                                                                    orang mempunyai waktu yang penting</a></h2>
                                                             <p class='categories'><a
                                                                     href="https://dtdrycleaning.wpengine.com/portfolio_entries/wet-washing/"
                                                                     rel="tag">Wet Washing</a></p>
@@ -2844,8 +2572,8 @@
                                                                 <span class="icon icon-search"> </span> </a></div>
                                                         <div class="image-overlay-details">
                                                             <h2><a title="Proin venenatis felis"
-                                                                    href="https://dtdrycleaning.wpengine.com/dt_portfolios/proin-venenatis-felis/">Proin
-                                                                    venenatis felis</a></h2>
+                                                                    href="https://dtdrycleaning.wpengine.com/dt_portfolios/proin-venenatis-felis/">Ini
+                                                                    adalah pemicu yang beracun</a></h2>
                                                             <p class='categories'><a
                                                                     href="https://dtdrycleaning.wpengine.com/portfolio_entries/stain-removal/"
                                                                     rel="tag">Stain Removal</a></p>
@@ -2869,8 +2597,8 @@
                                                                 <span class="icon icon-search"> </span> </a></div>
                                                         <div class="image-overlay-details">
                                                             <h2><a title="Aenean vitae enim rhoncus"
-                                                                    href="https://dtdrycleaning.wpengine.com/dt_portfolios/aenean-vitae-enim-rhoncus/">Aenean
-                                                                    vitae enim rhoncus</a></h2>
+                                                                    href="https://dtdrycleaning.wpengine.com/dt_portfolios/aenean-vitae-enim-rhoncus/">Layanan
+                                                                    binatu bertenaga yang terbaik!</a></h2>
                                                             <p class='categories'><a
                                                                     href="https://dtdrycleaning.wpengine.com/portfolio_entries/silk-and-suede/"
                                                                     rel="tag">Silk and Suede</a></p>
@@ -2893,8 +2621,8 @@
                                                                 <span class="icon icon-search"> </span> </a></div>
                                                         <div class="image-overlay-details">
                                                             <h2><a title="Donec in maximus augue"
-                                                                    href="https://dtdrycleaning.wpengine.com/dt_portfolios/donec-in-maximus-augue/">Donec
-                                                                    in maximus augue</a></h2>
+                                                                    href="https://dtdrycleaning.wpengine.com/dt_portfolios/donec-in-maximus-augue/">Dalam
+                                                                    publisitas terbesar</a></h2>
                                                             <p class='categories'><a
                                                                     href="https://dtdrycleaning.wpengine.com/portfolio_entries/stain-removal/"
                                                                     rel="tag">Stain Removal</a></p>
@@ -2918,8 +2646,8 @@
                                                                 <span class="icon icon-search"> </span> </a></div>
                                                         <div class="image-overlay-details">
                                                             <h2><a title="Vestibulum pellentesque metus"
-                                                                    href="https://dtdrycleaning.wpengine.com/dt_portfolios/vestibulum-pellentesque-metus/">Vestibulum
-                                                                    pellentesque metus</a></h2>
+                                                                    href="https://dtdrycleaning.wpengine.com/dt_portfolios/vestibulum-pellentesque-metus/">Pembersihan
+                                                                    kering menghemat uang dalam jangka panjang</a></h2>
                                                             <p class='categories'><a
                                                                     href="https://dtdrycleaning.wpengine.com/portfolio_entries/dry-cleaning/"
                                                                     rel="tag">Dry Cleaning</a></p>
@@ -2943,8 +2671,8 @@
                                                                 <span class="icon icon-search"> </span> </a></div>
                                                         <div class="image-overlay-details">
                                                             <h2><a title="Nulla rhoncus efficitur augue"
-                                                                    href="https://dtdrycleaning.wpengine.com/dt_portfolios/nulla-rhoncus-efficitur-augue/">Nulla
-                                                                    rhoncus efficitur augue</a></h2>
+                                                                    href="https://dtdrycleaning.wpengine.com/dt_portfolios/nulla-rhoncus-efficitur-augue/">Layanan
+                                                                    binatu bertenaga yang terbaik!</a></h2>
                                                             <p class='categories'><a
                                                                     href="https://dtdrycleaning.wpengine.com/portfolio_entries/wet-washing/"
                                                                     rel="tag">Wet Washing</a></p>
@@ -3132,12 +2860,11 @@
             </div><!-- **Container - End** -->
 
         </div><!-- **Main - End** --> <!-- **Footer** -->
-        <footer id="footer"
-            <div class="footer-copyright ">
-                <div class="container">
-                    <div class="column dt-sc-one-half first ">&copy; 2017 Cuci kering. Seluruh hak cipta.
-                    </div>
+        <footer id="footer" <div class="footer-copyright ">
+            <div class="container">
+                <div class="column dt-sc-one-half first ">&copy; 2017 Cuci kering. Seluruh hak cipta.
                 </div>
+            </div>
         </footer>
         <!-- **Footer - End** -->
     </div><!-- **Inner Wrapper - End** -->

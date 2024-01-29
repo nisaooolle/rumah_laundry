@@ -1353,11 +1353,6 @@
                                                         <?= $dc->tarif_dc ?>
                                                     </td>
                                                     <td class="text-center">
-                                                        <!-- <a href="<?= base_url('admin/edit_paket_dc') ?>/<?= $dc->id_dc ?>"
-                                                            class="btn btn-edit">Edit</a>
-                                                        <a href="<?= base_url('admin/hapus_paket_dc') ?>/<?= $dc->id_dc ?>"
-                                                            onclick="return confirm('Yakin akan menghapus?');"
-                                                            class="btn btn-hapus">Hapus</a> -->
                                                         <button type="button"
                                                             class=" btn-sm btn-square btn-edit text-danger-hover-none">
                                                             <a class="text-light text-decoration-none"

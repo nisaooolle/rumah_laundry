@@ -287,6 +287,7 @@ class Admin extends CI_Controller
             "tarif_dc" => $this->input->post('tarif_dc'),
         ];
         $this->m_model->tambah_data('tb_dry_clean', $data);
+        $this->session->set_flashdata('berhasil_tambah_paket', 'Tambah Paket Berhasil Di Tambahkan');
         redirect(base_url('admin/paket_dc'));
     }
     public function edit_paket_dc($id)
